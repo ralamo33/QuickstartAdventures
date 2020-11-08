@@ -1,13 +1,16 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import styled from "styled-components";
 
 export default function EpicImage(props) {
     const image = props.image;
     const header = props.header;
-    const colorClass = props.color;
+    const Header = styled.h3`
+        color: green;
+    `;
     return (
         <div>
-         <h3 className={colorClass}>{header}</h3>
+         <Header>{header}</Header>
          <img src={image} alt="Failed to load"></img>
         </div>
     )
