@@ -8,10 +8,13 @@ export default function EpicImage(props) {
     const Header = styled.h3`
         color: green;
     `;
+    const Image = styled.img`
+        max-width: 90%;
+    `;
     return (
         <div>
          <Header>{header}</Header>
-         <img src={image} alt="Failed to load"></img>
+         <Image src={image} alt="Failed to load"></Image>
         </div>
     )
 }

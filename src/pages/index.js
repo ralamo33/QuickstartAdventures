@@ -2,6 +2,8 @@ import React from "react"
 import "bootstrap/dist/css/bootstrap.min.css";
 import CustomNavbar from "../components/CustomNavbar";
 import EpicImage from "../components/EpicImage";
+import EpicText from "../components/EpicText";
+import AlternateSides from "../layouts/AlternateSides";
 
 export default function Home() {
   const navItems=['Home', 'Games', 'Projects', 'Blog'];
@@ -11,7 +13,10 @@ export default function Home() {
   return  (
     <div>
       <CustomNavbar navItems={navItems}></CustomNavbar>
-      <EpicImage image={image} colorClass={colorClass} header={header}></EpicImage>
+      <AlternateSides>
+        <EpicImage image={image} colorClass={colorClass} header={header}></EpicImage>
+        <EpicText text="This is dummy text"></EpicText>
+      </AlternateSides>
     </div>
   )
 }
