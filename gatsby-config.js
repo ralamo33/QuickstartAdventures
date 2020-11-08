@@ -5,6 +5,9 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: `RememberTheRalamo`,
+  },
   plugins: [
     {
       resolve: `gatsby-plugin-s3`,
