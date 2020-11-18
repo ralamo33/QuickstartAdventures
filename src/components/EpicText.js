@@ -7,8 +7,13 @@ export default function EpicText(props) {
     const Text = styled.p`
         color: red;
     `;
+    const header = props.header;
+    const Header = styled.h3`
+        color: green;
+    `;
     return (
         <div>
+            <Header>{header}</Header>
             <Text>{text}</Text>
         </div>
     )
