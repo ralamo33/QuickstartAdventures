@@ -8,14 +8,21 @@ import Title from "../components/Title";
 
 export default function Home() {
   const navItems=['Home', 'Games', 'Projects', 'Blog'];
-  const image='https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.desktopanimated.com%2Fwp-content%2Fuploads%2F2014%2F12%2FEpic_Lands_1.jpg&f=1&nofb=1';
+  const urlHeader = 'https://remember-the-ralamo-images.s3.amazonaws.com/';
+  const cannon = urlHeader + 'Cannon.jpg'
+  const got = urlHeader + 'GOT.jpg'
+  const plane = urlHeader + 'Plane.jpg'
   const colorClass='text-danger';
   const header='Bow before your lord';
   return  (
     <Layout>
-      <Title navItems={navItems} title="Remember The Ralamo"></Title>
+      <Title navItems={navItems} title="Simplified Dungeons"></Title>
       <AlternateSides>
-        <EpicImage image={image} colorClass={colorClass} header={header}></EpicImage>
+        <EpicImage image={got} colorClass={colorClass}></EpicImage>
+        <EpicText text="This is dummy text" header={header}></EpicText>
+        <EpicImage image={plane} colorClass={colorClass} header={header}></EpicImage>
+        <EpicText text="This is dummy text"></EpicText>
+        <EpicImage image={cannon} colorClass={colorClass} header={header}></EpicImage>
         <EpicText text="This is dummy text"></EpicText>
       </AlternateSides>
     </Layout>
