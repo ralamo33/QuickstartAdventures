@@ -9,7 +9,7 @@ export default function Home() {
   const navItems=['Kickstarter', 'Our Journey'];
   return  (
     <Layout>
-      <Title title="Simple RPGs"></Title>
+      <Title title="Simple Tavern"></Title>
       <MyNavbar navItems={navItems}></MyNavbar>
       <AlternateSides>
         <h1>Simple</h1>

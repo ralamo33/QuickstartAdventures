@@ -4,9 +4,11 @@ import styled from "styled-components";
 import {Col} from "react-bootstrap";
 import OrderButton from "./OrderButton";
 import AWSImage from "../components/AWSImage";
+import * as Constants from "../constants.js"
 
 export default function Title(props) {
     const TopWrapper = styled.div`
+        background-color: black;
     `
     const MyImage = styled(AWSImage)`
         width: 100%;
@@ -14,13 +16,12 @@ export default function Title(props) {
         opacity: 0.3;
     `
     const Title = styled.h1`
-        color: red;
+        color: #e60000;
         text-align: center;
-        font-size: 10vh;
+        font-size: 20vh;
     `
             return (<div>
                 <TopWrapper>
-                    {/* <MyImage image="Cannon.jpg"></MyImage> */}
                     <Title>
                         {props.title}
                     </Title>
