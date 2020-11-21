@@ -12,7 +12,6 @@ export default function Layout({ children }) {
   return (
     <React.Fragment>
       <GlobalStyle theme="medieval"/>
-        <h1>This is in Medieval Sharp</h1>
       {children}
     </React.Fragment>
   )
