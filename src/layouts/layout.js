@@ -2,14 +2,17 @@ import React from "react"
 import { createGlobalStyle } from "styled-components"
 const GlobalStyle = createGlobalStyle`
   body {
-    background: ${props => (props.theme === "dark" ? "black" : "white")};
-    color: ${props => (props.theme === "dark" ? "white" : "black")};
+    background: ${props => (props.theme === "medieval" ? "#E8D8A6" : "white")};
+    color: ${props => (props.theme === "medieval" ? "black" : "white")};
+    font-family: 'MedievalSharp', cursive;
+    font-weight: 400;
   }
 `
 export default function Layout({ children }) {
   return (
     <React.Fragment>
-      <GlobalStyle theme="dark" />
+      <GlobalStyle theme="medieval"/>
+        <h1>This is in Medieval Sharp</h1>
       {children}
     </React.Fragment>
   )

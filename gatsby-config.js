@@ -15,7 +15,7 @@ module.exports = {
         bucketName: "remembertheralamo.com"
       }
     },
-    {
+        {
       resolve: `gatsby-plugin-styled-components`,
     }
   ],
