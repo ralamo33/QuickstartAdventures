@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styled from "styled-components";
-import { Popover, Row, Col} from "react-bootstrap";
+import {OverlayTrigger, Popover, Row, Col} from "react-bootstrap";
 
 export default function RowHeaderText(props) {
     const MyRow = styled.div`
@@ -17,18 +17,24 @@ export default function RowHeaderText(props) {
     `;
     const StyledText = styled.p`
         font-size: 2rem;
-        color: ${props.color};
+        text-align: center;
+        width: 45rem;
+        // color: ${props.color};
+        background-color: ${props.color};
+        color: gray;
     `;
     const MyHeader = <StyledHeader>{props.header}</StyledHeader>;
     const MyText = <StyledText>{props.text}</StyledText>;
     return (
         <MyRow>
-            <StyledHeader>
-                {props.header}
-            </StyledHeader>
-            <StyledText>
+            <OverlayTrigger placement="bottom" overlay={MyText}>
+                <StyledHeader>
+                 {props.header}
+                </StyledHeader>
+            </OverlayTrigger>
+            {/* <StyledText>
                 {props.text}
-            </StyledText>
+            </StyledText> */}
         </MyRow>
     );
 }
