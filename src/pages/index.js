@@ -17,7 +17,7 @@ export default function Home() {
       <MyNavbar navItems={navItems}></MyNavbar>
       <Container>
         <Break height="10"></Break>
-        <RowHeaderText header="Simple" color="gold" text={Constants.SIMPLE_TEXT} headerFirst={true} 
+        <RowHeaderText header="Fast-Paced" color="gold" text={Constants.SIMPLE_TEXT} headerFirst={true} 
           url="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fa0%2Fb9%2F1d%2Fa0b91dcd5ab54bb509358bbcd797a289.jpg&f=1&nofb=1"></RowHeaderText>
         <Break height="10"></Break>
         <RowHeaderText header="Modular" color="red" text="This is pretty simple" headerFirst={false}
