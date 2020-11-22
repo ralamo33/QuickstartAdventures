@@ -4,12 +4,11 @@ import styled from "styled-components";
 import { Popover, Row, Col} from "react-bootstrap";
 
 export default function RowHeaderText(props) {
-    const MyRow = styled(Row)`
+    const MyRow = styled.div`
         height: 50vh;
         background-image: url(${props.url});
         background-position: center;
         background-size: cover;
-        // border: 5px white ;
     `;
     const StyledHeader = styled.p`
         font-size: 5rem;
@@ -22,14 +21,14 @@ export default function RowHeaderText(props) {
     `;
     const MyHeader = <StyledHeader>{props.header}</StyledHeader>;
     const MyText = <StyledText>{props.text}</StyledText>;
-    const first = props.headerFirst ? MyHeader : MyText;
-    const second = props.headerFirst ? MyText : MyHeader;
     return (
         <MyRow>
-                {first}
-            <Col>
-                {second}
-            </Col>
+            <StyledHeader>
+                {props.header}
+            </StyledHeader>
+            <StyledText>
+                {props.text}
+            </StyledText>
         </MyRow>
     );
 }
