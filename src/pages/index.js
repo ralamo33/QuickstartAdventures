@@ -1,30 +1,32 @@
 import React from "react"
 import "bootstrap/dist/css/bootstrap.min.css";
-import EpicImage from "../components/EpicImage";
-import EpicText from "../components/EpicText";
 import AlternateSides from "../layouts/AlternateSides";
 import Layout from "../layouts/layout";
 import Title from "../components/Title";
+import MyNavbar from "../components/MyNavbar";
+import RowHeaderText from "../components/RowHeaderText";
+import Break from "../components/Break";
+import { Container, Row, Col} from "react-bootstrap";
+import * as Constants from "../constants";
 
 export default function Home() {
-  const navItems=['Home', 'Games', 'Projects', 'Blog'];
-  const urlHeader = 'https://remember-the-ralamo-images.s3.amazonaws.com/';
-  const cannon = urlHeader + 'Cannon.jpg'
-  const got = urlHeader + 'GOT.jpg'
-  const plane = urlHeader + 'Plane.jpg'
-  const colorClass='text-danger';
-  const header='Bow before your lord';
+  const navItems=['Kickstarter', 'Our Journey'];
   return  (
     <Layout>
-      <Title navItems={navItems} title="Simplified Dungeons"></Title>
-      <AlternateSides>
-        <EpicImage image={got} colorClass={colorClass}></EpicImage>
-        <EpicText text="This is dummy text" header={header}></EpicText>
-        <EpicImage image={plane} colorClass={colorClass} header={header}></EpicImage>
-        <EpicText text="This is dummy text"></EpicText>
-        <EpicImage image={cannon} colorClass={colorClass} header={header}></EpicImage>
-        <EpicText text="This is dummy text"></EpicText>
-      </AlternateSides>
+      <Title title="Simple Tavern"></Title>
+      <MyNavbar navItems={navItems}></MyNavbar>
+      <Container>
+        <Break height="10"></Break>
+        <RowHeaderText header="Fast-Paced" color="gold" text={Constants.SIMPLE_TEXT} headerFirst={true} 
+          url="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fa0%2Fb9%2F1d%2Fa0b91dcd5ab54bb509358bbcd797a289.jpg&f=1&nofb=1"></RowHeaderText>
+        <Break height="10"></Break>
+        <RowHeaderText header="Modular" color="red" text="This is pretty simple" headerFirst={false}
+          url="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftheinnergamer.net%2Fwp-content%2Fuploads%2F2017%2F03%2Fwhat-is-dungeons-dragons-1024x521.jpg&f=1&nofb=1"></RowHeaderText>
+        <Break height="10"></Break>
+        <RowHeaderText header="Customizable" color="#00ccff" text="This is pretty simple" headerFirst={true}
+          url="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdna.artstation.com%2Fp%2Fassets%2Fimages%2Fimages%2F016%2F574%2F322%2Flarge%2Fyang-sohyeon-2-1.jpg%3F1552713509&f=1&nofb=1"></RowHeaderText>
+        <Break height="10"></Break>
+      </Container>
     </Layout>
   )
 }
