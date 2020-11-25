@@ -1,15 +1,14 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styled from "styled-components";
-import { Popover, Row, Col} from "react-bootstrap";
+import {OverlayTrigger} from "react-bootstrap";
 
-export default function RowHeaderText(props) {
-    const MyRow = styled(Row)`
-        height: 50vh;
+export default function MyOverlayTrigger(props) {
+    const MyRow = styled.div`
+        height: 60vh;
         background-image: url(${props.url});
         background-position: center;
         background-size: cover;
-        // border: 5px white ;
     `;
     const StyledHeader = styled.p`
         font-size: 5rem;
@@ -18,18 +17,20 @@ export default function RowHeaderText(props) {
     `;
     const StyledText = styled.p`
         font-size: 2rem;
-        color: ${props.color};
+        width: 60vw;
+        max-width: 600px;
+        text-align: center;
+        background-color: ${props.color};
+        color: black;
     `;
-    const MyHeader = <StyledHeader>{props.header}</StyledHeader>;
     const MyText = <StyledText>{props.text}</StyledText>;
-    const first = props.headerFirst ? MyHeader : MyText;
-    const second = props.headerFirst ? MyText : MyHeader;
     return (
         <MyRow>
-                {first}
-            <Col>
-                {second}
-            </Col>
+            <OverlayTrigger placement="bottom" overlay={MyText}>
+                <StyledHeader>
+                 {props.header}
+                </StyledHeader>
+            </OverlayTrigger>
         </MyRow>
     );
 }
