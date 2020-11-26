@@ -9,7 +9,7 @@ export default function MyNavbar(props) {
         border: 5px solid black;
         text-align: center;
         font-size: 4rem;
-        color: #00ccff;
+        color: #ccffff;
         background-color: #595959;
     `
     const navItems = props.navItems.map((navItem) => {
