@@ -13,10 +13,6 @@ export default function MyModal(props) {
 
   return (
     <div>
-      <Button variant="primary" onClick={handleShow}>
-        Launch static backdrop modal
-      </Button>
-
       <Modal
         show={show}
         onHide={handleClose}
