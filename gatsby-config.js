@@ -12,7 +12,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: "remembertheralamo.com"
+        bucketName: "www.quickstartadventures.com"
       }
     },
         {
