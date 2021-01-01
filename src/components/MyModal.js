@@ -11,6 +11,7 @@ export default function MyModal(props) {
   const setShow = props.setShow;
   const apiUrl = 'https://cors-anywhere.herokuapp.com/https://9oeq1w1vcf.execute-api.us-east-1.amazonaws.com/prod/notify';
   const emailParam = '?TopicArn=arn:aws:sns:us-east-1:451835830300:AddEmail&Message=';
+  // This is only exists to test automated shell script
   let [email, setEmail] = useState("");
   
   const handleClose = () => setShow(false);
