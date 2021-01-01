@@ -16,7 +16,3 @@ export default function() {
         </Form>
     )
 }
-
-function handleSubmit(event) {
-    console.log("Hello");
-}
