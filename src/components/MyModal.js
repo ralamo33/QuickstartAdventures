@@ -8,7 +8,7 @@ import axios from "axios";
 export default function MyModal(props) {
   const show = props.show;
   const setShow = props.setShow;
-  const apiUrl = 'https://cors-anywhere.herokuapp.com/https://9oeq1w1vcf.execute-api.us-east-1.amazonaws.com/prod/notify';
+  const apiUrl = 'https://9oeq1w1vcf.execute-api.us-east-1.amazonaws.com/prod/notify';
   const emailParam = '?TopicArn=arn:aws:sns:us-east-1:451835830300:AddEmail&Message=';
   let [email, setEmail] = useState("");
   
@@ -18,8 +18,8 @@ export default function MyModal(props) {
   const handleSubmit = event => {
     event.preventDefault();
     axios.post(
-      apiUrl + emailParam + email, {
-        headers: {"Access-Control-Allow-Origin": "*"}
+      apiUrl + emailParam + email, {}, {
+        headers: {"x-api-key": "3ILD8V8RHmg10Su7VXUl3JL9wvFOfnS7QZf26At7"}
       }
     ).then(handleClose()
     ).catch((error) => alert(error));
