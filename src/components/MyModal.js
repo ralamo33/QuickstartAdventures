@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Container, Row, Col, Button, Modal, Form } from "react-bootstrap";
-import EmailForm from "../components/EmailForm";
+import {Button, Modal, Form } from "react-bootstrap";
 import axios from "axios";
 
 

@@ -24,7 +24,7 @@ export default function OrderButton() {
     `
     return (
         <Container>
-            <OrderButton variant="warning" onClick={handleShow}>Claim For Free</OrderButton>
+            <OrderButton variant="warning" onClick={handleShow}>Claim For Free!</OrderButton>
             <MyModal show={show} setShow={setShow}></MyModal>
         </Container>
     )
