@@ -1,9 +1,9 @@
 import React from "react"
-import {styled, createGlobalStyle } from "styled-components"
+import {createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background: "#ffffcc";
+    background: #ffffcc;
     font-family: 'MedievalSharp', cursive;
     font-weight: 400;
   }
@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 export default function Layout({ children }) {
   return (
     <React.Fragment>
-      <GlobalStyle theme="medival"/>
+      <GlobalStyle/>
       {children}
     </React.Fragment>
   )

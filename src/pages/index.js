@@ -1,7 +1,7 @@
 import React from "react"
 import "bootstrap/dist/css/bootstrap.min.css";
 import Layout from "../layouts/layout";
-import Title from "../components/Title";
+import Header from "../components/Header";
 import Break from "../components/Break";
 import {Container} from "react-bootstrap";
 import MyCarousel from "../components/MyCarousel";
@@ -11,7 +11,7 @@ export default function Home() {
 
   return  (
     <Layout>
-      <Title title="Quickstart Adventures" navItems={navItems}></Title>
+      <Header title="Quickstart Adventures" navItems={navItems}></Header>
       <Container>
         <Break height="5"></Break>
         <MyCarousel></MyCarousel>
