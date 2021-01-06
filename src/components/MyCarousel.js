@@ -23,7 +23,7 @@ export default function MyCarouselItem(props) {
             <Carousel.Item>
                 <MyOverlayTrigger url={Constants.BUCKET_URL + 'Workshop.jpg'}
                  colorClass={classes.blue} imageClass={classes.workshop} textClass={classes.blueBackground}
-                 header="Customizable" text={Constants.CUSTOMIZABLE_TEXT}>
+                 header="Modular" text={Constants.CUSTOMIZABLE_TEXT}>
                 </MyOverlayTrigger>
             </Carousel.Item>
          </Carousel>

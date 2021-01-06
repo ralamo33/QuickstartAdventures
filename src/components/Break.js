@@ -6,6 +6,7 @@ export default function Break(props) {
     const Break = styled.div`
         height: ${props.height}rem;
     `;
+
     return (
         <Break></Break>
     )
