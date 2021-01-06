@@ -5,6 +5,7 @@ import Image from 'react-bootstrap/Image'
 import OrderButton from "./OrderButton";
 import MyNavbar from "../components/MyNavbar";
 import Break from "../components/Break";
+import * as Constants from "../constants";
 
 export default function Title(props) {
 
@@ -34,7 +35,7 @@ export default function Title(props) {
     `
         
             return (<SetFontSize>
-                        <StyledImage alt="Tavern" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fa0%2Fb9%2F1d%2Fa0b91dcd5ab54bb509358bbcd797a289.jpg&f=1&nofb=1"></StyledImage>
+                        <StyledImage alt="Tavern" src={Constants.BUCKET_URL + "Tavern.jpg"}></StyledImage>
                         <Title>
                             {props.title}
                         </Title>
