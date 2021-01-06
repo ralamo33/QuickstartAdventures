@@ -8,10 +8,11 @@ export default function MyNavbar(props) {
     const NavWrapper = styled.p`
         border: 5px solid black;
         text-align: center;
-        font-size: 4rem;
+        font-size: .5em;
         color: #ccffff;
         background-color: #595959;
     `
+
     const navItems = props.navItems.map((navItem) => {
         return (
             <Col>

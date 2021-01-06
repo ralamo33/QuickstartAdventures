@@ -5,7 +5,6 @@ import Title from "../components/Title";
 import Break from "../components/Break";
 import {Container} from "react-bootstrap";
 import MyCarousel from "../components/MyCarousel";
-import styled from "styled-components";
 
 export default function Home() {
   const navItems=['Kickstarter', 'Our Journey'];
@@ -14,7 +13,7 @@ export default function Home() {
     <Layout>
       <Title title="Quickstart Adventures" navItems={navItems}></Title>
       <Container>
-        <Break height="10"></Break>
+        <Break height="5"></Break>
         <MyCarousel></MyCarousel>
       </Container>
     </Layout>

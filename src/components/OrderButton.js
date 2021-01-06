@@ -11,21 +11,17 @@ export default function OrderButton() {
 
     const handleClose = () => setShow(false);
 
-    const Container = styled.div`
-    height: 10vh;
+    const OrderButton = styled(Button)`
+        display: block;
+        margin: auto;
+        color: black;
+        font-size: .4em;
     `
 
-    const OrderButton = styled(Button)`
-        left: 45%;
-        position: relative;
-        height: 80%;
-        font-size: 170%;
-        color: black;
-    `
     return (
-        <Container>
+        <div>
             <OrderButton variant="warning" onClick={handleShow}>Claim For Free!</OrderButton>
             <MyModal show={show} setShow={setShow}></MyModal>
-        </Container>
+        </div>
     )
 }

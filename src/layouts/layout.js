@@ -3,8 +3,7 @@ import {styled, createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background: ${props => (props.theme === "medieval" ? "#1a0d00" : "gray")};
-    color: ${props => (props.theme === "medieval" ? "black" : "white")};
+    background: "#ffffcc";
     font-family: 'MedievalSharp', cursive;
     font-weight: 400;
   }
@@ -12,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 export default function Layout({ children }) {
   return (
     <React.Fragment>
-      <GlobalStyle theme="medieval"/>
+      <GlobalStyle theme="medival"/>
       {children}
     </React.Fragment>
   )
