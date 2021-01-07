@@ -5,7 +5,6 @@ import styled from "styled-components";
 export default function EpicImage(props) {
  
     const StyledImage = styled.img`
-        display: block;
         margin-left: auto;
         margin-right: auto;
         width: 100%;
