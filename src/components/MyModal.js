@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Button, Modal, Form } from "react-bootstrap";
+import {Button, Modal, Form, Row, Col} from "react-bootstrap";
 import axios from "axios";
 
 
@@ -46,8 +46,15 @@ export default function MyModal(props) {
                       This is where we will email you a pdf of Quickstart Adventures. We'll never share your email with anyone else.
                   </Form.Text>
               </Form.Group>
-                  <Button variant="secondary" onClick={handleClose}>Close</Button>
-                  <Button variant="primary" type="submit">Onwards</Button>
+                  <Row>
+                    <Col xs="1">
+                      <Button variant="secondary" onClick={handleClose}>Close</Button>
+                    </Col>
+                    <Col xs="7" sm="8" md="8" lg="9" xlg="10"></Col>
+                    <Col xs="1">
+                      <Button variant="primary" type="submit">Onwards</Button>
+                    </Col>
+                  </Row>
           </Form>
         </Modal.Body>
       </Modal>

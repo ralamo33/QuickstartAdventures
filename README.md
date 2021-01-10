@@ -7,3 +7,4 @@ To start this project you must
 5. Run npm install eslint
 6. Run npm install --save-dev jest
 7. yarn add typeface-medievalsharp
+8. npm install use-query-params gatsby-plugin-use-query-params

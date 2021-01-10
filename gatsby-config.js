@@ -17,6 +17,9 @@ module.exports = {
     },
         {
       resolve: `gatsby-plugin-styled-components`,
+    },
+    {
+      resolve: `gatsby-plugin-use-query-params`,
     }
   ],
 }
