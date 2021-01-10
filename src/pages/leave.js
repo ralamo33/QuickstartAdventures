@@ -41,6 +41,7 @@ export default function Leave() {
         headers: {
             'Email': email,
             'TopicArn': 'arn:aws:sns:us-east-1:451835830300:ComplaintEmail',
+            'x-api-key': Constants.REMOVE_EMAIL_KEY,
         }
     }
 

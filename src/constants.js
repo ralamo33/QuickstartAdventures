@@ -8,7 +8,7 @@ export const CUSTOMIZABLE_TEXT = 'Easily add or remove rules and features!';
 
 
 export const REMOVE_EMAIL_API = 'https://9oeq1w1vcf.execute-api.us-east-1.amazonaws.com/prod/remove';
-export const REMOVE_EMAIL_KEY = 'myhpVktYdn6c1lyZ2iSrf13plIodKqab3cbQi1DS';
+export const REMOVE_EMAIL_KEY = '3ILD8V8RHmg10Su7VXUl3JL9wvFOfnS7QZf26At7';
 
 export const ADD_EMAIL_API = '';
 export const ADD_EMAIL_KEY = '';
