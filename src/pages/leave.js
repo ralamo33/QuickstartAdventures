@@ -10,7 +10,7 @@ import * as Constants from "../constants";
 
 export default function Leave() {
 
-    const [foo, setFoo] = useQueryParam("foo", StringParam);
+    const [email, setEmail] = useQueryParam("email", StringParam);
 
 
     const Relative = styled.div`
@@ -39,7 +39,7 @@ export default function Leave() {
 
     const headers = {
         headers: {
-            'Email': 'ralamo33@gmail.com',
+            'Email': email,
             'TopicArn': 'arn:aws:sns:us-east-1:451835830300:ComplaintEmail',
         }
     }
