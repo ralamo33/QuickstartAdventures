@@ -31,6 +31,5 @@ export default function Title(props) {
             </Title>
             <OrderButton></OrderButton>
             <Break height="2"></Break>
-            <MyNavbar navItems={navItems}></MyNavbar>
         </SetFontSize>);
 }

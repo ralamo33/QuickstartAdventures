@@ -14,6 +14,8 @@ export const ADD_EMAIL_API = '';
 export const ADD_EMAIL_KEY = '';
 
 export const BLUE = '#ccffff';
+export const GRAY = '#595959';
+export const BACKGROUND = '#1a0000';
 
 
 export const FIRST_TITLE = "Hook New Players";

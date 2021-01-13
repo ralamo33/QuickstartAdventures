@@ -16,6 +16,8 @@ export default function Home() {
       <Container>
         <Break height="5"></Break>
         <TitledList title={Constants.FIRST_TITLE} items={Constants.FIRST_ITEMS}></TitledList>
+        <TitledList title={Constants.SECOND_TITLE} items={Constants.SECOND_ITEMS}></TitledList>
+        <TitledList title={Constants.THIRD_TITLE} items={Constants.THIRD_ITEMS}></TitledList>
       </Container>
     </Layout>
   )

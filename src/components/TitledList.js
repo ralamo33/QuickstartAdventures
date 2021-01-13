@@ -7,6 +7,9 @@ export default function TitledList(props) {
 
     const MyJumbotron = styled(Jumbotron)`
         font-size: 4vw;
+        border: 5px solid white;
+        background-color: #595959;
+        color: #ccffff;
     `;
 
     const Title = styled.p`
