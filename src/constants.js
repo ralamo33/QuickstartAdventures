@@ -27,6 +27,6 @@ export const SECOND_ITEMS = ["Gain your characters abilities through a card syst
                              "Easily accessible abilities, without any writing!"]
 
 export const THIRD_TITLE = "Meaningful Choices";
-export const THIRD_ITEMS = ["Explore your identity, talents and maneouvers as you progress", 
-                            "Carefully choose the properties of your weapons, shields and armor"]
+export const THIRD_ITEMS = ["Explore your identity, talents and maneouvers", 
+                            "Carefully choose the properties of your equipment"];
 

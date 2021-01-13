@@ -1,35 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import Break from "../components/Break";
-import {Jumbotron} from "react-bootstrap";
+import {Button, Popover, OverlayTrigger} from "react-bootstrap";
 
 export default function TitledList(props) {
 
-    const MyJumbotron = styled(Jumbotron)`
-        font-size: 4vw;
-        border: 5px solid white;
-        background-color: #595959;
-        color: #ccffff;
-    `;
+    const MyButton = styled(Button)`
+        background-color: #00b3b3;
+        color: white;
+        border: none;
+    `
 
-    const Title = styled.p`
-        text-align: center;
-        font-size: 1em;
-    `;
+    const MyPopover = styled(Popover)``;
 
-    const Item = styled.li`
-        font-size: 0.5em;
-    `;
+    const MyOverlayTrigger = styled(OverlayTrigger)``;
 
-    const Items = () => props.items.map((itemText) => 
-        <Item>{itemText}</Item>
-    )
-
-    return  <MyJumbotron>
-                <Title>{props.title}</Title>
-                <Break height="1"></Break>
-                <ul>
-                    <Items></Items>
-                </ul>
-            </MyJumbotron>;
+    return  <MyOverlayTrigger trigger="hover" overlay="MyPopover" placement="bottom">
+                <MyButton block>
+                    {props.title}
+                </MyButton>
+            </MyOverlayTrigger>
 }
