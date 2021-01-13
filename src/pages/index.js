@@ -3,8 +3,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Layout from "../layouts/layout";
 import Header from "../components/Header";
 import Break from "../components/Break";
-import {Container} from "react-bootstrap";
+import {Container, Jumbotron} from "react-bootstrap";
+import * as Constants from "../constants";
 import MyCarousel from "../components/MyCarousel";
+import TitledList from "../components/TitledList";
 
 export default function Home() {
 
@@ -13,7 +15,7 @@ export default function Home() {
       <Header/>
       <Container>
         <Break height="5"></Break>
-        <MyCarousel></MyCarousel>
+        <TitledList title={Constants.FIRST_TITLE} items={Constants.FIRST_ITEMS}></TitledList>
       </Container>
     </Layout>
   )
