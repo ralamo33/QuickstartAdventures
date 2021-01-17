@@ -14,7 +14,7 @@ export default function Home() {
     <Layout>
       <Header/>
       <Container fluid>
-        <Break height="5"></Break>
+        <Break height="2"></Break>
         <Row>
           <Col>
             <TitledList title={Constants.FIRST_TITLE} items={Constants.FIRST_ITEMS}></TitledList>

@@ -1,0 +1,15 @@
+.hide {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}

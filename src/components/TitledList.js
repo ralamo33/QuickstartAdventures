@@ -1,22 +1,35 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
-import {Button, Popover, OverlayTrigger} from "react-bootstrap";
+import {Button, Card, Tooltip, Popover, OverlayTrigger} from "react-bootstrap";
 
 export default function TitledList(props) {
 
-    const MyButton = styled(Button)`
+    const [show, setShow] = useState(false);
+
+    const MyButton = styled(Card)`
         background-color: #00b3b3;
         color: white;
         border: none;
-    `
+        font-size: 2.5vw;
+        text-align: center;
+        width: 100%;
+    `;
 
-    const MyPopover = styled(Popover)``;
+    const StyledText = styled.p`
+        color: white;
+        background-color: #00b3b3;
+        font-size: .7em;
+        text-align: left;
+    `;
 
-    const MyOverlayTrigger = styled(OverlayTrigger)``;
+    const Items = () => props.items.map((itemText) => {
+        return <StyledText className={show ? "show" : "hide"}>{itemText}</StyledText>;
+    })
 
-    return  <MyOverlayTrigger trigger="hover" overlay="MyPopover" placement="bottom">
-                <MyButton block>
+        return  <div>
+                    <MyButton onClick={() => setShow(!show)}>
                     {props.title}
-                </MyButton>
-            </MyOverlayTrigger>
+                    <Items></Items>
+                    </MyButton>
+                </div>
 }

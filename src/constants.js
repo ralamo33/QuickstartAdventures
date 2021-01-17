@@ -26,7 +26,7 @@ export const SECOND_TITLE = "Power Cards";
 export const SECOND_ITEMS = ["Gain your characters abilities through a card system",
                              "Easily accessible abilities, without any writing!"]
 
-export const THIRD_TITLE = "Meaningful Choices";
-export const THIRD_ITEMS = ["Explore your identity, talents and maneouvers", 
+export const THIRD_TITLE = "Choices Matter";
+export const THIRD_ITEMS = ["Explore your identity, talents or maneouvers", 
                             "Carefully choose the properties of your equipment"];
 
