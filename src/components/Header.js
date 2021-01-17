@@ -9,8 +9,6 @@ import * as Constants from "../constants";
 
 export default function Title(props) {
 
-    const navItems=['Kickstarter', 'Our Journey'];
-
     const SetFontSize = styled.div`
         font-size: 8vw;
     `
@@ -31,6 +29,5 @@ export default function Title(props) {
             </Title>
             <OrderButton></OrderButton>
             <Break height="2"></Break>
-            <MyNavbar navItems={navItems}></MyNavbar>
         </SetFontSize>);
 }

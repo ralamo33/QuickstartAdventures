@@ -13,7 +13,6 @@ export default function Home() {
       <Header/>
       <Container>
         <Break height="5"></Break>
-        <MyCarousel></MyCarousel>
       </Container>
     </Layout>
   )
