@@ -1,5 +1,6 @@
 import React from "react"
 import {Container, Row, Col} from "react-bootstrap";
+import EvenSpacingRow from "../layouts/EvenSpacingRow";
 import styled from "styled-components";
 import Break from "./Break";
 import FreeButton from "./FreeButton";
@@ -22,6 +23,8 @@ export default function Title(props) {
     `
 
     const title = "Quickstart Adventures"
+
+    const buttons = [<OrderButton></OrderButton>, <FreeButton></FreeButton>, <SubscriptionButton></SubscriptionButton>]
        
     return (
         <SetFontSize>
@@ -31,19 +34,7 @@ export default function Title(props) {
             </Title>
             <Textbox></Textbox>
             <Break height="2"></Break>
-            <Container fluid>
-                <Row>
-                    <Col>
-                        <OrderButton></OrderButton> 
-                    </Col>
-                    <Col>
-                        <FreeButton></FreeButton>
-                    </Col>
-                    <Col>
-                        <SubscriptionButton></SubscriptionButton>
-                    </Col>
-                </Row>
-            </Container>
+            <EvenSpacingRow items={buttons}></EvenSpacingRow>
             <Break height="2"></Break>
         </SetFontSize>);
 }
