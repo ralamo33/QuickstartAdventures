@@ -6,6 +6,7 @@ export const INTENSE_TEXT = 'The escalation die and a limited health pool makes 
 
 export const CUSTOMIZABLE_TEXT = 'Easily add or remove rules and features!';
 
+export const DESCRIPTION = 'A super simple TableTop RPG'
 
 export const REMOVE_EMAIL_API = 'https://9oeq1w1vcf.execute-api.us-east-1.amazonaws.com/prod/remove';
 export const REMOVE_EMAIL_KEY = 'myhpVktYdn6c1lyZ2iSrf13plIodKqab3cbQi1DS';

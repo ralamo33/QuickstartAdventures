@@ -1,10 +1,10 @@
 import React from "react"
 import "bootstrap/dist/css/bootstrap.min.css";
 import styled from "styled-components";
-import OrderButton from "./OrderButton";
-import MyNavbar from "./MyNavbar";
 import Break from "./Break";
+import OrderButton from "./OrderButton";
 import EpicImage from "./EpicImage";
+import Textbox from "./Textbox";
 import * as Constants from "../constants";
 
 export default function Title(props) {
@@ -27,6 +27,8 @@ export default function Title(props) {
             <Title>
                 {title}
             </Title>
+            <Textbox></Textbox>
+            <Break height="2"></Break>
             <OrderButton></OrderButton>
             <Break height="2"></Break>
         </SetFontSize>);

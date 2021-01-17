@@ -4,7 +4,6 @@ import Layout from "../layouts/layout";
 import Header from "../components/Header";
 import Break from "../components/Break";
 import {Container} from "react-bootstrap";
-import MyCarousel from "../components/MyCarousel";
 
 export default function Home() {
 
