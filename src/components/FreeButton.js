@@ -4,7 +4,7 @@ import styled from "styled-components";
 import MyModal from "./MyModal";
 import * as Constants from "../constants";
 
-export default function OrderButton() {
+export default function OrderButton(props) {
 
     const [show, setShow] = useState(false);
 
@@ -14,7 +14,7 @@ export default function OrderButton() {
 
     const OrderButton = styled(Button)`
         color: black;
-        font-size: .35em;
+        font-size: ${props.size};
         margin: auto;
         display: block;
     `

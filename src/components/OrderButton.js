@@ -3,10 +3,10 @@ import styled from "styled-components";
 import {Button} from "react-bootstrap";
 import * as Constants from "../constants";
 
-export default function OrderButton() {
+export default function OrderButton(props) {
 
     const MyButton = styled(Button)`
-        font-size: 0.35em;
+        font-size: ${props.size};
         margin: auto;
         display: block;
     `

@@ -6,7 +6,7 @@ import Break from "./Break";
 import FreeButton from "./FreeButton";
 import EpicImage from "./EpicImage";
 import Textbox from "./Textbox";
-import SubscriptionButton from "./SubscriptionButton";
+import SubscribeButton from "./SubscribeButton";
 import OrderButton from "./OrderButton";
 import * as Constants from "../constants";
 
@@ -24,7 +24,7 @@ export default function Title(props) {
 
     const title = "Quickstart Adventures"
 
-    const buttons = [<OrderButton></OrderButton>, <FreeButton></FreeButton>, <SubscriptionButton></SubscriptionButton>]
+    const buttons = [<OrderButton size=".35em"/>, <FreeButton size=".35em"/>, <SubscribeButton size=".35em"/>]
        
     return (
         <SetFontSize>
