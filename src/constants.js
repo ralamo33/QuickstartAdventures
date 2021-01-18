@@ -4,7 +4,7 @@ export const DESCRIPTION = 'A super simple TableTop RPG';
 
 export const FREE_BUTTON_TEXT = 'Become a Playtester!';
 export const ORDER_BUTTON_TEXT = 'Naming Contest';
-export const SUBSCRIPTION_BUTTON_TEXT = 'Subscribe'
+export const SUBSCRIPE_BUTTON_TEXT = 'Subscribe';
 
 export const POWER_CARD_TEXT = ['Upgrade and collect ability cards for your characters!', 'Excited?', 'Win a Cash Prize!']
 export const HOOK_CARD_TEXT = ['Start fast with only 10 pages of core rules', 'Perfect for your friends that hate reading!', 'Try it out']

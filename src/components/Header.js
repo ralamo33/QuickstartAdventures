@@ -1,40 +1,44 @@
 import React from "react"
-import {Container, Row, Col} from "react-bootstrap";
+import {Navbar,Container, Row, Col} from "react-bootstrap";
 import EvenSpacingRow from "../layouts/EvenSpacingRow";
 import styled from "styled-components";
 import Break from "./Break";
-import FreeButton from "./FreeButton";
 import EpicImage from "./EpicImage";
 import Textbox from "./Textbox";
-import SubscribeButton from "./SubscribeButton";
-import OrderButton from "./OrderButton";
 import * as Constants from "../constants";
+import ClickToOpen from "../components/ClickToOpen";
+import buttonClasses from "../components/ClickToOpen.module.css";
 
 export default function Title(props) {
-
-    const SetFontSize = styled.div`
-        font-size: 8vw;
-    `
 
     const Title = styled.h1`
     color: red;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.2em;
     `
 
     const title = "Quickstart Adventures"
 
-    const buttons = [<OrderButton size=".35em"/>, <FreeButton size=".35em"/>, <SubscribeButton size=".35em"/>]
+
+    const orderButton = <ClickToOpen variant="danger" size={buttonClasses.relative} text={Constants.ORDER_BUTTON_TEXT}/>
+    const freeButton = <ClickToOpen variant="warning" size={buttonClasses.relativeBlack} text={Constants.FREE_BUTTON_TEXT}/>
+    const subscribeButton = <ClickToOpen variant="info" size={buttonClasses.relative} text={Constants.SUBSCRIPE_BUTTON_TEXT} />
+
+    const buttons = [orderButton, freeButton, subscribeButton];
+
+    const MyDiv = styled.div`
+        display: fixed;
+    `
        
     return (
-        <SetFontSize>
+        <Navbar>
             <EpicImage src={Constants.BUCKET_URL + "Tavern.jpg"}></EpicImage>
             <Title>
                 {title}
             </Title>
             <Textbox></Textbox>
             <Break height="2"></Break>
-            <EvenSpacingRow items={buttons}></EvenSpacingRow>
+            <EvenSpacingRow items={buttons} oneOnSmall={true}></EvenSpacingRow>
             <Break height="2"></Break>
-        </SetFontSize>);
+        </Navbar>);
 }

@@ -1,0 +1,19 @@
+.relative {
+  font-size: 0.35em;
+  color: white;
+}
+
+.relativeBlack {
+  font-size: 0.35em;
+  color: black;
+}
+
+.independent {
+  font-size: 7vw;
+  color: white;
+}
+
+.independentBlack {
+  font-size: 7vw;
+  color: black;
+}

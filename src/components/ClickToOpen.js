@@ -1,10 +1,11 @@
-import React, { useState } from "react"
+
+import React, {useState} from "react"
 import { Button, Modal } from "react-bootstrap";
 import styled from "styled-components";
 import MyModal from "./MyModal";
-import * as Constants from "../constants";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-export default function OrderButton(props) {
+export default function ClickToOpen(props) {
 
     const [show, setShow] = useState(false);
 
@@ -12,16 +13,14 @@ export default function OrderButton(props) {
 
     const handleClose = () => setShow(false);
 
-    const OrderButton = styled(Button)`
-        color: black;
-        font-size: ${props.size};
+    const MyButton = styled(Button)`
         margin: auto;
         display: block;
     `
 
     return (
         <div>
-            <OrderButton variant="warning" onClick={handleShow}>{Constants.FREE_BUTTON_TEXT}</OrderButton>
+            <MyButton className={props.size} variant={props.variant} onClick={handleShow}>{props.text}</MyButton>
             <MyModal show={show} setShow={setShow}></MyModal>
         </div>
     )
