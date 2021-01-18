@@ -1,5 +1,4 @@
 import React from "react"
-import {Navbar,Container, Row, Col} from "react-bootstrap";
 import EvenSpacingRow from "../layouts/EvenSpacingRow";
 import styled from "styled-components";
 import Break from "./Break";
@@ -26,12 +25,8 @@ export default function Title(props) {
 
     const buttons = [orderButton, freeButton, subscribeButton];
 
-    const MyDiv = styled.div`
-        display: fixed;
-    `
-       
     return (
-        <Navbar>
+        <div>
             <EpicImage src={Constants.BUCKET_URL + "Tavern.jpg"}></EpicImage>
             <Title>
                 {title}
@@ -40,5 +35,5 @@ export default function Title(props) {
             <Break height="2"></Break>
             <EvenSpacingRow items={buttons} oneOnSmall={true}></EvenSpacingRow>
             <Break height="2"></Break>
-        </Navbar>);
+        </div>);
 }

@@ -6,8 +6,8 @@ export const FREE_BUTTON_TEXT = 'Become a Playtester!';
 export const ORDER_BUTTON_TEXT = 'Naming Contest';
 export const SUBSCRIPE_BUTTON_TEXT = 'Subscribe';
 
-export const POWER_CARD_TEXT = ['Upgrade and collect ability cards for your characters!', 'Excited?', 'Win a Cash Prize!']
-export const HOOK_CARD_TEXT = ['Start fast with only 10 pages of core rules', 'Perfect for your friends that hate reading!', 'Try it out']
+export const POWER_CARD_TEXT = ['Gather and upgrade cards to improve your character!', 'Excited?', 'Win a Cash Prize!']
+export const HOOK_CARD_TEXT = ['Create your character in 5 minutes and 10 pages of core rules', 'Perfect for your friends that hate reading!', 'Try it out']
 export const CHOICES_CARD_TEXT = ['Explore your identity, talents and maneuvers', 'Intrigued?', 'Learn more!']
 
 

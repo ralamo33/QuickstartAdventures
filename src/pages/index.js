@@ -13,9 +13,9 @@ import {Container, Row, Col} from "react-bootstrap";
 
 export default function Home() {
 
-  const orderButton = <ClickToOpen variant="danger" size={buttonClasses.small} text={Constants.ORDER_BUTTON_TEXT}/>
-  const freeButton = <ClickToOpen variant="warning" size={buttonClasses.small} text={Constants.FREE_BUTTON_TEXT}/>
-  const subscribeButton = <ClickToOpen variant="info" size={buttonClasses.small} text={Constants.SUBSCRIPE_BUTTON_TEXT} />
+  const orderButton = <ClickToOpen variant="danger" size={buttonClasses.independent} text={Constants.ORDER_BUTTON_TEXT}/>
+  const freeButton = <ClickToOpen variant="warning" size={buttonClasses.independentBlack} text={Constants.FREE_BUTTON_TEXT}/>
+  const subscribeButton = <ClickToOpen variant="info" size={buttonClasses.independent} text={Constants.SUBSCRIPE_BUTTON_TEXT} />
 
   const powerCard = <QuickstartCard color={classes.red} header="Power Cards" border={classes.redBorder}
                     text={Constants.POWER_CARD_TEXT} button={orderButton}/>

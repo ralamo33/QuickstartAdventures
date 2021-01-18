@@ -21,7 +21,7 @@ export default function ClickToOpen(props) {
     return (
         <div>
             <MyButton className={props.size} variant={props.variant} onClick={handleShow}>{props.text}</MyButton>
-            <MyModal show={show} setShow={setShow}></MyModal>
+            <MyModal topicArn="arn:aws:sns:us-east-1:451835830300:AddEmail" show={show} setShow={setShow}></MyModal>
         </div>
     )
 }

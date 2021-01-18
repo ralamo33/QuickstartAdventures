@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Button, Modal, Form, Row, Col} from "react-bootstrap";
 import axios from "axios";
+import ModalFooter from "../components/ModalFooter";
+import styled from "styled-components";
 
 
 
@@ -9,7 +11,8 @@ export default function MyModal(props) {
   const show = props.show;
   const setShow = props.setShow;
   const apiUrl = 'https://9oeq1w1vcf.execute-api.us-east-1.amazonaws.com/prod/notify';
-  const emailParam = '?TopicArn=arn:aws:sns:us-east-1:451835830300:AddEmail&Message=';
+  const topicArn = '?TopicArn=' + props.topicArn
+  const emailParam = '&Message=';
   let [email, setEmail] = useState("");
   
   const handleClose = () => setShow(false);
@@ -18,13 +21,25 @@ export default function MyModal(props) {
   const handleSubmit = event => {
     event.preventDefault();
     axios.post(
-      apiUrl + emailParam + email, {}, {
+      apiUrl + topicArn + emailParam + email, {}, {
         headers: {"x-api-key": "3ILD8V8RHmg10Su7VXUl3JL9wvFOfnS7QZf26At7"}
       }
     ).then(handleClose()
     ).catch((error) => alert(error));
   }
 
+  const MyLabel = styled(Form.Label)`
+    font-size: 1rem;
+    margin: 0px;
+    padding: 0px;
+  `
+
+  const MyText = styled(Form.Text)`
+    font-size: 0.7rem;
+    margin: 0px;
+    padding: 0px;
+  `
+  
   return (
     <div>
       <Modal
@@ -33,6 +48,7 @@ export default function MyModal(props) {
         backdrop="static"
         keyboard={false}
         size="lg"
+        centered
       >
         <Modal.Header closeButton>
           <Modal.Title>Where Shall we Send the Ravens?</Modal.Title>
@@ -40,21 +56,13 @@ export default function MyModal(props) {
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
               <Form.Group controlId="EmailSubmit">
-                  <Form.Label>Email Address</Form.Label>
+                  <MyLabel>Email Address</MyLabel>
                   <Form.Control type="email" placeholder="Enter email" value={email} onChange={(event) => setEmail(event.target.value)}/>
-                  <Form.Text>
+                  <MyText>
                       This is where we will email you a pdf of Quickstart Adventures. We'll never share your email with anyone else.
-                  </Form.Text>
+                  </MyText>
+                  <ModalFooter close={handleClose}></ModalFooter>
               </Form.Group>
-                  <Row>
-                    <Col xs="1">
-                      <Button variant="secondary" onClick={handleClose}>Close</Button>
-                    </Col>
-                    <Col xs="7" sm="8" md="8" lg="9" xlg="10"></Col>
-                    <Col xs="1">
-                      <Button variant="primary" type="submit">Onwards</Button>
-                    </Col>
-                  </Row>
           </Form>
         </Modal.Body>
       </Modal>
