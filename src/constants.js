@@ -7,7 +7,7 @@ export const ORDER_BUTTON_TEXT = 'Naming Contest';
 export const SUBSCRIPTION_BUTTON_TEXT = 'Subscribe'
 
 export const POWER_CARD_TEXT = ['Upgrade and collect ability cards for your characters!', 'Excited?', 'Win a Cash Prize!']
-export const HOOK_CARD_TEXT = ['Super easy barely an inconvience', 'Perfect for your friends that hate reading!', 'Try it out']
+export const HOOK_CARD_TEXT = ['Start fast with only 10 pages of core rules', 'Perfect for your friends that hate reading!', 'Try it out']
 export const CHOICES_CARD_TEXT = ['Explore your identity, talents and maneuvers', 'Intrigued?', 'Learn more!']
 
 
