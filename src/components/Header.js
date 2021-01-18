@@ -10,6 +10,10 @@ import buttonClasses from "../components/ClickToOpen.module.css";
 
 export default function Title(props) {
 
+     const SetFontSize = styled.div`
+        font-size: 8.5vw;
+    `
+
     const Title = styled.h1`
     color: red;
     text-align: center;
@@ -26,7 +30,7 @@ export default function Title(props) {
     const buttons = [orderButton, freeButton, subscribeButton];
 
     return (
-        <div>
+        <SetFontSize>
             <EpicImage src={Constants.BUCKET_URL + "Tavern.jpg"}></EpicImage>
             <Title>
                 {title}
@@ -35,5 +39,5 @@ export default function Title(props) {
             <Break height="2"></Break>
             <EvenSpacingRow items={buttons} oneOnSmall={true}></EvenSpacingRow>
             <Break height="2"></Break>
-        </div>);
+        </SetFontSize>);
 }

@@ -6,7 +6,6 @@ const GlobalStyle = createGlobalStyle`
     background: #1a0000;
     font-family: 'MedievalSharp', cursive;
     font-weight: 400;
-    font-size: 8vw;
   }
 `
 export default function Layout({ children }) {

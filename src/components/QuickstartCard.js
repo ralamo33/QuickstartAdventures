@@ -12,11 +12,11 @@ export default function QuickstartCard(props) {
 
     const MyHeader = styled(Card.Header)`
         text-align: center;
-        font-size: 40px;
+        font-size: 32px;
     `
 
     const MyBody = styled(Card.Body)`
-        height: 50vh;
+        min-height: 65vh;
     `
 
     const MyList = styled.ul`
@@ -25,7 +25,7 @@ export default function QuickstartCard(props) {
     `
 
     const MyText = styled.li`
-        font-size: 30px;
+        font-size: 24px;
     `
 
     const TextList = props.text.map((text) => <div><MyText>{text}</MyText><Break height="2"></Break></div>);
