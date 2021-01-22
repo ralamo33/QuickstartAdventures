@@ -5,8 +5,9 @@ import Break from "./Break";
 import EpicImage from "./EpicImage";
 import Textbox from "./Textbox";
 import * as Constants from "../constants";
-import ClickToOpen from "./Buttons/ClickToOpen";
-import buttonClasses from "../components/Buttons/ClickToOpen.module.css";
+import PlaytestButton from "./Buttons/PlaytestButton";
+import ContestButton from "./Buttons/ContestButton";
+import SubscribeButton from "./Buttons/SubscribeButton";
 
 export default function Title(props) {
 
@@ -22,12 +23,7 @@ export default function Title(props) {
 
     const title = "Quickstart Adventures"
 
-
-    const orderButton = <ClickToOpen variant="danger" size={buttonClasses.relative} text={Constants.CONTEST_BUTTON_TEXT}/>
-    const freeButton = <ClickToOpen variant="warning" size={buttonClasses.relativeBlack} text={Constants.PLAYTEST_BUTTON_TEXT}/>
-    const subscribeButton = <ClickToOpen variant="info" size={buttonClasses.relative} text={Constants.SUBSCRIPE_BUTTON_TEXT} />
-
-    const buttons = [orderButton, freeButton, subscribeButton];
+    const buttons = [<ContestButton/>, <PlaytestButton/>, <SubscribeButton/>];
 
     return (
         <SetFontSize>

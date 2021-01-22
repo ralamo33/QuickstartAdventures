@@ -7,7 +7,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function ClickToOpen(props) {
 
-    const [show, setShow] = useState(false);
+    const show = props.show;
+    const setShow = props.setShow;
 
     const handleShow = () => setShow(true);
 
