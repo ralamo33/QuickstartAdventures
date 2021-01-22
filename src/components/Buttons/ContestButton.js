@@ -1,12 +1,16 @@
-import React from "react"
+import React, {useState} from "react"
 import ClickToOpen from "./ClickToOpen"
 import buttonClasses from "./ClickToOpen.module.css"
 import * as Constants from "../../constants";
+import ContestForm from "../Forms/ContestForm";
 
-export default function PlaytestButton() {
+export default function ContestButton() {
 
-    const playtestButton = <ClickToOpen variant="warning" size={buttonClasses.independentBlack} 
-                                text={Constants.PLAYTEST_BUTTON_TEXT}/>
+    const [show, setShow] = useState(false);
 
-    return playtestButton; 
+    const ContestButton = <ClickToOpen variant="danger" size={buttonClasses.independent} show={show} setShow={setShow}
+                                text={Constants.CONTEST_BUTTON_TEXT} title={Constants.CONTEST_MODAL_TITLE}
+                                form={<ContestForm close={() => setShow(false)}/>}/>
+
+    return ContestButton; 
 }

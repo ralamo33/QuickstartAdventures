@@ -11,14 +11,14 @@ export const CONTEST_CARD_TEXT = ['Gather and upgrade cards to improve your char
 export const SUBSCRIBE_CARD_TEXT = ['Explore your identity, talents and maneuvers', 'Intrigued?', 'Learn more!']
 
 export const PLAYTEST_MODAL_TITLE = "Try it for yourself!";
-export const CONTEST_CARD_MODAL = 'Naming Contest: Beat "Quickstart Adventures"';
-export const SUBSCRIBE_CARD_MODAL = "Where shall we send the ravens?";
+export const CONTEST_MODAL_TITLE = 'Naming Contest: Beat "Quickstart Adventures"';
+export const SUBSCRIBE_MODAL_TITLE = "Where shall we send the ravens?";
 
 const API_URL = 'https://9oeq1w1vcf.execute-api.us-east-1.amazonaws.com/prod'
 
 export const PLAYTEST_TOPIC_ARN = "arn:aws:sns:us-east-1:451835830300:Playtest";
-export const CONTEST_TOPIC_ARN = "arn:aws:sns:us-east-1:451835830300:AddEmail";
-export const SUBSCRIBE_TOPIC_ARN = "arn:aws:sns:us-east-1:451835830300:AddEmail";
+export const CONTEST_TOPIC_ARN = "arn:aws:sns:us-east-1:451835830300:Contest";
+export const SUBSCRIBE_TOPIC_ARN = "arn:aws:sns:us-east-1:451835830300:Subscribe";
 
 export const PLAYTEST_API = API_URL + '/notify?TopicArn=' + PLAYTEST_TOPIC_ARN;
 export const CONTEST_API = API_URL + '/notify?TopicArn=' + CONTEST_TOPIC_ARN;

@@ -20,7 +20,7 @@ export default function ClickToOpen(props) {
     return (
         <div>
             <MyButton className={props.size} variant={props.variant} onClick={handleShow}>{props.text}</MyButton>
-            <MyModal show={show} setShow={setShow} title={props.title} apiUrlFunction={props.apiUrlFunction} apiKey={props.apiKey}></MyModal>
+            <MyModal form={props.form} show={show} setShow={setShow} title={props.title}></MyModal>
         </div>
     )
 }

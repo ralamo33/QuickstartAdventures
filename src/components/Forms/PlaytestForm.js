@@ -1,15 +1,15 @@
 import React from 'react';
 import {Formik, Form } from 'formik';
-import {Button, Row, Col} from 'react-bootstrap';
 import * as Yup from 'yup';
-import Break from "../components/Break";
 import axios from "axios";
-import Email from "./FormFields/Email";
-import CheckHuman from "./FormFields/CheckHuman";
-import FormFooter from "./FormFields/FormFooter";
+import * as Constants from "../../constants";
+import Break from "../Break";
+import Email from "../FormFields/Email";
+import CheckHuman from "../FormFields/CheckHuman";
+import FormFooter from "../FormFields/FormFooter";
 
 
-export default function MyForm(props) {
+export default function PlaytestForm(props) {
 
   const ValidationSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
@@ -24,9 +24,10 @@ export default function MyForm(props) {
               }}
               validationSchema={ValidationSchema}
               onSubmit={async (values) => {
+                const apiUrl = Constants.PLAYTEST_API + "&Message=" + values.email;
                 axios.post(
-                  props.apiUrlFunction(values.email), {}, {
-                    headers: {"x-api-key": props.apiKey}
+                  apiUrl, {}, {
+                    headers: {"x-api-key": Constants.PLAYTEST_API_KEY}
                   }
                 ).catch((error) => alert(error))
                 .then(props.close);
@@ -38,7 +39,7 @@ export default function MyForm(props) {
               <Break height="3"/>
               <CheckHuman/>
               <FormFooter close={props.close}/>
-             </Form>
+            </Form>
             </Formik>
           </div>
 };

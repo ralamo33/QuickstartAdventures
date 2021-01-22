@@ -2,7 +2,6 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Modal} from "react-bootstrap";
 import * as Constants from "../constants";
-import MyForm from "../components/MyForm";
 
 
 export default function MyModal(props) {
@@ -24,8 +23,7 @@ export default function MyModal(props) {
           <Modal.Title>{props.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <MyForm close={handleClose} apiKey={Constants.PLAYTEST_API_KEY} 
-          apiUrlFunction={props.apiUrlFunction}></MyForm>
+          {props.form}
         </Modal.Body>
       </Modal>
       </div>
