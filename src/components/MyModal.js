@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Modal} from "react-bootstrap";
 import * as Constants from "../constants";
@@ -21,11 +21,11 @@ export default function MyModal(props) {
         size="lg"
       >
         <Modal.Header closeButton>
-          <Modal.Title>Where Shall we Send the Ravens?</Modal.Title>
+          <Modal.Title>{props.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <MyForm close={handleClose} apiKey={Constants.PLAYTEST_API_KEY} 
-          apiUrlFunction={(email) => Constants.PLAYTEST_API + "&Message=" + email}></MyForm>
+          apiUrlFunction={props.apiUrlFunction}></MyForm>
         </Modal.Body>
       </Modal>
       </div>

@@ -6,14 +6,15 @@ import Break from "../components/Break";
 import QuickstartCard from "../components/QuickstartCard";
 import * as Constants from "../constants";
 import classes from "../components/QuickstartCard.module.css";
-import buttonClasses from "../components/ClickToOpen.module.css";
-import ClickToOpen from "../components/ClickToOpen";
+import buttonClasses from "../components/Buttons/ClickToOpen.module.css";
+import ClickToOpen from "../components/Buttons/ClickToOpen";
 import {Container, Row, Col} from "react-bootstrap";
+import PlaytestButton from "../components/Buttons/PlaytestButton";
 
 export default function Home() {
 
+  const playtestButton = <PlaytestButton/>
   const contestButton = <ClickToOpen variant="danger" size={buttonClasses.independent} text={Constants.CONTEST_BUTTON_TEXT}/>
-  const playtestButton = <ClickToOpen variant="warning" size={buttonClasses.independentBlack} text={Constants.PLAYTEST_BUTTON_TEXT}/>
   const subscribeButton = <ClickToOpen variant="info" size={buttonClasses.independent} text={Constants.SUBSCRIPE_BUTTON_TEXT} />
 
   const contestCard = <QuickstartCard color={classes.red} header="Power Cards" border={classes.redBorder}

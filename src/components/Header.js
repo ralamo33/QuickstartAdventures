@@ -5,8 +5,8 @@ import Break from "./Break";
 import EpicImage from "./EpicImage";
 import Textbox from "./Textbox";
 import * as Constants from "../constants";
-import ClickToOpen from "../components/ClickToOpen";
-import buttonClasses from "../components/ClickToOpen.module.css";
+import ClickToOpen from "./Buttons/ClickToOpen";
+import buttonClasses from "../components/Buttons/ClickToOpen.module.css";
 
 export default function Title(props) {
 

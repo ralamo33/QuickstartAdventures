@@ -47,7 +47,7 @@ export default function MyForm(props) {
                     headers: {"x-api-key": props.apiKey}
                   }
                 ).catch((error) => alert(error))
-                .then(props.close)
+                .then(props.close);
               }
             }
             >
