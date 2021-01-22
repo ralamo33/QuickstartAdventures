@@ -23,8 +23,8 @@ export default function Title(props) {
     const title = "Quickstart Adventures"
 
 
-    const orderButton = <ClickToOpen variant="danger" size={buttonClasses.relative} text={Constants.ORDER_BUTTON_TEXT}/>
-    const freeButton = <ClickToOpen variant="warning" size={buttonClasses.relativeBlack} text={Constants.FREE_BUTTON_TEXT}/>
+    const orderButton = <ClickToOpen variant="danger" size={buttonClasses.relative} text={Constants.CONTEST_BUTTON_TEXT}/>
+    const freeButton = <ClickToOpen variant="warning" size={buttonClasses.relativeBlack} text={Constants.PLAYTEST_BUTTON_TEXT}/>
     const subscribeButton = <ClickToOpen variant="info" size={buttonClasses.relative} text={Constants.SUBSCRIPE_BUTTON_TEXT} />
 
     const buttons = [orderButton, freeButton, subscribeButton];

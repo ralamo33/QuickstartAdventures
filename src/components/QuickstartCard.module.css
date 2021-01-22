@@ -1,19 +1,19 @@
 .blue {
-  background: blue;
+  background: #17a2b8;
   color: white;
 }
 
 .blueBorder {
-  border: 4px solid blue;
+  border: 4px solid #17a2b8;
 }
 
 .red {
-  background: red;
+  background: #dc3545;
   color: white;
 }
 
 .redBorder {
-  border: 4px solid red;
+  border: 4px solid #dc3545;
 }
 
 .yellow {

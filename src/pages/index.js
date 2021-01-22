@@ -4,7 +4,6 @@ import Layout from "../layouts/layout";
 import Header from "../components/Header";
 import Break from "../components/Break";
 import QuickstartCard from "../components/QuickstartCard";
-import EvenSpacingRow from "../layouts/EvenSpacingRow";
 import * as Constants from "../constants";
 import classes from "../components/QuickstartCard.module.css";
 import buttonClasses from "../components/ClickToOpen.module.css";
@@ -13,18 +12,16 @@ import {Container, Row, Col} from "react-bootstrap";
 
 export default function Home() {
 
-  const orderButton = <ClickToOpen variant="danger" size={buttonClasses.independent} text={Constants.ORDER_BUTTON_TEXT}/>
-  const freeButton = <ClickToOpen variant="warning" size={buttonClasses.independentBlack} text={Constants.FREE_BUTTON_TEXT}/>
+  const contestButton = <ClickToOpen variant="danger" size={buttonClasses.independent} text={Constants.CONTEST_BUTTON_TEXT}/>
+  const playtestButton = <ClickToOpen variant="warning" size={buttonClasses.independentBlack} text={Constants.PLAYTEST_BUTTON_TEXT}/>
   const subscribeButton = <ClickToOpen variant="info" size={buttonClasses.independent} text={Constants.SUBSCRIPE_BUTTON_TEXT} />
 
-  const powerCard = <QuickstartCard color={classes.red} header="Power Cards" border={classes.redBorder}
-                    text={Constants.POWER_CARD_TEXT} button={orderButton}/>
-  const hookCard = <QuickstartCard color={classes.yellow} header="Hook Your Friends" border={classes.yellowBorder} 
-                    text={Constants.HOOK_CARD_TEXT} button={freeButton}/>
-  const choiceCard = <QuickstartCard color={classes.blue} header="Choices Matter" border={classes.blueBorder}
-                    text={Constants.CHOICES_CARD_TEXT} button={subscribeButton}/>
-
-  const cards = [powerCard, hookCard, choiceCard];
+  const contestCard = <QuickstartCard color={classes.red} header="Power Cards" border={classes.redBorder}
+                    text={Constants.CONTEST_CARD_TEXT} button={contestButton}/>
+  const playtestCard = <QuickstartCard color={classes.yellow} header="Hook Your Friends" border={classes.yellowBorder} 
+                    text={Constants.PLAYTEST_CARD_TEXT} button={playtestButton}/>
+  const subscribeCard = <QuickstartCard color={classes.blue} header="Choices Matter" border={classes.blueBorder}
+                    text={Constants.SUBSCRIBE_CARD_TEXT} button={subscribeButton}/>
 
   return  (
     <Layout>
@@ -32,9 +29,9 @@ export default function Home() {
       <Break height="5"></Break>
       <Container fluid>
         <Row>
-          <Col md="4" sm="12">{powerCard}</Col>
-          <Col md="4" sm="12">{hookCard}</Col>
-          <Col md="4" sm="12">{choiceCard}</Col>
+          <Col md="4" sm="12">{contestCard}</Col>
+          <Col md="4" sm="12">{playtestCard}</Col>
+          <Col md="4" sm="12">{subscribeCard}</Col>
         </Row>
       </Container>
       <Break height="5"></Break>
