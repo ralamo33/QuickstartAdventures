@@ -8,3 +8,5 @@ To start this project you must
 6. Run npm install --save-dev jest
 7. yarn add typeface-medievalsharp
 8. npm install use-query-params gatsby-plugin-use-query-params
+9. npm install formik --save
+10. npm install yup --save
