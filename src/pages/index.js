@@ -10,12 +10,14 @@ import buttonClasses from "../components/Buttons/ClickToOpen.module.css";
 import ClickToOpen from "../components/Buttons/ClickToOpen";
 import {Container, Row, Col} from "react-bootstrap";
 import PlaytestButton from "../components/Buttons/PlaytestButton";
+import ContestButton from "../components/Buttons/ContestButton";
+import SubscribeButton from "../components/Buttons/SubscribeButton";
 
 export default function Home() {
 
   const playtestButton = <PlaytestButton/>
-  const contestButton = <ClickToOpen variant="danger" size={buttonClasses.independent} text={Constants.CONTEST_BUTTON_TEXT}/>
-  const subscribeButton = <ClickToOpen variant="info" size={buttonClasses.independent} text={Constants.SUBSCRIPE_BUTTON_TEXT} />
+  const contestButton = <ContestButton/>
+  const subscribeButton = <SubscribeButton/>
 
   const contestCard = <QuickstartCard color={classes.red} header="Power Cards" border={classes.redBorder}
                     text={Constants.CONTEST_CARD_TEXT} button={contestButton}/>

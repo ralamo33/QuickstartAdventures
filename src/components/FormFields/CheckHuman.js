@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {Row, Col} from "react-bootstrap";
 import {Field, ErrorMessage} from "formik";
 
-export default function CheckHuman() {
+export default function CheckHuman(props) {
 
     const MyLabel = styled.p`
     font-size: 20px;
@@ -25,7 +25,7 @@ export default function CheckHuman() {
     return <div>
             <MyLabel>Are you undead?</MyLabel>
             <Row>
-                <TestQuestion>2 + 2 =</TestQuestion>
+                <TestQuestion>{props.question}</TestQuestion>
                 <Col>
                 <FullField
                     id="test"

@@ -7,15 +7,20 @@ import Break from "../Break";
 import Email from "../FormFields/Email";
 import CheckHuman from "../FormFields/CheckHuman";
 import FormFooter from "../FormFields/FormFooter";
+import {randomEquationAndAnswer} from "../../utils";
 
 
 export default function ContestForm(props) {
 
+  const questionAndAnswer = randomEquationAndAnswer();
+  const question = questionAndAnswer[0];
+  const answer = questionAndAnswer[1];
+
   const ValidationSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
-    test: Yup.number('Invalid').min(4, 'Incorrect').max(4, 'Incorrect').required('You must pass the test'),
+    test: Yup.number('Invalid').min(answer, 'Incorrect').max(answer, 'Incorrect').required('You must pass the test'),
   });
-  
+
   return  <div>
             <Formik
               initialValues={{
@@ -37,7 +42,7 @@ export default function ContestForm(props) {
             <Form>
               <Email/>
               <Break height="3"/>
-              <CheckHuman/>
+              <CheckHuman question={question}/>
               <FormFooter close={props.close}/>
             </Form>
             </Formik>
