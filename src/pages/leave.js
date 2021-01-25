@@ -10,7 +10,7 @@ import * as Constants from "../constants";
 
 export default function Leave() {
 
-    const [email, setEmail] = useQueryParam("email", StringParam);
+    const email = useQueryParam("email", StringParam);
 
 
     const Relative = styled.div`

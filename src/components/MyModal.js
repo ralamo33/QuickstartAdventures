@@ -1,8 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Modal} from "react-bootstrap";
 import * as Constants from "../constants";
-import MyForm from "../components/MyForm";
 
 
 export default function MyModal(props) {
@@ -21,11 +20,10 @@ export default function MyModal(props) {
         size="lg"
       >
         <Modal.Header closeButton>
-          <Modal.Title>Where Shall we Send the Ravens?</Modal.Title>
+          <Modal.Title>{props.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <MyForm close={handleClose} apiKey={Constants.PLAYTEST_API_KEY} 
-          apiUrlFunction={(email) => Constants.PLAYTEST_API + "&Message=" + email}></MyForm>
+          {props.form}
         </Modal.Body>
       </Modal>
       </div>
