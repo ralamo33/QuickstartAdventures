@@ -41,7 +41,6 @@ export default function ContestForm(props) {
             >
             <Form>
               <Email/>
-              <Break height="3"/>
               <CheckHuman question={question}/>
               <FormFooter close={props.close}/>
             </Form>

@@ -8,6 +8,7 @@ import Email from "../FormFields/Email";
 import CheckHuman from "../FormFields/CheckHuman";
 import FormFooter from "../FormFields/FormFooter";
 import {randomEquationAndAnswer} from "../../utils";
+import NewName from '../FormFields/NewName';
 
 
 export default function ContestForm(props) {
@@ -18,6 +19,7 @@ export default function ContestForm(props) {
 
   const ValidationSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
+    newName: Yup.string().required('Required'),
     test: Yup.number('Invalid').min(answer, 'Incorrect').max(answer, 'Incorrect').required('You must pass the test'),
   });
 
@@ -26,6 +28,7 @@ export default function ContestForm(props) {
               initialValues={{
                 email: '',
                 test: '',
+                newName: ''
               }}
               validationSchema={ValidationSchema}
               onSubmit={async (values) => {
@@ -41,7 +44,7 @@ export default function ContestForm(props) {
             >
             <Form>
               <Email/>
-              <Break height="3"/>
+              <NewName/>
               <CheckHuman question={question}/>
               <FormFooter close={props.close}/>
             </Form>

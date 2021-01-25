@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import {ErrorMessage, Field} from 'formik';
+import {ErrorMessage, Formik, Field, Form } from 'formik';
 import {Row, Col} from "react-bootstrap"
 
-export default function Email() {
+export default function NewName() {
 
   const MyLabel = styled.p`
     font-size: 20px;
@@ -16,11 +16,11 @@ export default function Email() {
   `
 
     return  <div>
-                <MyLabel>Email</MyLabel>
+                <MyLabel>New Name</MyLabel>
                 <Row>
                     <Col>
-                    <FullField id="email" name="email" placeholder="Your email address" />
-                    <ErrorMessage name="email" />
+                        <FullField id="newName" name="newName" placeholder="Pick a good one, winner gets $50" />
+                        <ErrorMessage name="email" />
                     </Col>
                 </Row>
             </div>
