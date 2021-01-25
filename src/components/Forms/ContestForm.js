@@ -13,9 +13,7 @@ import NewName from '../FormFields/NewName';
 
 export default function ContestForm(props) {
 
-  const questionAndAnswer = randomEquationAndAnswer();
-  const question = questionAndAnswer[0];
-  const answer = questionAndAnswer[1];
+  const [question, answer] = randomEquationAndAnswer();
 
   const ValidationSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
@@ -32,19 +30,20 @@ export default function ContestForm(props) {
               }}
               validationSchema={ValidationSchema}
               onSubmit={async (values) => {
-                const apiUrl = Constants.CONTEST_API + "&Message=" + values.email;
+                const apiUrl = Constants.CONTEST_API + "&Message=" + values.email + "_" + values.newName;
                 axios.post(
                   apiUrl, {}, {
                     headers: {"x-api-key": Constants.CONTEST_API_KEY}
                   }
                 ).catch((error) => alert(error))
+                .then(alert("Success! You submitted " + values.newName + " into the naming contest."))
                 .then(props.close);
               }
             }
             >
             <Form>
-              <Email/>
               <NewName/>
+              <Email/>
               <CheckHuman question={question}/>
               <FormFooter close={props.close}/>
             </Form>

@@ -19,7 +19,7 @@ export default function NewName() {
                 <MyLabel>New Name</MyLabel>
                 <Row>
                     <Col>
-                        <FullField id="newName" name="newName" placeholder="Pick a good one, winner gets $50" />
+                        <FullField id="newName" name="newName" placeholder="Winner gets $50" />
                         <ErrorMessage name="email" />
                     </Col>
                 </Row>

@@ -12,9 +12,7 @@ import {randomEquationAndAnswer} from "../../utils";
 
 export default function PlaytestForm(props) {
 
-  const questionAndAnswer = randomEquationAndAnswer();
-  const question = questionAndAnswer[0];
-  const answer = questionAndAnswer[1];
+  const [question, answer] = randomEquationAndAnswer();
  
   const ValidationSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
