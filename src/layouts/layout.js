@@ -1,5 +1,5 @@
-import React from "react"
-import {createGlobalStyle } from "styled-components"
+import React from 'react';
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -7,12 +7,13 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'MedievalSharp', cursive;
     font-weight: 400;
   }
-`
+`;
+// eslint-disable-next-line react/prop-types
 export default function Layout({ children }) {
   return (
-    <React.Fragment>
-      <GlobalStyle/>
+    <>
+      <GlobalStyle />
       {children}
-    </React.Fragment>
-  )
+    </>
+  );
 }

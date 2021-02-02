@@ -1,26 +1,24 @@
+/* eslint-disable react/prop-types */
+import React from 'react';
+import { Button } from 'react-bootstrap';
+import styled from 'styled-components';
+import MyModal from '../MyModal';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import React from "react"
-import { Button} from "react-bootstrap";
-import styled from "styled-components";
-import MyModal from "../MyModal";
-import "bootstrap/dist/css/bootstrap.min.css";
+export default function ClickToOpen({
+  size, variant, text, form, title, show, setShow,
+}) {
+  const handleShow = () => setShow(true);
 
-export default function ClickToOpen(props) {
-
-    const show = props.show;
-    const setShow = props.setShow;
-
-    const handleShow = () => setShow(true);
-
-    const MyButton = styled(Button)`
+  const MyButton = styled(Button)`
         margin: auto;
         display: block;
-    `
+    `;
 
-    return (
-        <div>
-            <MyButton className={props.size} variant={props.variant} onClick={handleShow}>{props.text}</MyButton>
-            <MyModal form={props.form} show={show} setShow={setShow} title={props.title}></MyModal>
-        </div>
-    )
+  return (
+    <div>
+      <MyButton className={size} variant={variant} onClick={handleShow}>{text}</MyButton>
+      <MyModal form={form} show={show} setShow={setShow} title={title} />
+    </div>
+  );
 }
