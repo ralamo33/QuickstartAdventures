@@ -1,13 +1,11 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import {Modal} from "react-bootstrap";
-import * as Constants from "../constants";
+/* eslint-disable react/prop-types */
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Modal } from 'react-bootstrap';
 
-
-export default function MyModal(props) {
-  const show = props.show;
-  const setShow = props.setShow;
-
+export default function MyModal({
+  show, setShow, title, form,
+}) {
   const handleClose = () => setShow(false);
 
   return (
@@ -20,12 +18,12 @@ export default function MyModal(props) {
         size="lg"
       >
         <Modal.Header closeButton>
-          <Modal.Title>{props.title}</Modal.Title>
+          <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {props.form}
+          {form}
         </Modal.Body>
       </Modal>
-      </div>
+    </div>
   );
 }

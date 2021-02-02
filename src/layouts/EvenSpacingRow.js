@@ -1,15 +1,15 @@
-import React from "react";
-import {Container, Row, Col} from "react-bootstrap";
+/* eslint-disable react/prop-types */
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
-export default function EvenSpacingRow(props) {
+export default function EvenSpacingRow({ items }) {
+  const cols = items.map((item) => <Col>{item}</Col>);
 
-    const items = props.items.map((item) => <Col>{item}</Col>);
-
-
-
-    return <Container fluid>
-                <Row>
-                    {items}
-                </Row>
-           </Container>
+  return (
+    <Container fluid>
+      <Row>
+        {cols}
+      </Row>
+    </Container>
+  );
 }
