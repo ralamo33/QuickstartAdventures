@@ -1,9 +1,9 @@
 /**
  * Generates a sum equation with variables between 1 and 10 
- * @return {[]} equation as a string and the answer as a number
+ * @return {[string, number]} equation as a string and the answer as a number
  */
 // eslint-disable-next-line import/prefer-default-export
-export function randomEquationAndAnswer() {
+export function randomEquationAndAnswer(): [string, number]{
   const randNum1 = Math.floor(Math.random() * 10);
   const randNum2 = Math.floor(Math.random() * 10);
   const answer = randNum1 + randNum2;

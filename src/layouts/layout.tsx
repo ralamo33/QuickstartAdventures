@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
@@ -8,8 +8,8 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
   }
 `;
-// eslint-disable-next-line react/prop-types
-export default function Layout({ children }) {
+
+export default function Layout({children}) {
   return (
     <>
       <GlobalStyle />
