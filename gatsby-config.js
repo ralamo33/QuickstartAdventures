@@ -12,10 +12,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: "www.quickstartadventures.com"
-      }
+        bucketName: 'www.quickstartadventures.com',
+      },
     },
-        {
+    {
       resolve: `gatsby-plugin-styled-components`,
     },
     {
@@ -25,7 +25,7 @@ module.exports = {
       resolve: `gatsby-plugin-typescript`,
     },
     {
-      resolve: "gatsby-plugin-prettier-eslint",
+      resolve: 'gatsby-plugin-prettier-eslint',
       // this is the default configuration, override only what you need
       options: {
         cwd: process.cwd(), // path to a directory that should be considered as the current working directory
@@ -35,11 +35,11 @@ module.exports = {
         onChangeFullScanFormat: false, // if true, on file save always perform full scan format
         prettierLast: false, // if true, will run Prettier after ESLint
         ignorePatterns: [
-          "**/node_modules/**/*",
-          "**/.git/**/*",
-          "**/dist/**/*",
-          ".cache/**/*",
-          "public/**/*",
+          '**/node_modules/**/*',
+          '**/.git/**/*',
+          '**/dist/**/*',
+          '.cache/**/*',
+          'public/**/*',
         ], // string or array of paths/files/globs to ignore
         prettier: {
           patterns: [], // string or array of paths/files/globs to include related only to Prettier
@@ -49,7 +49,7 @@ module.exports = {
         eslint: {
           patterns: [], // string or array of paths/files/globs to include related only to ESLint
           ignorePatterns: [], // string or array of paths/files/globs to exclude related only to ESLint
-          formatter: "stylish", // set custom or third party formatter
+          formatter: 'stylish', // set custom or third party formatter
           maxWarnings: undefined, // number of max warnings allowed, when exceed it will fail Gatsby build
           emitWarning: true, // if true, will emit lint warnings
           failOnError: false, // if true, any lint error will fail the build, you may set true only in your prod config

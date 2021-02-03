@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQueryParam, StringParam } from 'use-query-params';
-import axios from "axios";
+import axios from 'axios';
 import styled from 'styled-components';
 import { Button } from 'react-bootstrap';
 import { navigate } from 'gatsby';
@@ -12,28 +12,28 @@ export default function Leave() {
   const email = useQueryParam('email', StringParam);
 
   const Relative = styled.div`
-        position: relative;
-    `;
+    position: relative;
+  `;
 
   const Title = styled.p`
-        text-align: center;
-        font-size: 5vw;
-        color: #ccffff;
-    `
+    text-align: center;
+    font-size: 5vw;
+    color: #ccffff;
+  `;
 
   const MyButton = styled(Button)`
-        position: absolute;
-        top: 50%;
-        font-size: 3vw;
-    `;
+    position: absolute;
+    top: 50%;
+    font-size: 3vw;
+  `;
 
   const LeaveButton = styled(MyButton)`
-        left: 65%;
-    `;
+    left: 65%;
+  `;
 
   const StayButton = styled(MyButton)`
-        left: 25%;
-    `;
+    left: 25%;
+  `;
 
   const headers = {
     headers: {
@@ -44,12 +44,15 @@ export default function Leave() {
 
   const leave = (event) => {
     event.preventDefault();
-    axios.post(
-      Constants.REMOVE_EMAIL_API, {}, headers,
-    )
-      .then(alert('You have successfully unsubscribed.'
-        + 'We\'re sorry to see you go! :('))
-      .catch((error) => alert(error))
+    axios
+      .post(Constants.REMOVE_EMAIL_API, {}, headers)
+      .then(
+        alert(
+          'You have successfully unsubscribed.' +
+            "We're sorry to see you go! :("
+        )
+      )
+      .catch((error) => alert(error));
   };
 
   return (
@@ -57,8 +60,12 @@ export default function Leave() {
       <Title>Do you really want to leave?</Title>
       <Relative>
         <EpicImage src="https://pop-verse.com/wp-content/uploads/2015/05/Abzan-Houses-MtG-Art-620x330.jpg" />
-        <StayButton variant="primary" size="lg" onClick={() => navigate('/')}>Stay</StayButton>
-        <LeaveButton variant="danger" size="lg" onClick={leave}>Leave</LeaveButton>
+        <StayButton variant="primary" size="lg" onClick={() => navigate('/')}>
+          Stay
+        </StayButton>
+        <LeaveButton variant="danger" size="lg" onClick={leave}>
+          Leave
+        </LeaveButton>
       </Relative>
     </Layout>
   );
