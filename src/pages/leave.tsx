@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement, MouseEvent } from 'react';
 import { useQueryParam, StringParam } from 'use-query-params';
 import axios from 'axios';
 import styled from 'styled-components';
@@ -8,7 +8,7 @@ import * as Constants from '../constants';
 import Layout from '../layouts/layout';
 import EpicImage from '../components/EpicImage';
 
-export default function Leave() {
+export default function Leave(): ReactElement {
   const email = useQueryParam('email', StringParam);
 
   const Relative = styled.div`
@@ -42,16 +42,10 @@ export default function Leave() {
     },
   };
 
-  const leave = (event) => {
+  const leave = (event: MouseEvent<HTMLInputElement>): void => {
     event.preventDefault();
     axios
       .post(Constants.REMOVE_EMAIL_API, {}, headers)
-      .then(
-        alert(
-          'You have successfully unsubscribed.' +
-            "We're sorry to see you go! :("
-        )
-      )
       .catch((error) => alert(error));
   };
 
