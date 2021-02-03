@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 import ClickToOpen from './ClickToOpen';
 import buttonClasses from './ClickToOpen.module.css';
 import * as Constants from '../../constants';
 import ContestForm from '../Forms/ContestForm';
 
-export default function ContestButton() {
+export default function ContestButton(): ReactElement {
   const [show, setShow] = useState(false);
 
   return (
