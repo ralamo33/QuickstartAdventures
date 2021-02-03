@@ -1,12 +1,10 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prop-types */
-import React from 'react';
+import React, {} from 'react';
 import styled from 'styled-components';
 import { Card } from 'react-bootstrap';
 import Break from './Break';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function QuickstartCard(props) {
+export default function QuickstartCard(props): ReactElement {
   const MyCard = styled(Card)`
         margin: 10px 0px;
     `;

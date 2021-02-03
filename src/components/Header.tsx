@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import EvenSpacingRow from '../layouts/EvenSpacingRow';
 import Break from './Break';
@@ -9,31 +9,33 @@ import PlaytestButton from './Buttons/PlaytestButton';
 import ContestButton from './Buttons/ContestButton';
 import SubscribeButton from './Buttons/SubscribeButton';
 
-export default function Header() {
+export default function Header(): ReactElement {
   const SetFontSize = styled.div`
-        font-size: 8.5vw;
-    `;
+    font-size: 8.5vw;
+  `;
 
   const Title = styled.h1`
     color: red;
     text-align: center;
     font-size: 1.2em;
-    `;
+  `;
 
   const title = 'Quickstart Adventures';
 
-  const buttons = [<ContestButton />, <PlaytestButton />, <SubscribeButton />];
+  const buttons = [
+    <ContestButton key="1" />,
+    <PlaytestButton key="2" />,
+    <SubscribeButton key="3" />,
+  ];
 
   return (
     <SetFontSize>
       <EpicImage src={`${Constants.BUCKET_URL}Tavern.jpg`} />
-      <Title>
-        {title}
-      </Title>
+      <Title>{title}</Title>
       <Textbox />
-      <Break height="2" />
-      <EvenSpacingRow items={buttons} oneOnSmall />
-      <Break height="2" />
+      <Break height={2} />
+      <EvenSpacingRow items={buttons} />
+      <Break height={2} />
     </SetFontSize>
   );
 }

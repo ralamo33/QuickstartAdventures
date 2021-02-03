@@ -1,25 +1,25 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-bootstrap';
 import { Field, ErrorMessage } from 'formik';
 
-export default function CheckHuman(question) {
+export default function CheckHuman(question: string): ReactElement {
   const MyLabel = styled.p`
     font-size: 20px;
     display: block;
-    `;
+  `;
 
   const MyField = styled(Field)`
     margin-bottom: 25px;
-    `;
+  `;
 
   const FullField = styled(MyField)`
     width: 100%;
-    `;
+  `;
 
   const TestQuestion = styled.p`
     margin-left: 10px;
-`;
+  `;
 
   return (
     <div>
