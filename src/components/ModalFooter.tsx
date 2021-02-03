@@ -1,8 +1,9 @@
 import React, { ReactElement, MouseEvent } from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
+import { ButtonClose } from '../types';
 
 interface ModalProps {
-  close: (event: MouseEvent<HTMLInputElement>) => void;
+  close: ButtonClose;
 }
 
 export default function ModalFooter({ close }: ModalProps): ReactElement {

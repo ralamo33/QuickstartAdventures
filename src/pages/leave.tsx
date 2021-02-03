@@ -7,6 +7,7 @@ import { navigate } from 'gatsby';
 import * as Constants from '../constants';
 import Layout from '../layouts/layout';
 import EpicImage from '../components/EpicImage';
+import { ButtonClick } from '../types';
 
 export default function Leave(): ReactElement {
   const email = useQueryParam('email', StringParam);
@@ -38,11 +39,11 @@ export default function Leave(): ReactElement {
   const headers = {
     headers: {
       Email: email,
-      TopicArn: 'arn:aws:sns:us-east-1:451835830300:ComplaintEmail',
+      TopicArn: 'arn:aws:sns:us-east-2:451835830300:ComplaintEmail',
     },
   };
 
-  const leave = (event: MouseEvent<HTMLInputElement>): void => {
+  const leave: ButtonClick = (event) => {
     event.preventDefault();
     axios
       .post(Constants.REMOVE_EMAIL_API, {}, headers)

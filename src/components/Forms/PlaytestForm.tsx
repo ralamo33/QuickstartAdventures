@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
@@ -9,12 +9,19 @@ import CheckHuman from '../FormFields/CheckHuman';
 import FormFooter from '../FormFields/FormFooter';
 import { randomEquationAndAnswer } from '../../utils';
 
-export default function PlaytestForm({ close }) {
+interface FormProps {
+  close: () => void;
+}
+
+export default function PlaytestForm({ close }: FormProps): ReactElement {
   const [question, answer] = randomEquationAndAnswer();
 
   const ValidationSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
-    test: Yup.number().max(answer, 'Too high').min(answer, 'Too low').required('You must pass the test'),
+    test: Yup.number()
+      .max(answer, 'Too high')
+      .min(answer, 'Too low')
+      .required('You must pass the test'),
   });
 
   return (
@@ -27,11 +34,15 @@ export default function PlaytestForm({ close }) {
         validationSchema={ValidationSchema}
         onSubmit={async (values) => {
           const apiUrl = `${Constants.PLAYTEST_API}&Message=${values.email}`;
-          axios.post(
-            apiUrl, {}, {
-              headers: { 'x-api-key': Constants.PLAYTEST_API_KEY },
-            },
-          ).catch((error) => alert(error))
+          axios
+            .post(
+              apiUrl,
+              {},
+              {
+                headers: { 'x-api-key': Constants.PLAYTEST_API_KEY },
+              }
+            )
+            .catch((error) => alert(error))
             .then(close);
         }}
       >

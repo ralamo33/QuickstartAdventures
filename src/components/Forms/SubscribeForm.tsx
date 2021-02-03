@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
@@ -7,16 +7,20 @@ import Email from '../FormFields/Email';
 import CheckHuman from '../FormFields/CheckHuman';
 import FormFooter from '../FormFields/FormFooter';
 import { randomEquationAndAnswer } from '../../utils';
-import NewName from '../FormFields/NewName';
 
-// eslint-disable-next-line react/prop-types
-export default function ContestForm({ close }) {
+interface FormProps {
+  close: () => void;
+}
+
+export default function ContestForm({ close }: FormProps): ReactElement {
   const [question, answer] = randomEquationAndAnswer();
 
   const ValidationSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
-    newName: Yup.string().required('Required'),
-    test: Yup.number('Invalid').min(answer, 'Incorrect').max(answer, 'Incorrect').required('You must pass the test'),
+    test: Yup.number()
+      .min(answer, 'Incorrect')
+      .max(answer, 'Incorrect')
+      .required('You must pass the test'),
   });
 
   return (
@@ -25,22 +29,23 @@ export default function ContestForm({ close }) {
         initialValues={{
           email: '',
           test: '',
-          newName: '',
         }}
         validationSchema={ValidationSchema}
         onSubmit={async (values) => {
-          const apiUrl = `${Constants.CONTEST_API}&Message=${values.email}_${values.newName}`;
-          axios.post(
-            apiUrl, {}, {
-              headers: { 'x-api-key': Constants.CONTEST_API_KEY },
-            },
-          ).catch((error) => alert(error))
-            .then(alert(`Success! You submitted ${values.newName} into the naming contest.`))
+          const apiUrl = `${Constants.SUBSCRIBE_API}&Message=${values.email}`;
+          axios
+            .post(
+              apiUrl,
+              {},
+              {
+                headers: { 'x-api-key': Constants.SUBSCRIBE_API_KEY },
+              }
+            )
+            .catch((error) => alert(error))
             .then(close);
         }}
       >
         <Form>
-          <NewName />
           <Email />
           <CheckHuman question={question} />
           <FormFooter close={close} />
