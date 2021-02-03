@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQueryParam, StringParam } from 'use-query-params';
-import axios from 'axios';
+import axios from "axios";
 import styled from 'styled-components';
 import { Button } from 'react-bootstrap';
 import { navigate } from 'gatsby';
@@ -19,7 +19,7 @@ export default function Leave() {
         text-align: center;
         font-size: 5vw;
         color: #ccffff;
-    `;
+    `
 
   const MyButton = styled(Button)`
         position: absolute;
@@ -49,7 +49,7 @@ export default function Leave() {
     )
       .then(alert('You have successfully unsubscribed.'
         + 'We\'re sorry to see you go! :('))
-      .catch((error) => alert(error));
+      .catch((error) => alert(error))
   };
 
   return (

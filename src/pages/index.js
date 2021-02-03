@@ -4,16 +4,16 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Layout from '../layouts/layout';
 import Header from '../components/Header';
 import Break from '../components/Break';
-import QuickstartCard from '../components/QuickstartCard';
-import * as Constants from '../constants';
-import classes from '../components/QuickstartCard.module.css';
+import QuickstartCard from "../components/QuickstartCard";
+import * as Constants from "../constants";
+import classes from "../components/QuickstartCard.module.css";
 import PlaytestButton from '../components/Buttons/PlaytestButton';
 import ContestButton from '../components/Buttons/ContestButton';
 import SubscribeButton from '../components/Buttons/SubscribeButton';
 
 export default function Home() {
-  const playtestButton = <PlaytestButton />;
-  const contestButton = <ContestButton />;
+  const playtestButton = <PlaytestButton />
+  const contestButton = <ContestButton />
   const subscribeButton = <SubscribeButton />;
 
   const contestCard = (
@@ -52,7 +52,9 @@ export default function Home() {
         <Row>
           <Col md="4" sm="12">{contestCard}</Col>
           <Col md="4" sm="12">{playtestCard}</Col>
-          <Col md="4" sm="12">{subscribeCard}</Col>
+          <Col md="4" sm="12">
+            {subscribeCard}
+          </Col>
         </Row>
       </Container>
       <Break height="5" />
