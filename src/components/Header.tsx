@@ -6,8 +6,8 @@ import EpicImage from './EpicImage';
 import Textbox from './Textbox';
 import * as Constants from '../constants';
 import PlaytestButton from './Buttons/PlaytestButton';
-import ContestButton from './Buttons/ContestButton';
 import SubscribeButton from './Buttons/SubscribeButton';
+import ContestButton from './Buttons/ContestButton';
 
 export default function Header(): ReactElement {
   const SetFontSize = styled.div`

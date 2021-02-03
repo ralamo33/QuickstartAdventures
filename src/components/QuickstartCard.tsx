@@ -17,7 +17,7 @@ export default function QuickstartCard({
   color,
   header,
   text,
-  button
+  button,
 }: CardProps): ReactElement {
   const MyCard = styled(Card)`
     margin: 10px 0px;

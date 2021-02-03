@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
@@ -8,8 +8,12 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
   }
 `;
-// eslint-disable-next-line react/prop-types
-export default function Layout({ children }) {
+
+interface LayoutProps {
+  children: ReactNode;
+}
+
+export default function Layout({ children }: LayoutProps): ReactElement {
   return (
     <>
       <GlobalStyle />

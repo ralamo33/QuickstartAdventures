@@ -1,9 +1,9 @@
-import React, { ReactElement, MouseEvent } from 'react';
+import React, { ReactElement } from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
-import { ButtonClose } from '../types';
+import { ButtonClick } from '../types';
 
 interface ModalProps {
-  close: ButtonClose;
+  close: ButtonClick;
 }
 
 export default function ModalFooter({ close }: ModalProps): ReactElement {
@@ -14,7 +14,7 @@ export default function ModalFooter({ close }: ModalProps): ReactElement {
           Close
         </Button>
       </Col>
-      <Col xs="7" sm="8" md="8" lg="9" xlg="10" />
+      <Col xs="7" sm="8" md="8" lg="9" />
       <Col xs="1">
         <Button variant="primary" type="submit">
           Onwards

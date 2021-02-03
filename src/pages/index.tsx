@@ -1,19 +1,19 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import Layout from '../layouts/layout';
-import Header from '../components/Header';
 import Break from '../components/Break';
-import QuickstartCard from "../components/QuickstartCard";
-import * as Constants from "../constants";
-import classes from "../components/QuickstartCard.module.css";
+import * as Constants from '../constants';
+import classes from '../components/QuickstartCard.module.css';
 import PlaytestButton from '../components/Buttons/PlaytestButton';
-import ContestButton from '../components/Buttons/ContestButton';
 import SubscribeButton from '../components/Buttons/SubscribeButton';
+import Header from '../components/Header';
+import QuickstartCard from '../components/QuickstartCard';
+import ContestButton from '../components/Buttons/ContestButton';
 
-export default function Home() {
-  const playtestButton = <PlaytestButton />
-  const contestButton = <ContestButton />
+export default function Home(): ReactElement {
+  const playtestButton = <PlaytestButton />;
+  const contestButton = <ContestButton />;
   const subscribeButton = <SubscribeButton />;
 
   const contestCard = (
@@ -47,17 +47,21 @@ export default function Home() {
   return (
     <Layout>
       <Header />
-      <Break height="5" />
+      <Break height={5} />
       <Container fluid>
         <Row>
-          <Col md="4" sm="12">{contestCard}</Col>
-          <Col md="4" sm="12">{playtestCard}</Col>
+          <Col md="4" sm="12">
+            {contestCard}
+          </Col>
+          <Col md="4" sm="12">
+            {playtestCard}
+          </Col>
           <Col md="4" sm="12">
             {subscribeCard}
           </Col>
         </Row>
       </Container>
-      <Break height="5" />
+      <Break height={5} />
     </Layout>
   );
 }

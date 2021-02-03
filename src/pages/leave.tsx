@@ -1,4 +1,4 @@
-import React, { ReactElement, MouseEvent } from 'react';
+import React, { ReactElement } from 'react';
 import { useQueryParam, StringParam } from 'use-query-params';
 import axios from 'axios';
 import styled from 'styled-components';
