@@ -22,11 +22,13 @@ export default function Header() {
 
   const title = 'Quickstart Adventures';
 
-  const buttons = [<ContestButton />, <PlaytestButton />, <SubscribeButton />];
+  const buttons = [
+    <ContestButton />, 
+    <PlaytestButton />, 
+    <SubscribeButton />];
 
   return (
     <SetFontSize>
-      <EpicImage src={`${Constants.BUCKET_URL}Tavern.jpg`} />
       <Title>
         {title}
       </Title>
