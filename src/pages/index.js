@@ -10,6 +10,8 @@ import classes from '../components/QuickstartCard.module.css';
 import PlaytestButton from '../components/Buttons/PlaytestButton';
 import ContestButton from '../components/Buttons/ContestButton';
 import SubscribeButton from '../components/Buttons/SubscribeButton';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import styled from 'styled-components';
 
 export default function Home() {
   const playtestButton = <PlaytestButton />;
@@ -44,7 +46,14 @@ export default function Home() {
     />
   );
 
+  const Background = styled.div`
+        background-image: url(${Constants.BUCKET_URL}Tavern.jpg);
+        background-size: contain;
+        background-position: 0px -200px; 
+    `;
+
   return (
+    <Background>
     <Layout>
       <Header />
       <Break height="5" />
@@ -57,5 +66,6 @@ export default function Home() {
       </Container>
       <Break height="5" />
     </Layout>
+    </Background>
   );
 }
