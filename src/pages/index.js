@@ -49,6 +49,7 @@ export default function Home() {
   const Background = styled.div`
         background-image: url(${Constants.BUCKET_URL}Tavern.jpg);
         background-size: contain;
+        background-position: 0px -200px; 
     `;
 
   return (
