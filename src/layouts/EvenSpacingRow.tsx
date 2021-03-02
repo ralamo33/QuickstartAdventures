@@ -8,7 +8,11 @@ interface RowProps<ItemType> {
 export default function EvenSpacingRow<ItemType>({
   items,
 }: RowProps<ItemType>): ReactElement {
-  const cols = items.map((item, idx) => <Col key={idx.toString()}>{item}</Col>);
+  const cols = items.map((item, idx) => (
+    <Col sm="12" md="4" key={idx.toString()}>
+      {item}
+    </Col>
+  ));
 
   return (
     <Container fluid>

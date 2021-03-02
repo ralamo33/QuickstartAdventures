@@ -30,7 +30,7 @@ export default function Header(): ReactElement {
 
   return (
     <SetFontSize>
-      <EpicImage src={`${Constants.BUCKET_URL}Tavern.jpg`} />
+      <EpicImage src={`${Constants.BUCKET_URL}Tavern2.jpg`} />
       <Title>{title}</Title>
       <Textbox />
       <Break height={2} />

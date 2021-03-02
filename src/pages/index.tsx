@@ -50,13 +50,13 @@ export default function Home(): ReactElement {
       <Break height={5} />
       <Container fluid>
         <Row>
-          <Col md="4" sm="12">
+          <Col lg="4" md="6" sm="12">
             {contestCard}
           </Col>
-          <Col md="4" sm="12">
+          <Col lg="4" md="6" sm="12">
             {playtestCard}
           </Col>
-          <Col md="4" sm="12">
+          <Col lg="4" md="6" sm="12">
             {subscribeCard}
           </Col>
         </Row>
