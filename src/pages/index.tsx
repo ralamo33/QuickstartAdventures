@@ -10,6 +10,7 @@ import SubscribeButton from '../components/Buttons/SubscribeButton';
 import Header from '../components/Header';
 import QuickstartCard from '../components/QuickstartCard';
 import ContestButton from '../components/Buttons/ContestButton';
+import EpicImage from '../components/EpicImage';
 
 export default function Home(): ReactElement {
   const playtestButton = <PlaytestButton />;
@@ -46,6 +47,7 @@ export default function Home(): ReactElement {
 
   return (
     <Layout>
+      <EpicImage src={`${Constants.BUCKET_URL}Tavern.jpg`} />
       <Header />
       <Break height={5} />
       <Container fluid>

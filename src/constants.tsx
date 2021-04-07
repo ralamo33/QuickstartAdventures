@@ -1,7 +1,7 @@
 export const BUCKET_URL =
   'https://remember-the-ralamo-images.s3.amazonaws.com/';
 
-export const DESCRIPTION = 'A super simple TableTop RPG';
+export const DESCRIPTION = 'A new way to roleplay';
 
 export const PLAYTEST_BUTTON_TEXT = 'Become a Playtester!';
 export const CONTEST_BUTTON_TEXT = 'Naming Contest';
@@ -24,8 +24,7 @@ export const SUBSCRIBE_CARD_TEXT = [
 ];
 
 export const PLAYTEST_MODAL_TITLE = 'Try it for yourself!';
-export const CONTEST_MODAL_TITLE =
-  'Naming Contest: Beat "Quickstart Adventures"';
+export const CONTEST_MODAL_TITLE = 'Naming Contest: Beat "Roleplay Revolution"';
 export const SUBSCRIBE_MODAL_TITLE = 'Where shall we send the ravens?';
 
 const API_URL = 'https://9oeq1w1vcf.execute-api.us-east-1.amazonaws.com/prod';

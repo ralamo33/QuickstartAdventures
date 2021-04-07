@@ -2,9 +2,7 @@ import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import EvenSpacingRow from '../layouts/EvenSpacingRow';
 import Break from './Break';
-import EpicImage from './EpicImage';
 import Textbox from './Textbox';
-import * as Constants from '../constants';
 import PlaytestButton from './Buttons/PlaytestButton';
 import SubscribeButton from './Buttons/SubscribeButton';
 import ContestButton from './Buttons/ContestButton';
@@ -20,7 +18,7 @@ export default function Header(): ReactElement {
     font-size: 1.2em;
   `;
 
-  const title = 'Quickstart Adventures';
+  const title = 'Roleplay Revolution';
 
   const buttons = [
     <ContestButton key="1" />,
@@ -30,7 +28,6 @@ export default function Header(): ReactElement {
 
   return (
     <SetFontSize>
-      <EpicImage src={`${Constants.BUCKET_URL}Tavern2.jpg`} />
       <Title>{title}</Title>
       <Textbox />
       <Break height={2} />
