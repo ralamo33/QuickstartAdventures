@@ -49,4 +49,7 @@ export const REMOVE_EMAIL_KEY = 'myhpVktYdn6c1lyZ2iSrf13plIodKqab3cbQi1DS';
 export const ADD_EMAIL_API = '';
 export const ADD_EMAIL_KEY = '';
 
-export const BLUE = '#ccffff';
+export const OLD_BLUE = '#ccffff';
+export const BLUE = '#001194';
+export const YELLOW = '#ffb314';
+export const RED = '#a40808';
