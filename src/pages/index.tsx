@@ -11,6 +11,7 @@ import Header from '../components/Header';
 import QuickstartCard from '../components/QuickstartCard';
 import ContestButton from '../components/Buttons/ContestButton';
 import EpicImage from '../components/EpicImage';
+import Counter from '../components/Counter';
 
 export default function Home(): ReactElement {
   const playtestButton = <PlaytestButton />;
@@ -48,9 +49,9 @@ export default function Home(): ReactElement {
   return (
     <Layout>
       <EpicImage src={`${Constants.BUCKET_URL}Tavern.jpg`} />
-      <Header />
+      <Counter></Counter>
       <Break height={5} />
-      <Container fluid>
+      {/* <Container fluid>
         <Row>
           <Col lg="4" md="6" sm="12">
             {contestCard}
@@ -62,7 +63,7 @@ export default function Home(): ReactElement {
             {subscribeCard}
           </Col>
         </Row>
-      </Container>
+      </Container> */}
       <Break height={5} />
     </Layout>
   );
