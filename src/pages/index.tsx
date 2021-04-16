@@ -14,6 +14,19 @@ import ContestButton from '../components/Buttons/ContestButton';
 import EpicImage from '../components/EpicImage';
 import Counter from '../components/Counter';
 
+const Subtitle = styled.div`
+  // color: ${Constants.BLUE};
+  // color: #00b3b3;
+  // color: #f2f2f2;
+  // color: #e6e6e6;
+  color: #000080;
+  font-size: 4rem;
+  max-width: 80vw;
+  margin: auto;
+  text-align: center;
+  font-family: belmont;
+`;
+
 export default function Home(): ReactElement {
   const playtestButton = <PlaytestButton />;
   const contestButton = <ContestButton />;
@@ -60,9 +73,13 @@ export default function Home(): ReactElement {
     <Layout>
       <EpicImage src={`${Constants.BUCKET_URL}Tavern.jpg`} />
       <Title>{title}</Title>
+      <Break height={1} />
       <Counter></Counter>
+      <Break height={1} />
+      <Subtitle>It Begins</Subtitle>
+      <Break height={1} />
       <Header></Header>
-      <Break height={5} />
+      <Break height={1} />
       <Container fluid>
         <Row>
           <Col lg="4" md="6" sm="12">

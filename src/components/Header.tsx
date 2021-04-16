@@ -20,7 +20,7 @@ export default function Header(): ReactElement {
 
   return (
     <SetFontSize>
-      <Textbox />
+      {/* <Textbox /> */}
       <Break height={2} />
       <EvenSpacingRow items={buttons} />
       <Break height={2} />

@@ -1,7 +1,7 @@
 export const BUCKET_URL =
   'https://remember-the-ralamo-images.s3.amazonaws.com/';
 
-export const DESCRIPTION = 'A new way to roleplay';
+export const SUBTITLE = 'Crowdstart Countdown';
 
 export const PLAYTEST_BUTTON_TEXT = 'Become a Playtester!';
 export const CONTEST_BUTTON_TEXT = 'Naming Contest';
