@@ -12,16 +12,6 @@ export default function Header(): ReactElement {
     font-size: 8.5vw;
   `;
 
-  const Title = styled.h1`
-    // Brownish red
-    color: #993300;
-    // color: #800000;
-    text-align: center;
-    font-size: 1.2em;
-  `;
-
-  const title = 'Join the Revolution';
-
   const buttons = [
     <ContestButton key="1" />,
     <PlaytestButton key="2" />,
@@ -30,7 +20,6 @@ export default function Header(): ReactElement {
 
   return (
     <SetFontSize>
-      <Title>{title}</Title>
       <Textbox />
       <Break height={2} />
       <EvenSpacingRow items={buttons} />

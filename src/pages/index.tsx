@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react';
+import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import Layout from '../layouts/layout';
@@ -17,6 +18,15 @@ export default function Home(): ReactElement {
   const playtestButton = <PlaytestButton />;
   const contestButton = <ContestButton />;
   const subscribeButton = <SubscribeButton />;
+
+  const Title = styled.h1`
+    color: #800000;
+    font-family: belmont;
+    text-align: center;
+    font-size: 6rem;
+  `;
+
+  const title = 'Join the Revolution';
 
   const contestCard = (
     <QuickstartCard
@@ -49,7 +59,8 @@ export default function Home(): ReactElement {
   return (
     <Layout>
       <EpicImage src={`${Constants.BUCKET_URL}Tavern.jpg`} />
-      {/* <Counter></Counter> */}
+      <Title>{title}</Title>
+      <Counter></Counter>
       <Header></Header>
       <Break height={5} />
       <Container fluid>
