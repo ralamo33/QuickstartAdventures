@@ -1,6 +1,46 @@
-.relative {
-  font-size: 0.34em;
+.relativeBlue {
+  /* font-size: 0.30em; */
+  font-size: 30px;
   color: white;
+  background-color: #0088cc;
+  border-color: #0088cc;
+}
+
+.relativeBlue:hover {
+  background-color: #00aaff;
+}
+
+.relativeRed {
+  /* font-size: 0.30em; */
+  font-size: 30px;
+  color: white;
+  background-color: #800000;
+  border-color: #800000;
+}
+
+.relativeRed:hover {
+  color: white;
+  background-color: #cc0000;
+}
+
+.relativeWhite {
+  /* font-size: 0.30em; */
+  font-size: 30px;
+  color: black;
+  background-color: #f2f2f2;
+  border-color: #f2f2f2;
+  opacity: 0.5;
+}
+
+
+.relativeWhite:hover {
+  background-color: #f2f2f2;
+  border-color: #f2f2f2;
+  opacity: 0.8;
+}
+
+#customCursor1:hover {
+  cursor: no-drop;
 }
 
 .relativeBlack {

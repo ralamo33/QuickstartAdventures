@@ -1,12 +1,24 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prop-types */
-import React from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 import { Card } from 'react-bootstrap';
 import Break from './Break';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function QuickstartCard(props) {
+interface CardProps {
+  header: string;
+  border: string;
+  color: string;
+  text: string[];
+  button: ReactNode;
+}
+
+export default function QuickstartCard({
+  border,
+  color,
+  header,
+  text,
+  button,
+}: CardProps): ReactElement {
   const MyCard = styled(Card)`
     margin: 10px 0px;
   `;
@@ -29,23 +41,23 @@ export default function QuickstartCard(props) {
     font-size: 24px;
   `;
 
-  const TextList = props.text.map((text) => (
-    <div>
-      <MyText>{text}</MyText>
-      <Break height="2" />
+  const TextList = text.map((txt, idx) => (
+    <div key={txt + idx.toString()}>
+      <MyText>{txt}</MyText>
+      <Break height={2} />
     </div>
   ));
 
   return (
-    <MyCard className={props.border}>
-      <MyHeader className={props.color}>{props.header}</MyHeader>
+    <MyCard className={border}>
+      <MyHeader className={color}>{header}</MyHeader>
       <MyBody>
         <Card.Text>
           <MyList>{TextList}</MyList>
         </Card.Text>
       </MyBody>
-      {props.button}
-      <Break height="3" />
+      {button}
+      <Break height={3} />
     </MyCard>
   );
 }

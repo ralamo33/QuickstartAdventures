@@ -10,3 +10,6 @@ To start this project you must
 8. npm install use-query-params gatsby-plugin-use-query-params
 9. npm install formik --save
 10. npm install yup --save
+11. yarn add react-countdown-circle-timer
+
+Files are in tsx rather than ts for consistency, even if they do not use jsx
