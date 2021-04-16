@@ -16,18 +16,18 @@ export const FREE_CARD_TEXT = [
   'Online Monster Maker: May',
   'Share and rate Monsters: July',
   'Create, share and rate Homebrew Rules: September',
-  'Subscribe to keep up to date with our improvements!',
+  'Subscribe to keep up with our improvements!',
 ];
 export const SUBSCRIBE_CARD_TEXT = [
-  'Designed to introduce new players to roleplaying.',
-  'Intuitive and easy to explain.',
-  '5 minutes to create an epic character.',
-  '10 minutes to teach to someone who never roleplayed.',
+  'Easy to introduce new people to roleplaying.',
+  'Intuitive and concise ruleset.',
+  'Support homebrew content.',
+  '5 minutes for an epic character.',
+  '10 minutes to teach.',
 ];
 
 export const BUY_MODAL_TITLE = 'Your Friends Will Want to Play';
-export const FREE_MODAL_TITLE =
-  'The Core Rules, Character Sheets, and Spellbook are free!';
+export const FREE_MODAL_TITLE = 'Everything you need to play with friends!';
 export const SUBSCRIBE_MODAL_TITLE = 'Where shall we send the ravens?';
 
 const API_URL = 'https://9oeq1w1vcf.execute-api.us-east-1.amazonaws.com/prod';
