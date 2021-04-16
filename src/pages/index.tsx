@@ -13,6 +13,8 @@ import FreeButton from '../components/Buttons/FreeButton';
 import EpicImage from '../components/EpicImage';
 import Counter from '../components/Counter';
 import BuyButton from '../components/Buttons/BuyButton';
+import DisabledBuyButton from '../components/Buttons/DisabledBuyButton';
+import EvenSpacingRow from '../layouts/EvenSpacingRow';
 
 const Subtitle = styled.div`
   // color: ${Constants.BLUE};
@@ -34,9 +36,9 @@ const Title = styled.h1`
   font-size: 6rem;
 `;
 
-const subscribeButton = <SubscribeButton />;
-const buyButton = <BuyButton />;
-const freeButton = <FreeButton />;
+const subscribeButton = <SubscribeButton key="1" />;
+const buyButton = <DisabledBuyButton key="2" />;
+const freeButton = <FreeButton key="3" />;
 
 const subscribeCard = (
   <QuickstartCard
@@ -71,17 +73,16 @@ const freeCard = (
 export default function Home(): ReactElement {
   const title = 'Join the Revolution';
 
+  const buttons = [subscribeButton, buyButton, freeButton];
+
   return (
     <Layout>
       <EpicImage src={`${Constants.BUCKET_URL}Tavern.jpg`} />
       <Title>{title}</Title>
-      <Break height={1} />
       <Counter></Counter>
-      <Break height={1} />
       <Subtitle>It Begins</Subtitle>
-      <Break height={1} />
+      <EvenSpacingRow items={buttons} />
       <Header></Header>
-      <Break height={1} />
       <Container fluid>
         <Row>
           <Col lg="4" md="6" sm="12">

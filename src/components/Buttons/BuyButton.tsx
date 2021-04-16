@@ -10,7 +10,7 @@ export default function BuyButton(): ReactElement {
   return (
     <ClickToOpen
       variant="warning"
-      size={buttonClasses.relativeOrange}
+      size={buttonClasses.relativeWhite}
       show={show}
       setShow={setShow}
       text={Constants.BUY_BUTTON_TEXT}

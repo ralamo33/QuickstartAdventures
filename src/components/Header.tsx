@@ -1,6 +1,5 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
-import EvenSpacingRow from '../layouts/EvenSpacingRow';
 import Break from './Break';
 import Textbox from './Textbox';
 import BuyButton from './Buttons/BuyButton';
@@ -21,7 +20,6 @@ export default function Header(): ReactElement {
   return (
     <SetFontSize>
       <Break height={2} />
-      <EvenSpacingRow items={buttons} />
       <Break height={2} />
     </SetFontSize>
   );

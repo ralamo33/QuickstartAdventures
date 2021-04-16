@@ -55,3 +55,4 @@ export const YELLOW = '#ffcc00';
 export const RED = '#800000';
 export const PURPLE = '#cc00cc';
 export const ORANGE = 'orange';
+export const WHITE = '#f2f2f2';
