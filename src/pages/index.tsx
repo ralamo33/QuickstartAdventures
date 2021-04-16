@@ -49,9 +49,10 @@ export default function Home(): ReactElement {
   return (
     <Layout>
       <EpicImage src={`${Constants.BUCKET_URL}Tavern.jpg`} />
-      <Counter></Counter>
+      {/* <Counter></Counter> */}
+      <Header></Header>
       <Break height={5} />
-      {/* <Container fluid>
+      <Container fluid>
         <Row>
           <Col lg="4" md="6" sm="12">
             {contestCard}
@@ -63,7 +64,7 @@ export default function Home(): ReactElement {
             {subscribeCard}
           </Col>
         </Row>
-      </Container> */}
+      </Container>
       <Break height={5} />
     </Layout>
   );

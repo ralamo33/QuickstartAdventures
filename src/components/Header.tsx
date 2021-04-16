@@ -13,12 +13,14 @@ export default function Header(): ReactElement {
   `;
 
   const Title = styled.h1`
-    color: red;
+    // Brownish red
+    color: #993300;
+    // color: #800000;
     text-align: center;
     font-size: 1.2em;
   `;
 
-  const title = 'Roleplay Revolution';
+  const title = 'Join the Revolution';
 
   const buttons = [
     <ContestButton key="1" />,
