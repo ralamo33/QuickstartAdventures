@@ -8,23 +8,26 @@ export const FREE_BUTTON_TEXT = 'Claim Free Tier';
 export const SUBSCRIPE_BUTTON_TEXT = 'Subscribe';
 
 export const BUY_CARD_TEXT = [
-  'Create your character in 5 minutes',
-  'Only 10 pages of rules',
-  'Perfect for your friends that hate reading!',
+  '60 profesionally designed Power Cards to create thousands of unique characters.',
+  '4,000 character options by level 4.',
+  'Make meaningful character choices every level.',
 ];
 export const FREE_CARD_TEXT = [
-  'Gather and upgrade cards to improve ' + 'your character!',
-  'Excited?',
-  'Win a Cash Prize!',
+  'Online Monster Maker: May',
+  'Share and rate Monsters: July',
+  'Create, share and rate Homebrew Rules: September',
+  'Subscribe to keep up to date with our improvements!',
 ];
 export const SUBSCRIBE_CARD_TEXT = [
-  'Explore your identity, talents and maneuvers',
-  'Intrigued?',
-  'Learn more!',
+  'Designed to introduce new players to roleplaying.',
+  'Intuitive and easy to explain.',
+  '5 minutes to create an epic character.',
+  '10 minutes to teach to someone who never roleplayed.',
 ];
 
-export const BUY_MODAL_TITLE = 'Try it for yourself!';
-export const FREE_MODAL_TITLE = 'Naming FREE: Beat "Roleplay Revolution"';
+export const BUY_MODAL_TITLE = 'Your Friends Will Want to Play';
+export const FREE_MODAL_TITLE =
+  'The Core Rules, Character Sheets, and Spellbook are free!';
 export const SUBSCRIBE_MODAL_TITLE = 'Where shall we send the ravens?';
 
 const API_URL = 'https://9oeq1w1vcf.execute-api.us-east-1.amazonaws.com/prod';

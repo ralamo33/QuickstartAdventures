@@ -43,7 +43,7 @@ const freeButton = <FreeButton key="3" />;
 const subscribeCard = (
   <QuickstartCard
     color={classes.blue}
-    header="Choices Matter"
+    header="Roleplaying Games?"
     border={classes.blueBorder}
     text={Constants.SUBSCRIBE_CARD_TEXT}
     button={subscribeButton}
@@ -53,7 +53,7 @@ const subscribeCard = (
 const buyCard = (
   <QuickstartCard
     color={classes.yellow}
-    header="Hook Your Friends"
+    header="Roleplay Revolution"
     border={classes.yellowBorder}
     text={Constants.BUY_CARD_TEXT}
     button={buyButton}
@@ -63,7 +63,7 @@ const buyCard = (
 const freeCard = (
   <QuickstartCard
     color={classes.red}
-    header="Power Cards"
+    header="Future Features"
     border={classes.redBorder}
     text={Constants.FREE_CARD_TEXT}
     button={freeButton}
