@@ -50,6 +50,8 @@ export const ADD_EMAIL_API = '';
 export const ADD_EMAIL_KEY = '';
 
 export const OLD_BLUE = '#ccffff';
-export const BLUE = '#001194';
-export const YELLOW = '#ffb314';
-export const RED = '#a40808';
+export const BLUE = '#0088cc';
+export const YELLOW = '#ffcc00';
+export const RED = '#800000';
+export const PURPLE = '#cc00cc';
+export const ORANGE = 'orange';

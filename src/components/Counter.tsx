@@ -10,6 +10,8 @@ const minuteSeconds = 60;
 const hourSeconds = 3600;
 const daySeconds = 86400;
 
+const countdownColors = [['#00b3b3', 0.5], [Constants.PURPLE, 0.5], ['#e60000']];
+
 const timerProps = {
   isPlaying: true,
   size: 140,
@@ -24,16 +26,6 @@ const TimeText = styled.p`
 const DimensionText = styled.p`
   font-size: 1.5rem;
   text-align: center;
-`;
-
-// This does not work not even a little.
-// This may be impossible or I may need to be more clever.
-const StyledTimer = styled(CountdownCircleTimer)`
-  height: 2000px;
-  width: 20px;
-  background-color: pink;
-  background: pink;
-  color: pink;
 `;
 
 const renderTime = (dimension: string, time: number) => {
@@ -64,9 +56,10 @@ export default function Counter(): JSX.Element {
     <Container>
       <Row>
         <Col sm="3" xs="6">
-          <StyledTimer
+          <CountdownCircleTimer
             {...timerProps}
-            colors={'#999999'}
+            // colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
+            colors={countdownColors}
             duration={daysDuration}
             initialRemainingTime={remainingTime}
           >
@@ -74,12 +67,13 @@ export default function Counter(): JSX.Element {
               const time = elapsedTime.elapsedTime ?? 0;
               return renderTime('days', getTimeDays(daysDuration - time));
             }}
-          </StyledTimer>
+          </CountdownCircleTimer>
         </Col>
         <Col sm="3" xs="6">
-          <StyledTimer
+          <CountdownCircleTimer
             {...timerProps}
-            colors={Constants.BLUE}
+            // colors={Constants.BLUE}
+            colors={countdownColors}
             duration={daySeconds}
             initialRemainingTime={remainingTime % daySeconds}
             onComplete={(totalElapsedTime) => {
@@ -91,12 +85,13 @@ export default function Counter(): JSX.Element {
               const time = elapsedTime.elapsedTime ?? 0;
               return renderTime('hours', getTimeHours(daySeconds - time));
             }}
-          </StyledTimer>
+          </CountdownCircleTimer>
         </Col>
         <Col sm="3" xs="6">
           <CountdownCircleTimer
             {...timerProps}
-            colors={Constants.RED}
+            // colors={Constants.RED}
+            colors={countdownColors}
             duration={hourSeconds}
             initialRemainingTime={remainingTime % hourSeconds}
             onComplete={(totalElapsedTime) => {
@@ -113,7 +108,10 @@ export default function Counter(): JSX.Element {
         <Col sm="3" xs="6">
           <CountdownCircleTimer
             {...timerProps}
-            colors={Constants.YELLOW}
+            // colors={[[Constants.BLUE, 0.5], [Constants.RED, 0.5]]}
+            // colors={[['#b300b3', 1], ['#4d004d']]}
+            // colors={[['#00b3b3', 0.5], ['#b300b3', 0.5], ['#e60000']]}
+            colors={countdownColors}
             duration={minuteSeconds}
             initialRemainingTime={remainingTime % minuteSeconds}
             onComplete={(totalElapsedTime) => {

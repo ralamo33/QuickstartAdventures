@@ -5,10 +5,10 @@ import * as Constants from '../constants';
 export default function Textbox(): ReactElement {
   const Text = styled.div`
     //blue
-    // color: #b3f0ff;
+    color: #0088cc;
     // silver
     // color: #333333;
-    color: #800000;
+    // color: #800000;
     font-size: 0.6em;
     max-width: 80vw;
     margin: auto;
