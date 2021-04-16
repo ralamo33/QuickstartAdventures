@@ -43,7 +43,7 @@ const freeButton = <FreeButton key="3" />;
 const subscribeCard = (
   <QuickstartCard
     color={classes.blue}
-    header="Roleplaying Games?"
+    header="Our Principles"
     border={classes.blueBorder}
     text={Constants.SUBSCRIBE_CARD_TEXT}
     button={subscribeButton}
