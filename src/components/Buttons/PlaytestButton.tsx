@@ -10,7 +10,7 @@ export default function PlaytestButton(): ReactElement {
   return (
     <ClickToOpen
       variant="warning"
-      size={buttonClasses.independentBlack}
+      size={buttonClasses.relativeOrange}
       show={show}
       setShow={setShow}
       text={Constants.PLAYTEST_BUTTON_TEXT}
