@@ -13,7 +13,7 @@ interface FormProps {
   close: () => void;
 }
 
-export default function ContestForm({ close }: FormProps): ReactElement {
+export default function FreeForm({ close }: FormProps): ReactElement {
   const [question, answer] = randomEquationAndAnswer();
 
   const ValidationSchema = Yup.object().shape({
@@ -35,13 +35,13 @@ export default function ContestForm({ close }: FormProps): ReactElement {
         }}
         validationSchema={ValidationSchema}
         onSubmit={async (values) => {
-          const apiUrl = `${Constants.CONTEST_API}&Message=${values.email}_${values.newName}`;
+          const apiUrl = `${Constants.FREE_API}&Message=${values.email}_${values.newName}`;
           axios
             .post(
               apiUrl,
               {},
               {
-                headers: { 'x-api-key': Constants.CONTEST_API_KEY },
+                headers: { 'x-api-key': Constants.FREE_API_KEY },
               }
             )
             .catch((error) => alert(error))

@@ -12,7 +12,7 @@ interface FormProps {
   close: () => void;
 }
 
-export default function ContestForm({ close }: FormProps): ReactElement {
+export default function SubscribeForm({ close }: FormProps): ReactElement {
   const [question, answer] = randomEquationAndAnswer();
 
   const ValidationSchema = Yup.object().shape({

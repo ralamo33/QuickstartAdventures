@@ -6,13 +6,13 @@ import Layout from '../layouts/layout';
 import Break from '../components/Break';
 import * as Constants from '../constants';
 import classes from '../components/QuickstartCard.module.css';
-import PlaytestButton from '../components/Buttons/PlaytestButton';
 import SubscribeButton from '../components/Buttons/SubscribeButton';
 import Header from '../components/Header';
 import QuickstartCard from '../components/QuickstartCard';
-import ContestButton from '../components/Buttons/ContestButton';
+import FreeButton from '../components/Buttons/FreeButton';
 import EpicImage from '../components/EpicImage';
 import Counter from '../components/Counter';
+import BuyButton from '../components/Buttons/BuyButton';
 
 const Subtitle = styled.div`
   // color: ${Constants.BLUE};
@@ -27,47 +27,49 @@ const Subtitle = styled.div`
   font-family: belmont;
 `;
 
+const Title = styled.h1`
+  color: #800000;
+  font-family: belmont;
+  text-align: center;
+  font-size: 6rem;
+`;
+
+const subscribeButton = <SubscribeButton />;
+const buyButton = <BuyButton />;
+const freeButton = <FreeButton />;
+
+const subscribeCard = (
+  <QuickstartCard
+    color={classes.blue}
+    header="Choices Matter"
+    border={classes.blueBorder}
+    text={Constants.SUBSCRIBE_CARD_TEXT}
+    button={subscribeButton}
+  />
+);
+
+const buyCard = (
+  <QuickstartCard
+    color={classes.yellow}
+    header="Hook Your Friends"
+    border={classes.yellowBorder}
+    text={Constants.BUY_CARD_TEXT}
+    button={buyButton}
+  />
+);
+
+const freeCard = (
+  <QuickstartCard
+    color={classes.red}
+    header="Power Cards"
+    border={classes.redBorder}
+    text={Constants.FREE_CARD_TEXT}
+    button={freeButton}
+  />
+);
+
 export default function Home(): ReactElement {
-  const playtestButton = <PlaytestButton />;
-  const contestButton = <ContestButton />;
-  const subscribeButton = <SubscribeButton />;
-
-  const Title = styled.h1`
-    color: #800000;
-    font-family: belmont;
-    text-align: center;
-    font-size: 6rem;
-  `;
-
   const title = 'Join the Revolution';
-
-  const contestCard = (
-    <QuickstartCard
-      color={classes.red}
-      header="Power Cards"
-      border={classes.redBorder}
-      text={Constants.CONTEST_CARD_TEXT}
-      button={contestButton}
-    />
-  );
-  const playtestCard = (
-    <QuickstartCard
-      color={classes.yellow}
-      header="Hook Your Friends"
-      border={classes.yellowBorder}
-      text={Constants.PLAYTEST_CARD_TEXT}
-      button={playtestButton}
-    />
-  );
-  const subscribeCard = (
-    <QuickstartCard
-      color={classes.blue}
-      header="Choices Matter"
-      border={classes.blueBorder}
-      text={Constants.SUBSCRIBE_CARD_TEXT}
-      button={subscribeButton}
-    />
-  );
 
   return (
     <Layout>
@@ -83,13 +85,13 @@ export default function Home(): ReactElement {
       <Container fluid>
         <Row>
           <Col lg="4" md="6" sm="12">
-            {contestCard}
-          </Col>
-          <Col lg="4" md="6" sm="12">
-            {playtestCard}
-          </Col>
-          <Col lg="4" md="6" sm="12">
             {subscribeCard}
+          </Col>
+          <Col lg="4" md="6" sm="12">
+            {buyCard}
+          </Col>
+          <Col lg="4" md="6" sm="12">
+            {freeCard}
           </Col>
         </Row>
       </Container>

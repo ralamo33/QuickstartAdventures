@@ -12,7 +12,7 @@ interface FormProps {
   close: () => void;
 }
 
-export default function PlaytestForm({ close }: FormProps): ReactElement {
+export default function BuyForm({ close }: FormProps): ReactElement {
   const [question, answer] = randomEquationAndAnswer();
 
   const ValidationSchema = Yup.object().shape({
@@ -32,13 +32,13 @@ export default function PlaytestForm({ close }: FormProps): ReactElement {
         }}
         validationSchema={ValidationSchema}
         onSubmit={async (values) => {
-          const apiUrl = `${Constants.PLAYTEST_API}&Message=${values.email}`;
+          const apiUrl = `${Constants.BUY_API}&Message=${values.email}`;
           axios
             .post(
               apiUrl,
               {},
               {
-                headers: { 'x-api-key': Constants.PLAYTEST_API_KEY },
+                headers: { 'x-api-key': Constants.BUY_API_KEY },
               }
             )
             .catch((error) => alert(error))

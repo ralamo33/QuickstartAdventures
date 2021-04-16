@@ -9,8 +9,8 @@ export default function SubscribeButton(): ReactElement {
 
   const subscribeButton = (
     <ClickToOpen
-      variant="danger"
-      size={buttonClasses.relativeRed}
+      variant="info"
+      size={buttonClasses.relativeBlue}
       show={show}
       setShow={setShow}
       text={Constants.SUBSCRIPE_BUTTON_TEXT}

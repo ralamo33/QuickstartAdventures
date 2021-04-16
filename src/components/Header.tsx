@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import EvenSpacingRow from '../layouts/EvenSpacingRow';
 import Break from './Break';
 import Textbox from './Textbox';
-import PlaytestButton from './Buttons/PlaytestButton';
+import BuyButton from './Buttons/BuyButton';
 import SubscribeButton from './Buttons/SubscribeButton';
-import ContestButton from './Buttons/ContestButton';
+import FreeButton from './Buttons/FreeButton';
 
 export default function Header(): ReactElement {
   const SetFontSize = styled.div`
@@ -13,14 +13,13 @@ export default function Header(): ReactElement {
   `;
 
   const buttons = [
-    <ContestButton key="1" />,
-    <PlaytestButton key="2" />,
     <SubscribeButton key="3" />,
+    <BuyButton key="2" />,
+    <FreeButton key="1" />,
   ];
 
   return (
     <SetFontSize>
-      {/* <Textbox /> */}
       <Break height={2} />
       <EvenSpacingRow items={buttons} />
       <Break height={2} />
