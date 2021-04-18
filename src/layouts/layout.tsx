@@ -25,10 +25,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    // background: #1a0000;
-    background: #ffcc00;
+    background: #ffbf00;
     font-family: 'newrocker';
     font-weight: 400;
+    width: 100%;
+    height: 100%;
   }
 `;
 

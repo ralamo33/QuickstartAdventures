@@ -7,7 +7,6 @@ import Break from '../components/Break';
 import * as Constants from '../constants';
 import classes from '../components/QuickstartCard.module.css';
 import SubscribeButton from '../components/Buttons/SubscribeButton';
-import Header from '../components/Header';
 import QuickstartCard from '../components/QuickstartCard';
 import FreeButton from '../components/Buttons/FreeButton';
 import EpicImage from '../components/EpicImage';
@@ -17,12 +16,8 @@ import DisabledBuyButton from '../components/Buttons/DisabledBuyButton';
 import EvenSpacingRow from '../layouts/EvenSpacingRow';
 
 const Subtitle = styled.div`
-  // color: ${Constants.BLUE};
-  // color: #00b3b3;
-  // color: #f2f2f2;
-  // color: #e6e6e6;
   color: #000080;
-  font-size: 4rem;
+  font-size: 13vmin;
   max-width: 80vw;
   margin: auto;
   text-align: center;
@@ -33,7 +28,8 @@ const Title = styled.h1`
   color: #800000;
   font-family: belmont;
   text-align: center;
-  font-size: 6rem;
+  font-size: 15vmin;
+  width: 100%;
 `;
 
 const subscribeButton = <SubscribeButton key="1" />;
@@ -82,7 +78,6 @@ export default function Home(): ReactElement {
       <Counter></Counter>
       <Subtitle>It Begins</Subtitle>
       <EvenSpacingRow items={buttons} />
-      <Header></Header>
       <Container fluid>
         <Row>
           <Col lg="4" md="6" sm="12">
