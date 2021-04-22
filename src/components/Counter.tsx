@@ -47,7 +47,7 @@ const getTimeDays = (time: number) => Math.floor(time / daySeconds);
 export default function Counter(): JSX.Element {
   const overallStartTime = Date.UTC(2021, 3, 10, 4) / 1000;
   const localStartTime = Date.now() / 1000; // use UNIX timestamp in seconds
-  const endTime = Date.UTC(2021, 4, 10, 4) / 1000;
+  const endTime = Date.UTC(2021, 5, 10, 4) / 1000;
 
   const startingTime = endTime - overallStartTime;
   const overallDays = Math.ceil(startingTime / daySeconds);
