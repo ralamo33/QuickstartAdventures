@@ -37,14 +37,19 @@ export const BUY_TOPIC_ARN = 'arn:aws:sns:us-east-1:451835830300:Playtest';
 export const FREE_TOPIC_ARN = 'arn:aws:sns:us-east-1:451835830300:Contest';
 export const SUBSCRIBE_TOPIC_ARN =
   'arn:aws:sns:us-east-1:451835830300:Subscribe';
+export const CREATE_MONSTER_TOPIC_ARN =
+  'arn:aws:sns:us-east-1:451835830300:CreateMonster';
 
 export const BUY_API = `${API_URL}/notify?TopicArn=${BUY_TOPIC_ARN}`;
 export const FREE_API = `${API_URL}/notify?TopicArn=${FREE_TOPIC_ARN}`;
 export const SUBSCRIBE_API = `${API_URL}/notify?TopicArn=${SUBSCRIBE_TOPIC_ARN}`;
+export const CREATE_MONSTER_API = `${API_URL}/notify?TopicArn=${CREATE_MONSTER_TOPIC_ARN}`;
 
 export const BUY_API_KEY = '3ILD8V8RHmg10Su7VXUl3JL9wvFOfnS7QZf26At7';
 export const FREE_API_KEY = '3ILD8V8RHmg10Su7VXUl3JL9wvFOfnS7QZf26At7';
 export const SUBSCRIBE_API_KEY = '3ILD8V8RHmg10Su7VXUl3JL9wvFOfnS7QZf26At7';
+export const CREATE_MONSTER_API_KEY =
+  '3ILD8V8RHmg10Su7VXUl3JL9wvFOfnS7QZf26At7';
 
 export const REMOVE_EMAIL_API =
   'https://9oeq1w1vcf.execute-api.us-east-1.amazonaws.com/prod/remove';
