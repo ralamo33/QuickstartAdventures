@@ -11,7 +11,6 @@ import QuickstartCard from '../components/QuickstartCard';
 import FreeButton from '../components/Buttons/FreeButton';
 import EpicImage from '../components/EpicImage';
 import Counter from '../components/Counter';
-import BuyButton from '../components/Buttons/BuyButton';
 import DisabledBuyButton from '../components/Buttons/DisabledBuyButton';
 import EvenSpacingRow from '../layouts/EvenSpacingRow';
 
@@ -39,7 +38,7 @@ const freeButton = <FreeButton key="3" />;
 const subscribeCard = (
   <QuickstartCard
     color={classes.blue}
-    header="Our Principles"
+    header="Future Features"
     border={classes.blueBorder}
     text={Constants.SUBSCRIBE_CARD_TEXT}
     button={subscribeButton}
@@ -48,9 +47,9 @@ const subscribeCard = (
 
 const buyCard = (
   <QuickstartCard
-    color={classes.yellow}
+    color={classes.red}
     header="Roleplay Revolution"
-    border={classes.yellowBorder}
+    border={classes.redBorder}
     text={Constants.BUY_CARD_TEXT}
     button={buyButton}
   />
@@ -58,9 +57,9 @@ const buyCard = (
 
 const freeCard = (
   <QuickstartCard
-    color={classes.red}
-    header="Future Features"
-    border={classes.redBorder}
+    color={classes.yellow}
+    header="Our Principles"
+    border={classes.yellowBorder}
     text={Constants.FREE_CARD_TEXT}
     button={freeButton}
   />
@@ -69,7 +68,7 @@ const freeCard = (
 export default function Home(): ReactElement {
   const title = 'Join the Revolution';
 
-  const buttons = [subscribeButton, buyButton, freeButton];
+  const buttons = [buyButton, freeButton, subscribeButton];
 
   return (
     <Layout>
@@ -81,13 +80,13 @@ export default function Home(): ReactElement {
       <Container fluid>
         <Row>
           <Col lg="4" md="6" sm="12">
-            {subscribeCard}
-          </Col>
-          <Col lg="4" md="6" sm="12">
             {buyCard}
           </Col>
           <Col lg="4" md="6" sm="12">
             {freeCard}
+          </Col>
+          <Col lg="4" md="6" sm="12">
+            {subscribeCard}
           </Col>
         </Row>
       </Container>

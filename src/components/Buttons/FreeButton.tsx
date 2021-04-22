@@ -9,8 +9,8 @@ export default function ContestButton(): ReactElement {
 
   return (
     <ClickToOpen
-      variant="danger"
-      size={buttonClasses.relativeRed}
+      variant="warning"
+      size={buttonClasses.relativeYellow}
       show={show}
       setShow={setShow}
       text={Constants.FREE_BUTTON_TEXT}

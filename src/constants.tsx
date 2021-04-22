@@ -8,23 +8,23 @@ export const FREE_BUTTON_TEXT = 'Claim Free Tier';
 export const SUBSCRIPE_BUTTON_TEXT = 'Subscribe';
 
 export const BUY_CARD_TEXT = [
-  'A deck of profesionally designed Power Cards to create thousands of unique characters.',
-  '4,000 character options by level 4.',
-  'Free Tier includes the Core Rules, Character Sheet, and Spellbook.',
-  'Meaningful character choices at every level.',
+  'A fantasy TTRPG you can start in 10 minutes.',
+  'Hook new friends with a roleplaying game designed for newcomers.',
+  'Core Rules, Character Sheet, and Spellbook are free.',
+  'Buy Now to recieve the full set of Power Cards.',
 ];
-export const FREE_CARD_TEXT = [
+export const SUBSCRIBE_CARD_TEXT = [
   'Online Monster Maker: May',
   'Share and rate Monsters: July',
   'Create, share and rate Homebrew Rules: September',
   'Subscribe to keep up with our improvements!',
 ];
-export const SUBSCRIBE_CARD_TEXT = [
-  'Easy to introduce to friends new to roleplaying.',
+export const FREE_CARD_TEXT = [
   'Intuitive and concise ruleset.',
   'Support homebrew content.',
   '5 minutes for an epic character.',
   '10 minutes to teach.',
+  'Thousands of character possbilities.',
 ];
 
 export const BUY_MODAL_TITLE = 'Your Friends Will Want to Play';
