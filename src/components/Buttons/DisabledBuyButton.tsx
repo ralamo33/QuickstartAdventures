@@ -21,7 +21,7 @@ export default function DisabledFreeButton(): ReactElement {
       <ReactButton
         variant="light"
         id={buttonClasses.customCursor1}
-        className={buttonClasses.relativeWhite}
+        className={buttonClasses.relativeRed}
       >
         {Constants.BUY_BUTTON_TEXT}
       </ReactButton>

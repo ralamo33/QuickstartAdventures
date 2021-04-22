@@ -16,27 +16,27 @@
   color: white;
   background-color: #800000;
   border-color: #800000;
+  opacity: .7;
 }
 
 .relativeRed:hover {
   color: white;
   background-color: #cc0000;
+  border-color: #800000;
+  opacity: .8;
 }
 
-.relativeWhite {
-  /* font-size: 0.30em; */
+.relativeYellow {
   font-size: 30px;
   color: black;
-  background-color: #f2f2f2;
-  border-color: #f2f2f2;
-  opacity: 0.5;
+  background-color: #ff9900;
+  border-color: #ff9900;
 }
 
 
-.relativeWhite:hover {
-  background-color: #f2f2f2;
-  border-color: #f2f2f2;
-  opacity: 0.8;
+.relativeYellow:hover {
+  background-color: #ffdd00;
+  border-color: #ff9900;
 }
 
 #customCursor1:hover {

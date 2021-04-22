@@ -8,22 +8,23 @@ export const FREE_BUTTON_TEXT = 'Claim Free Tier';
 export const SUBSCRIPE_BUTTON_TEXT = 'Subscribe';
 
 export const BUY_CARD_TEXT = [
-  '60 profesionally designed Power Cards to create thousands of unique characters.',
-  '4,000 character options by level 4.',
-  'Make meaningful character choices every level.',
+  'A fantasy TTRPG you can start in 10 minutes.',
+  'Hook new friends with a roleplaying game designed for newcomers.',
+  'Core Rules, Character Sheet, and Spellbook are free.',
+  'Buy Now to recieve the full set of Power Cards.',
 ];
-export const FREE_CARD_TEXT = [
+export const SUBSCRIBE_CARD_TEXT = [
   'Online Monster Maker: May',
   'Share and rate Monsters: July',
   'Create, share and rate Homebrew Rules: September',
   'Subscribe to keep up with our improvements!',
 ];
-export const SUBSCRIBE_CARD_TEXT = [
-  'Easy to introduce new people to roleplaying.',
+export const FREE_CARD_TEXT = [
   'Intuitive and concise ruleset.',
   'Support homebrew content.',
   '5 minutes for an epic character.',
   '10 minutes to teach.',
+  'Thousands of character possbilities.',
 ];
 
 export const BUY_MODAL_TITLE = 'Your Friends Will Want to Play';
@@ -36,14 +37,19 @@ export const BUY_TOPIC_ARN = 'arn:aws:sns:us-east-1:451835830300:Playtest';
 export const FREE_TOPIC_ARN = 'arn:aws:sns:us-east-1:451835830300:Contest';
 export const SUBSCRIBE_TOPIC_ARN =
   'arn:aws:sns:us-east-1:451835830300:Subscribe';
+export const CREATE_MONSTER_TOPIC_ARN =
+  'arn:aws:sns:us-east-1:451835830300:CreateMonster';
 
 export const BUY_API = `${API_URL}/notify?TopicArn=${BUY_TOPIC_ARN}`;
 export const FREE_API = `${API_URL}/notify?TopicArn=${FREE_TOPIC_ARN}`;
 export const SUBSCRIBE_API = `${API_URL}/notify?TopicArn=${SUBSCRIBE_TOPIC_ARN}`;
+export const CREATE_MONSTER_API = `${API_URL}/notify?TopicArn=${CREATE_MONSTER_TOPIC_ARN}`;
 
 export const BUY_API_KEY = '3ILD8V8RHmg10Su7VXUl3JL9wvFOfnS7QZf26At7';
 export const FREE_API_KEY = '3ILD8V8RHmg10Su7VXUl3JL9wvFOfnS7QZf26At7';
 export const SUBSCRIBE_API_KEY = '3ILD8V8RHmg10Su7VXUl3JL9wvFOfnS7QZf26At7';
+export const CREATE_MONSTER_API_KEY =
+  '3ILD8V8RHmg10Su7VXUl3JL9wvFOfnS7QZf26At7';
 
 export const REMOVE_EMAIL_API =
   'https://9oeq1w1vcf.execute-api.us-east-1.amazonaws.com/prod/remove';
