@@ -8,8 +8,8 @@ import { string } from 'yup/lib/locale';
 interface buttonProps {
   fontSize: string;
   color: string;
-  backgroundColor: string;
-  borderColor: string;
+  backgroundcolor: string;
+  bordercolor: string;
 }
 
 export default function FreeButton(): ReactElement {

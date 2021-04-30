@@ -14,10 +14,10 @@ interface ClickProps {
   form: ReactNode;
   fontSize: string;
   color: string;
-  backgroundColor: string;
-  borderColor: string;
+  backgroundcolor: string;
+  bordercolor: string;
   opacity?: string;
-  hoverColor?: string;
+  hovercolor?: string;
 }
 
 export default function ClickToOpen({
@@ -29,9 +29,9 @@ export default function ClickToOpen({
   setShow,
   fontSize,
   color,
-  backgroundColor,
-  borderColor,
-  hoverColor,
+  backgroundcolor,
+  bordercolor,
+  hovercolor,
   opacity,
 }: ClickProps): ReactElement {
   const handleShow = () => setShow(true);
@@ -44,9 +44,9 @@ export default function ClickToOpen({
         fontSize={fontSize}
         text={text}
         color={color}
-        backgroundColor={backgroundColor}
-        borderColor={borderColor}
-        hoverColor={hoverColor}
+        backgroundcolor={backgroundcolor}
+        bordercolor={bordercolor}
+        hovercolor={hovercolor}
         opacity={opacity}
       ></PrettyButton>
       <MyModal form={form} show={show} setShow={setShow} title={title} />

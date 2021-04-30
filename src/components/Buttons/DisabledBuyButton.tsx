@@ -12,9 +12,9 @@ export default function DisabledFreeButton(): ReactElement {
           variant="danger"
           fontSize="30px"
           color="white"
-          backgroundColor="#800000"
-          borderColor="#800000"
-          hoverColor="#cc0000"
+          backgroundcolor="#800000"
+          bordercolor="#800000"
+          hovercolor="#cc0000"
           opacity="0.7"
           text={Constants.BUY_BUTTON_TEXT}
         ></PrettyButton>

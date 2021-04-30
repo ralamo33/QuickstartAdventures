@@ -9,10 +9,10 @@ interface ClickProps {
   text: string;
   fontSize: string;
   color: string;
-  backgroundColor: string;
-  borderColor: string;
+  backgroundcolor: string;
+  bordercolor: string;
   opacity?: string;
-  hoverColor?: string;
+  hovercolor?: string;
   onClick?: () => void;
 }
 
@@ -22,13 +22,13 @@ const MyButton = styled(Button)`
     display: block;
     font-size: ${(props: ClickProps) => props.fontSize};
     color: ${(props: ClickProps) => props.color};
-    background-color: ${(props: ClickProps) => props.backgroundColor};
-    border-color: ${(props: ClickProps) => props.borderColor};
+    background-color: ${(props: ClickProps) => props.backgroundcolor};
+    border-color: ${(props: ClickProps) => props.bordercolor};
     opacity: ${(props: ClickProps) => props.opacity};
   }
 
   &:hover {
-    background-color: ${(props: ClickProps) => props.hoverColor};
+    background-color: ${(props: ClickProps) => props.hovercolor};
   }
 `;
 
@@ -37,9 +37,9 @@ export default function ClickToOpen({
   text,
   fontSize,
   color,
-  backgroundColor,
-  borderColor,
-  hoverColor,
+  backgroundcolor,
+  bordercolor,
+  hovercolor,
   opacity,
   onClick,
 }: ClickProps): ReactElement {
@@ -48,9 +48,9 @@ export default function ClickToOpen({
       variant={variant}
       fontSize={fontSize}
       color={color}
-      backgroundcolor={backgroundColor}
-      bordercolor={borderColor}
-      hovercolor={hoverColor}
+      backgroundcolor={backgroundcolor}
+      bordercolor={bordercolor}
+      hovercolor={hovercolor}
       opacity={opacity}
       onClick={onClick}
     >

@@ -11,9 +11,9 @@ export default function SubscribeButton(): ReactElement {
       variant="info"
       fontSize="30px"
       color="white"
-      backgroundColor="#0088cc"
-      borderColor="#0088cc"
-      hoverColor="#00aaff"
+      backgroundcolor="#0088cc"
+      bordercolor="#0088cc"
+      hovercolor="#00aaff"
       show={show}
       setShow={setShow}
       text={Constants.SUBSCRIPE_BUTTON_TEXT}
