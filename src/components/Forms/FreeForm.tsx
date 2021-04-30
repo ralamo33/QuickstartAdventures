@@ -17,7 +17,7 @@ interface FormValues {
   test: string;
 }
 
-export default function BuyForm({ close }: FormProps): ReactElement {
+export default function FreeForm({ close }: FormProps): ReactElement {
   const [question, answer] = randomEquationAndAnswer();
 
   const ValidationSchema = Yup.object().shape({

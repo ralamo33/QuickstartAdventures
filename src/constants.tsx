@@ -34,7 +34,7 @@ export const SUBSCRIBE_MODAL_TITLE = 'Where shall we send the ravens?';
 const API_URL = 'https://9oeq1w1vcf.execute-api.us-east-1.amazonaws.com/prod';
 
 export const BUY_TOPIC_ARN = 'arn:aws:sns:us-east-1:451835830300:Playtest';
-export const FREE_TOPIC_ARN = 'arn:aws:sns:us-east-1:451835830300:Contest';
+export const FREE_TOPIC_ARN = 'arn:aws:sns:us-east-1:451835830300:Playtest';
 export const SUBSCRIBE_TOPIC_ARN =
   'arn:aws:sns:us-east-1:451835830300:Subscribe';
 export const CREATE_MONSTER_TOPIC_ARN =
