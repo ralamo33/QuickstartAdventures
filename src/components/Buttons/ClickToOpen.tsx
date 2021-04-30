@@ -15,6 +15,11 @@ interface ClickProps {
   form: ReactNode;
 }
 
+const MyButton = styled(Button)`
+  margin: auto;
+  display: block;
+`;
+
 export default function ClickToOpen({
   size,
   variant,
@@ -25,11 +30,6 @@ export default function ClickToOpen({
   setShow,
 }: ClickProps): ReactElement {
   const handleShow = () => setShow(true);
-
-  const MyButton = styled(Button)`
-    margin: auto;
-    display: block;
-  `;
 
   return (
     <div>

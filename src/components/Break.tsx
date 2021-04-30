@@ -3,13 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
 
 interface Props {
-  height: number;
+  height: string;
 }
 
-export default function Break({ height }: Props): ReactElement {
-  const MyBreak = styled.div`
-    height: ${height}rem;
-  `;
+const MyBreak = styled.div`
+  height: ${(props: Props) => props.height || '5vh'};
+`;
 
-  return <MyBreak />;
+export default function Break({ height }: Props): ReactElement {
+  return <MyBreak height={height} />;
 }

@@ -90,7 +90,6 @@ export default function Home(): ReactElement {
           </Col>
         </Row>
       </Container>
-      <Break height={5} />
     </Layout>
   );
 }

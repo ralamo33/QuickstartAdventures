@@ -1,8 +1,8 @@
 import React, { ReactElement } from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import axios from 'axios';
 import * as Constants from '../../constants';
+import { post } from '../../utils';
 import Email from '../FormFields/Email';
 import CheckHuman from '../FormFields/CheckHuman';
 import FormFooter from '../FormFields/FormFooter';
@@ -10,6 +10,11 @@ import { randomEquationAndAnswer } from '../../utils';
 
 interface FormProps {
   close: () => void;
+}
+
+interface FormValues {
+  email: string;
+  test: string;
 }
 
 export default function SubscribeForm({ close }: FormProps): ReactElement {
@@ -31,19 +36,9 @@ export default function SubscribeForm({ close }: FormProps): ReactElement {
           test: '',
         }}
         validationSchema={ValidationSchema}
-        onSubmit={async (values) => {
-          const apiUrl = `${Constants.SUBSCRIBE_API}&Message=${values.email}`;
-          axios
-            .post(
-              apiUrl,
-              {},
-              {
-                headers: { 'x-api-key': Constants.SUBSCRIBE_API_KEY },
-              }
-            )
-            .catch((error) => alert(error))
-            .then(close);
-        }}
+        onSubmit={async (values: FormValues) =>
+          post(`${Constants.SUBSCRIBE_API}&Message=${values.email}`).then(close)
+        }
       >
         <Form>
           <Email />

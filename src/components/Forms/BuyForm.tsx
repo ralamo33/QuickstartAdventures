@@ -1,12 +1,11 @@
 import React, { ReactElement } from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import axios from 'axios';
 import * as Constants from '../../constants';
 import Email from '../FormFields/Email';
 import CheckHuman from '../FormFields/CheckHuman';
 import FormFooter from '../FormFields/FormFooter';
-import { randomEquationAndAnswer } from '../../utils';
+import { randomEquationAndAnswer, post } from '../../utils';
 
 interface FormProps {
   close: () => void;
@@ -32,17 +31,7 @@ export default function BuyForm({ close }: FormProps): ReactElement {
         }}
         validationSchema={ValidationSchema}
         onSubmit={async (values) => {
-          const apiUrl = `${Constants.BUY_API}&Message=${values.email}`;
-          axios
-            .post(
-              apiUrl,
-              {},
-              {
-                headers: { 'x-api-key': Constants.BUY_API_KEY },
-              }
-            )
-            .catch((error) => alert(error))
-            .then(close);
+          post(`${Constants.BUY_API}&Message=${values.email}`).then(close);
         }}
       >
         <Form>

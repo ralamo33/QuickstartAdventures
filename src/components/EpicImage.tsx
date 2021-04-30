@@ -6,12 +6,12 @@ interface EpicProps {
   src: string;
 }
 
-export default function EpicImage({ src }: EpicProps): ReactElement {
-  const StyledImage = styled.img`
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  `;
+const StyledImage = styled.img`
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+`;
 
+export default function EpicImage({ src }: EpicProps): ReactElement {
   return <StyledImage src={src} alt="Failed to load" />;
 }
