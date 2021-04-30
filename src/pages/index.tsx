@@ -77,7 +77,7 @@ export default function Home(): ReactElement {
       <Counter></Counter>
       <Subtitle>It Begins</Subtitle>
       <EvenSpacingRow items={buttons} />
-      <Container fluid>
+      {/* <Container fluid>
         <Row>
           <Col lg="4" md="6" sm="12">
             {buyCard}
@@ -89,7 +89,7 @@ export default function Home(): ReactElement {
             {subscribeCard}
           </Col>
         </Row>
-      </Container>
+      </Container> */}
     </Layout>
   );
 }

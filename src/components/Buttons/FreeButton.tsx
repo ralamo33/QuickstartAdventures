@@ -1,16 +1,28 @@
 import React, { ReactElement, useState } from 'react';
+import styled from 'styled-components';
 import ClickToOpen from './ClickToOpen';
-import buttonClasses from './ClickToOpen.module.css';
 import * as Constants from '../../constants';
 import FreeForm from '../Forms/FreeForm';
+import { string } from 'yup/lib/locale';
 
-export default function ContestButton(): ReactElement {
+interface buttonProps {
+  fontSize: string;
+  color: string;
+  backgroundColor: string;
+  borderColor: string;
+}
+
+export default function FreeButton(): ReactElement {
   const [show, setShow] = useState(false);
 
   return (
     <ClickToOpen
       variant="warning"
-      size={buttonClasses.relativeYellow}
+      fontSize="30px"
+      color="black"
+      backgroundcolor="#ff9900"
+      bordercolor="#ff9900"
+      hovercolor="#ffdd00"
       show={show}
       setShow={setShow}
       text={Constants.FREE_BUTTON_TEXT}
