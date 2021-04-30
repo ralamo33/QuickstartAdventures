@@ -1,6 +1,5 @@
 import React, { ReactElement, useState } from 'react';
 import ClickToOpen from './ClickToOpen';
-import buttonClasses from './ClickToOpen.module.css';
 import * as Constants from '../../constants';
 import SubscribeForm from '../Forms/SubscribeForm';
 
@@ -10,7 +9,11 @@ export default function SubscribeButton(): ReactElement {
   const subscribeButton = (
     <ClickToOpen
       variant="info"
-      size={buttonClasses.relativeBlue}
+      fontSize="30px"
+      color="white"
+      backgroundcolor="#0088cc"
+      bordercolor="#0088cc"
+      hovercolor="#00aaff"
       show={show}
       setShow={setShow}
       text={Constants.SUBSCRIPE_BUTTON_TEXT}
