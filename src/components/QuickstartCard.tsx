@@ -7,57 +7,62 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 interface CardProps {
   header: string;
   border: string;
+  background: string;
   color: string;
   text: string[];
   button: ReactNode;
 }
 
+const MyCard = styled(Card)`
+  margin: 10px 0px;
+  border: ${(props: CardProps) => props.border};
+`;
+
+const MyHeader = styled(Card.Header)`
+  text-align: center;
+  font-size: 32px;
+  color: ${(props: CardProps) => props.color};
+  background: ${(props: CardProps) => props.background};
+`;
+
+const MyBody = styled(Card.Body)`
+  min-height: 65vh;
+`;
+
+const MyList = styled.ul`
+  margin-left: 6px;
+  padding: 0;
+`;
+
+const MyText = styled.li`
+  font-size: 24px;
+`;
+
 export default function QuickstartCard({
   border,
+  background,
   color,
   header,
   text,
   button,
 }: CardProps): ReactElement {
-  const MyCard = styled(Card)`
-    margin: 10px 0px;
-  `;
-
-  const MyHeader = styled(Card.Header)`
-    text-align: center;
-    font-size: 32px;
-  `;
-
-  const MyBody = styled(Card.Body)`
-    min-height: 65vh;
-  `;
-
-  const MyList = styled.ul`
-    margin-left: 6px;
-    padding: 0;
-  `;
-
-  const MyText = styled.li`
-    font-size: 24px;
-  `;
-
   const TextList = text.map((txt, idx) => (
     <div key={txt + idx.toString()}>
       <MyText>{txt}</MyText>
-      <Break height={2} />
+      <Break height="2vh" />
     </div>
   ));
 
   return (
-    <MyCard className={border}>
-      <MyHeader className={color}>{header}</MyHeader>
+    <MyCard border={border}>
+      <MyHeader color={color} background={background}>
+        {header}
+      </MyHeader>
       <MyBody>
-        <Card.Text>
-          <MyList>{TextList}</MyList>
-        </Card.Text>
+        <MyList>{TextList}</MyList>
       </MyBody>
       {button}
-      <Break height={3} />
+      <Break height="3vh" />
     </MyCard>
   );
 }

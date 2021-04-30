@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import Layout from '../layouts/layout';
-import Break from '../components/Break';
 import * as Constants from '../constants';
-import classes from '../components/QuickstartCard.module.css';
 import SubscribeButton from '../components/Buttons/SubscribeButton';
 import QuickstartCard from '../components/QuickstartCard';
 import FreeButton from '../components/Buttons/FreeButton';
@@ -37,9 +35,10 @@ const freeButton = <FreeButton key="3" />;
 
 const subscribeCard = (
   <QuickstartCard
-    color={classes.blue}
+    color="white"
     header="Future Features"
-    border={classes.blueBorder}
+    border="4px solid #0088cc"
+    background="#0088cc"
     text={Constants.SUBSCRIBE_CARD_TEXT}
     button={subscribeButton}
   />
@@ -47,9 +46,10 @@ const subscribeCard = (
 
 const buyCard = (
   <QuickstartCard
-    color={classes.red}
+    color="white"
     header="Roleplay Revolution"
-    border={classes.redBorder}
+    border="4px solid #800000"
+    background="#800000"
     text={Constants.BUY_CARD_TEXT}
     button={buyButton}
   />
@@ -57,9 +57,10 @@ const buyCard = (
 
 const freeCard = (
   <QuickstartCard
-    color={classes.yellow}
+    color="black"
     header="Our Principles"
-    border={classes.yellowBorder}
+    border="4px solid orange"
+    background="orange"
     text={Constants.FREE_CARD_TEXT}
     button={freeButton}
   />
