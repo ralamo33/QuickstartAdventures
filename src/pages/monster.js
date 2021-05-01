@@ -5,7 +5,7 @@ import * as Constants from '../constants';
 import Layout from '../layouts/layout';
 import EpicImage from '../components/EpicImage';
 
-var myCredentials = { accessKeyId: 'message sean', secretAccessKey: 'message sean' }; 
+var myCredentials = { accessKeyId: 'message sean or see dashboard', secretAccessKey: '< see' }; 
 var AWS = require("aws-sdk");
 let myConfig = new AWS.Config(); 
 myConfig.update({region: 'us-east-1'});
@@ -92,9 +92,9 @@ export default class Monster extends React.Component {
   }
 
   postToAPI = () => {
-    console.log("posting to API");
-    apiUrl = `${Constants.MONSTER_API}&Message=${this.state.name}_${this.state.about}
+    let apiUrl = `${Constants.MONSTER_API}&Message=${this.state.name}_${this.state.about}
     &TopicArn=${Constants.MONSTER_TOPIC_ARN}`;
+    console.log("posting to API 2");
     axios.post(
       apiUrl, {}, {
         headers: { 'x-api-key': Constants.MONSTER_API_KEY },
