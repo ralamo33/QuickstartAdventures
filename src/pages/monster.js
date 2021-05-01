@@ -5,7 +5,7 @@ import * as Constants from '../constants';
 import Layout from '../layouts/layout';
 import EpicImage from '../components/EpicImage';
 
-var myCredentials = { accessKeyId: '...', secretAccessKey: '...' }; 
+var myCredentials = { accessKeyId: 'message sean', secretAccessKey: 'message sean' }; 
 var AWS = require("aws-sdk");
 let myConfig = new AWS.Config(); 
 myConfig.update({region: 'us-east-1'});
@@ -67,32 +67,42 @@ export default class Monster extends React.Component {
 
   submit = () => {
     console.log("submiting");
-    if (this.state.fileName == '' || this.state.name == '' || this.state.about == '') {
-      console.log("alert 1");
+    let completeInformation = (this.state.fileName != '' && this.state.name != '' && this.state.about != '');
+    if (!completeInformation) {
       alert("empty form or failed to upload image");
       return; 
-    } 
+    }
+    this.submitImage(); 
+    this.postToAPI(); 
+  };
+
+  submitImage = () => {
+    console.log("uploading image");
+    var params = {
+      Body: fileContent, 
+      Bucket: "monster-images", 
+      Key: this.state.fileName, 
+      Tagging: `${this.state.fileName}=${this.state.name}`
+      }
+    s3.putObject(params, function(err, data) {
+      if (err) console.log(err, err.stack);
+      else console.log(data);
+    });
+    console.log("done uploading image");
+  }
+
+  postToAPI = () => {
+    console.log("posting to API");
     apiUrl = `${Constants.MONSTER_API}&Message=${this.state.name}_${this.state.about}
     &TopicArn=${Constants.MONSTER_TOPIC_ARN}`;
     axios.post(
       apiUrl, {}, {
         headers: { 'x-api-key': Constants.MONSTER_API_KEY },
-      },
+      }
     ).catch((error) => alert(error))
-      .then(alert('Monster Submitted'))
-      .catch((error) => alert(error));
-      // new 
-      var params = {
-        Body: fileContent, 
-        Bucket: "monster-images", 
-        Key: this.state.fileName, 
-        Tagging: `${this.state.fileName}=${this.state.name}`
-       }
-      s3.putObject(params, function(err, data) {
-        if (err) console.log(err, err.stack);
-        else console.log(data);
-      });
-    };
+      .then(alert("Monster Submitted"));
+    console.log("done posting to API");
+  }
 
   setName = (event) => {
     this.setState({name: event.target.value});
