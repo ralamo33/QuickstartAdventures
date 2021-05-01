@@ -5,6 +5,14 @@ import * as Constants from '../constants';
 import Layout from '../layouts/layout';
 import EpicImage from '../components/EpicImage';
 
+var myCredentials = { accessKeyId: '...', secretAccessKey: '...' }; 
+var AWS = require("aws-sdk");
+let myConfig = new AWS.Config(); 
+myConfig.update({region: 'us-east-1'});
+myConfig.update({apiVersion: '2006-03-01'});
+myConfig.update({credentials: myCredentials});
+let s3 = new AWS.S3(myConfig);
+
 const Form = styled.form`
   width: 100%;
   position: absolute;
@@ -38,28 +46,34 @@ const NameInput = styled.input`
 `;
 
 let fileReader;
+let fileContent;
 
 const onLoadend = (e) => {
   console.log("getting content");
-  const content = fileReader.result;
-  console.log("content:")
-  console.log(content);
+  const fileContent = fileReader.result;
+  console.log("file content:")
+  console.log(fileContent);
 }
 
 export default class Monster extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {name: '', about: ''};
+    this.state = {name: '', about: '', fileName: ''};
     this.setName = this.setName.bind(this);
     this.setAbout = this.setAbout.bind(this);
     this.submit = this.submit.bind(this);
   }
 
-  submit = (event) => {
-    event.preventDefault();
+  submit = () => {
+    console.log("submiting");
+    if (this.state.fileName == '' || this.state.name == '' || this.state.about == '') {
+      console.log("alert 1");
+      alert("empty form or failed to upload image");
+      return; 
+    } 
     apiUrl = `${Constants.MONSTER_API}&Message=${this.state.name}_${this.state.about}
-    &TopicArn=${Constants.MONSTER_TOPIC_ARN}&UploadFile=${fileReader}`;
+    &TopicArn=${Constants.MONSTER_TOPIC_ARN}`;
     axios.post(
       apiUrl, {}, {
         headers: { 'x-api-key': Constants.MONSTER_API_KEY },
@@ -67,7 +81,18 @@ export default class Monster extends React.Component {
     ).catch((error) => alert(error))
       .then(alert('Monster Submitted'))
       .catch((error) => alert(error));
-  };
+      // new 
+      var params = {
+        Body: fileContent, 
+        Bucket: "monster-images", 
+        Key: this.state.fileName, 
+        Tagging: `${this.state.fileName}=${this.state.name}`
+       }
+      s3.putObject(params, function(err, data) {
+        if (err) console.log(err, err.stack);
+        else console.log(data);
+      });
+    };
 
   setName = (event) => {
     this.setState({name: event.target.value});
@@ -82,6 +107,7 @@ export default class Monster extends React.Component {
     fileReader = new FileReader();
     fileReader.onload = onLoadend;
     fileReader.readAsArrayBuffer(file);
+    this.state.fileName = file.name; 
     console.log("done");
   };
 
