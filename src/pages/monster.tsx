@@ -2,10 +2,11 @@ import React, { ReactElement, useState } from 'react';
 import styled from 'styled-components';
 import * as Constants from '../constants';
 import Layout from '../layouts/layout';
-import MonsterName from '../components/Forms/MonsterName';
+import MonsterForm from '../components/Forms/MonsterForm/MonsterForm';
 import Title from '../components/Title';
-import Break from '../components/Break';
-import { Button, Container, Col, Row, Jumbotron } from 'react-bootstrap';
+// import {FormStepper from '../components/Forms/FormUtils';
+import Tutorial from '../components/Forms/Tutorial';
+import { Container, Col, Row, Jumbotron } from 'react-bootstrap';
 
 const MonsterBackground = styled.div`
   background-image: url(${`${Constants.BUCKET_URL}Monster.jpg`});
@@ -40,8 +41,7 @@ export default function Monster(): ReactElement {
       <MonsterBackground>
         <Monstertron>
           <Title text="Monster Maker" size="10vmin"></Title>
-          <MonsterName></MonsterName>
-          <MonsterName></MonsterName>
+          <MonsterForm />
         </Monstertron>
       </MonsterBackground>
     </Layout>
