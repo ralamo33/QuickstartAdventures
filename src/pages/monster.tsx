@@ -1,28 +1,49 @@
 import React, { ReactElement, useState } from 'react';
-import axios from 'axios';
 import styled from 'styled-components';
 import * as Constants from '../constants';
 import Layout from '../layouts/layout';
+import MonsterName from '../components/Forms/MonsterName';
 import Title from '../components/Title';
-import EpicImage from '../components/EpicImage';
-import MonsterForm from '../components/Forms/CreatorForms/MonsterForm';
+import Break from '../components/Break';
+import { Button, Container, Col, Row, Jumbotron } from 'react-bootstrap';
 
-const Form = styled.form`
-  width: 100%;
-  position: absolute;
-  text-align: center;
+const MonsterBackground = styled.div`
+  background-image: url(${`${Constants.BUCKET_URL}Monster.jpg`});
+  background-color: ${Constants.RED};
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  justify-content: center;
+  position: relative;
 `;
 
-const Relative = styled.div`
-  position: relative;
+const Monstertron = styled(Jumbotron)`
+  position: center;
+  left: 10%;
+  display: block
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  width: 80vw;
+  // background-color: ${Constants.ORANGE};
+  background-color: #cccccc;
+  color: black;
+  opacity: 0.95;
 `;
 
 export default function Monster(): ReactElement {
   return (
     <Layout>
-      <EpicImage src={`${Constants.BUCKET_URL}Monster.jpg`} />
-      <Title text="Making Monsters" color="black"></Title>
-      <MonsterForm></MonsterForm>
+      <MonsterBackground>
+        <Monstertron>
+          <Title text="Monster Maker" size="10vmin"></Title>
+          <MonsterName></MonsterName>
+          <MonsterName></MonsterName>
+        </Monstertron>
+      </MonsterBackground>
     </Layout>
   );
 }
