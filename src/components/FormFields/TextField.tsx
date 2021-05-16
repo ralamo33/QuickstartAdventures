@@ -7,12 +7,16 @@ interface MonsterProps {
   id: string;
   name: string;
   placeholder: string;
+  label: string;
+  error: string;
 }
 
 export default function TextField({
   id,
   name,
   placeholder,
+  label,
+  error,
 }: MonsterProps): ReactElement {
   const MyLabel = styled.p`
     font-size: 20px;
@@ -26,7 +30,7 @@ export default function TextField({
 
   return (
     <div>
-      <MyLabel>Monster Name</MyLabel>
+      <MyLabel>{label}</MyLabel>
       <Row>
         <Col>
           <FullField id={id} name={name} placeholder={placeholder} />

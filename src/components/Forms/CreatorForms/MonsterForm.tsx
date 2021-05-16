@@ -2,8 +2,8 @@ import React, { ReactElement } from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
-import * as Constants from '../../constants';
-import TextField from '../FormFields/TextField';
+import * as Constants from '../../../constants';
+import TextField from '../../FormFields/TextField';
 import { Button } from 'react-bootstrap';
 
 export default function MonsterForm(): ReactElement {

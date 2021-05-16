@@ -1,35 +1,49 @@
 import React, { ReactElement, useState } from 'react';
-import axios from 'axios';
 import styled from 'styled-components';
 import * as Constants from '../constants';
 import Layout from '../layouts/layout';
-import EpicImage from '../components/EpicImage';
-import MonsterForm from '../components/Forms/MonsterForm';
+import MonsterForm from '../components/Forms/MonsterForm/MonsterForm';
+import Title from '../components/Title';
+// import {FormStepper from '../components/Forms/FormUtils';
+import Tutorial from '../components/Forms/Tutorial';
+import { Container, Col, Row, Jumbotron } from 'react-bootstrap';
 
-const Form = styled.form`
-  width: 100%;
-  position: absolute;
-  text-align: center;
-`;
-
-const Relative = styled.div`
+const MonsterBackground = styled.div`
+  background-image: url(${`${Constants.BUCKET_URL}Monster.jpg`});
+  background-color: ${Constants.RED};
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  justify-content: center;
   position: relative;
 `;
 
-const Title = styled.p`
-  text-align: center;
-  font-size: 5vw;
-  color: #ccffff;
+const Monstertron = styled(Jumbotron)`
+  position: center;
+  left: 10%;
+  display: block
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  width: 80vw;
+  // background-color: ${Constants.ORANGE};
+  background-color: #cccccc;
+  color: black;
+  opacity: 0.95;
 `;
 
 export default function Monster(): ReactElement {
   return (
     <Layout>
-      <Title>Create a Monster</Title>
-      <Relative>
-        <MonsterForm></MonsterForm>
-        <EpicImage src="https://pop-verse.com/wp-content/uploads/2015/05/Abzan-Houses-MtG-Art-620x330.jpg" />
-      </Relative>
+      <MonsterBackground>
+        <Monstertron>
+          <Title text="Monster Maker" size="10vmin"></Title>
+          <MonsterForm />
+        </Monstertron>
+      </MonsterBackground>
     </Layout>
   );
 }

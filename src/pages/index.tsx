@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import Layout from '../layouts/layout';
+import Title from '../components/Title';
 import * as Constants from '../constants';
 import SubscribeButton from '../components/Buttons/SubscribeButton';
 import QuickstartCard from '../components/QuickstartCard';
@@ -21,13 +22,6 @@ const Subtitle = styled.div`
   font-family: belmont;
 `;
 
-const Title = styled.h1`
-  color: #800000;
-  font-family: belmont;
-  text-align: center;
-  font-size: 15vmin;
-  width: 100%;
-`;
 
 const subscribeButton = <SubscribeButton key="1" />;
 const buyButton = <DisabledBuyButton key="2" />;

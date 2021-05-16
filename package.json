@@ -15,11 +15,13 @@
     "deploy": "npm run build && gatsby-plugin-s3 deploy"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
     "aws-sdk": "^2.787.0",
     "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.12.0",
     "bootstrap": "^4.5.3",
     "formik": "^2.2.6",
+    "formik-material-ui": "^3.0.1",
     "gatsby": "^2.31.1",
     "gatsby-plugin-prettier-eslint": "^1.0.4",
     "gatsby-plugin-s3": "^0.3.8",
@@ -30,6 +32,7 @@
     "react-bootstrap": "^1.4.0",
     "react-countdown-circle-timer": "^2.5.1",
     "react-dom": "^16.12.0",
+    "react-form-stepper": "^1.4.1",
     "styled-components": "^5.2.1",
     "typeface-medievalsharp": "^1.1.13",
     "typescript": "^4.1.3",
