@@ -68,7 +68,7 @@ export default function Home(): ReactElement {
   return (
     <Layout>
       <EpicImage src={`${Constants.BUCKET_URL}Tavern.jpg`} />
-      <Title>{title}</Title>
+      <Title text={title}></Title>
       <Counter></Counter>
       <Subtitle>It Begins</Subtitle>
       <EvenSpacingRow items={buttons} />
