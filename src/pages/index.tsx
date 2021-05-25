@@ -12,6 +12,7 @@ import EpicImage from '../components/EpicImage';
 import Counter from '../components/Counter';
 import DisabledBuyButton from '../components/Buttons/DisabledBuyButton';
 import EvenSpacingRow from '../layouts/EvenSpacingRow';
+import Landing from './landing';
 
 const Subtitle = styled.div`
   color: #000080;
@@ -21,7 +22,6 @@ const Subtitle = styled.div`
   text-align: center;
   font-family: belmont;
 `;
-
 
 const subscribeButton = <SubscribeButton key="1" />;
 const buyButton = <DisabledBuyButton key="2" />;
@@ -66,25 +66,26 @@ export default function Home(): ReactElement {
   const buttons = [buyButton, freeButton, subscribeButton];
 
   return (
-    <Layout>
-      <EpicImage src={`${Constants.BUCKET_URL}Tavern.jpg`} />
-      <Title text={title}></Title>
-      <Counter></Counter>
-      <Subtitle>It Begins</Subtitle>
-      <EvenSpacingRow items={buttons} />
-      <Container fluid>
-        <Row>
-          <Col lg="4" md="6" sm="12">
-            {buyCard}
-          </Col>
-          <Col lg="4" md="6" sm="12">
-            {freeCard}
-          </Col>
-          <Col lg="4" md="6" sm="12">
-            {subscribeCard}
-          </Col>
-        </Row>
-      </Container>
-    </Layout>
+    <Landing></Landing>
+    // <Layout>
+    //   <EpicImage src={`${Constants.BUCKET_URL}Tavern.jpg`} />
+    //   <Title text={title}></Title>
+    //   <Counter></Counter>
+    //   <Subtitle>It Begins</Subtitle>
+    //   <EvenSpacingRow items={buttons} />
+    //   <Container fluid>
+    //     <Row>
+    //       <Col lg="4" md="6" sm="12">
+    //         {buyCard}
+    //       </Col>
+    //       <Col lg="4" md="6" sm="12">
+    //         {freeCard}
+    //       </Col>
+    //       <Col lg="4" md="6" sm="12">
+    //         {subscribeCard}
+    //       </Col>
+    //     </Row>
+    //   </Container>
+    // </Layout>
   );
 }
