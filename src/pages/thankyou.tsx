@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import styled from 'styled-components';
 import * as Constants from '../constants';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -8,9 +8,9 @@ import LandingForm from '../components/Forms/LandingForm';
 
 const Header = styled.div`
   color: ${Constants.RED};
-  max-width: 90vw;
+  font-size: 2.5vw;
+  max-width: 80vw;
   margin: auto;
-  font-size: 3.5vmax;
   font-family: newsreader;
   font-weight: 500;
 `;
@@ -19,42 +19,34 @@ const Bold = styled.span`
   font-weight: 700;
   text-align: center;
   font-family: belmont;
-  font-size: 4vmax;
+  font-size: 2.6vw;
 `;
 
 const Subheader = styled.div`
-  color: black;
-  font-size: 3vmax;
+  color: #000080;
+  font-size: 1.3rem;
   font-family: newsreader;
 `;
 
-const StyledContainer = styled(Container)``;
+const StyledContainer = styled(Container)`
+  height: 85vh;
+`;
 
 const StyledImage = styled.img`
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 75%;
 `;
 
 const StyledList = styled.ul`
-  font-size: 2.5vmax;
+  font-size: 1.4rem;
   font-family: newsreader;
   font-weight: 475;
-  margin-bottom: 0;
 `;
 
 const BasicBold = styled.span`
   font-weight: 700;
-`;
-
-const BackImage = styled(Col)`
-  background-image: url('https://remember-the-ralamo-images.s3.amazonaws.com/StarterRules.jpg'),
-  background-color: black;
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-left: 5vw;
-  height: 40vh;
 `;
 
 const MyHeader = () => (
@@ -63,15 +55,22 @@ const MyHeader = () => (
   </Header>
 );
 
-export default function Landing(): ReactElement {
+export default function ThankYou(): ReactElement {
   const subheader =
     '20-page starter set includes basic rules, character materials PLUS a 2 hour mini adventure that will leave your friends hungry for more. A PDF copy will be instantly sent to your inbox.';
 
   return (
     <Layout>
-      <StyledContainer fluid>
+      <Break height="10vh"></Break>
+      <StyledContainer>
         <Row>
-          <Col xs="12" sm={{ span: 6, order: 'last' }}>
+          <Col>
+            <Break height="1vh"></Break>
+            <StyledImage
+              src={`${Constants.BUCKET_URL}Starter Set.jpg`}
+            ></StyledImage>
+          </Col>
+          <Col>
             <MyHeader></MyHeader>
             <StyledList>
               <li>
@@ -81,27 +80,13 @@ export default function Landing(): ReactElement {
               <li>Eliminate session 0 and get to the action instantly.</li>
               <li>Build meaningful experiences with new players.</li>
             </StyledList>
-          </Col>
-          <Col xs="12" sm={{ span: 6, order: 'first' }}>
-            <Break height="3vh"></Break>
-            <StyledImage
-              src={`${Constants.BUCKET_URL}StarterRules.jpg`}
-            ></StyledImage>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <Break height="1vh"></Break>
             <LandingForm></LandingForm>
-          </Col>
-        </Row>
-        <Break height="10vh"></Break>
-        <Row>
-          <Col>
+            <Break height="5vh"></Break>
             <Subheader>{subheader}</Subheader>
           </Col>
         </Row>
       </StyledContainer>
+      <Break height="10vh"></Break>
     </Layout>
   );
 }

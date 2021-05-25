@@ -39,11 +39,13 @@ export const SUBSCRIBE_TOPIC_ARN =
   'arn:aws:sns:us-east-1:451835830300:Subscribe';
 export const CREATE_MONSTER_TOPIC_ARN =
   'arn:aws:sns:us-east-1:451835830300:CreateMonster';
+export const LANDING_TOPIC_ARN = 'arn:aws:sns:us-east-1:451835830300:Landing';
 
 export const BUY_API = `${API_URL}/notify?TopicArn=${BUY_TOPIC_ARN}`;
 export const FREE_API = `${API_URL}/notify?TopicArn=${FREE_TOPIC_ARN}`;
 export const SUBSCRIBE_API = `${API_URL}/notify?TopicArn=${SUBSCRIBE_TOPIC_ARN}`;
 export const CREATE_MONSTER_API = `${API_URL}/notify?TopicArn=${CREATE_MONSTER_TOPIC_ARN}`;
+export const LANDING_API = `${API_URL}/notify?TopicArn=${LANDING_TOPIC_ARN}`;
 
 export const API_KEY = '3ILD8V8RHmg10Su7VXUl3JL9wvFOfnS7QZf26At7';
 export const BUY_API_KEY = '3ILD8V8RHmg10Su7VXUl3JL9wvFOfnS7QZf26At7';

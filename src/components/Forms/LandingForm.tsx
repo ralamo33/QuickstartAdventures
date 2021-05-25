@@ -1,36 +1,44 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
-import { Formik, Form } from 'formik';
+import { Formik, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import * as Constants from '../../constants';
 import { post } from '../../utils';
 import { Button } from 'react-bootstrap';
-import Email from '../FormFields/Email';
-import CheckHuman from '../FormFields/CheckHuman';
-import FormFooter from '../FormFields/FormFooter';
-import { randomEquationAndAnswer } from '../../utils';
-import { ErrorMessage, Field } from 'formik';
+import { Field } from 'formik';
+import { navigate } from 'gatsby';
 
 interface FormValues {
   email: string;
-  test: string;
+  customerName: string;
 }
 
 const FullField = styled(Field)`
   margin-bottom: 25px;
+  font-family: playfair;
+  font-weight: 600;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   width: 100%;
 `;
 
 const SubmitButton = styled(Button)`
+  display: block;
   width: 100%;
   font-family: belmont;
+  margin: auto;
+`;
+
+const StyledErrorMessage = styled(ErrorMessage)`
+  font-family: playfair;
+  font-weight: 600;
 `;
 
 export default function LandingForm(): ReactElement {
-
   const ValidationSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
-    name: Yup.string().required('Your name is required.'),
+    customerName: Yup.string().required('Your name is required.'),
   });
 
   return (
@@ -42,13 +50,27 @@ export default function LandingForm(): ReactElement {
         }}
         validationSchema={ValidationSchema}
         onSubmit={async (values: FormValues) =>
-          post(`${Constants.FREE_API}&Message=${values.email}`).then(close)
+          post(
+            `${Constants.LANDING_API}&Message=${values.customerName}_${values.email}`
+          ).then(() => navigate('/thankyou'))
         }
       >
         <Form>
-          <FullField id="customerName" name="customerName" placeholder="Full Name"></FullField>
-          <FullField id="email" name="email" placeholder="Email Address"></FullField>
-          <SubmitButton type="submit">free adventure</SubmitButton>
+          <FullField
+            id="customerName"
+            name="customerName"
+            placeholder="Full Name"
+          ></FullField>
+          <StyledErrorMessage name="customerName" />
+          <FullField
+            id="email"
+            name="email"
+            placeholder="Email Address"
+          ></FullField>
+          <StyledErrorMessage name="email" />
+          <SubmitButton variant="danger" type="submit">
+            free adventure
+          </SubmitButton>
         </Form>
       </Formik>
     </div>
