@@ -10,7 +10,7 @@ interface CardProps {
   background: string;
   color: string;
   text: string[];
-  button: ReactNode;
+  button?: ReactNode;
 }
 
 const MyCard = styled(Card)`

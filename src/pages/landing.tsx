@@ -28,7 +28,9 @@ const Subheader = styled.div`
   font-family: newsreader;
 `;
 
-const StyledContainer = styled(Container)``;
+const StyledContainer = styled(Container)`
+    background-image: linear-gradient(to right, #ddd, white);
+`;
 
 const Flex = styled.div`
   display: flex;

@@ -1,92 +1,79 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement } from 'react';
 import styled from 'styled-components';
-import * as Constants from '../constants';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import Layout from '../layouts/layout';
-import Break from '../components/Break';
-import LandingForm from '../components/Forms/LandingForm';
+import Title from '../components/Title';
+import * as Constants from '../constants';
+import SubscribeButton from '../components/Buttons/SubscribeButton';
+import QuickstartCard from '../components/QuickstartCard';
+import FreeButton from '../components/Buttons/FreeButton';
+import EpicImage from '../components/EpicImage';
+import Counter from '../components/Counter';
+import DisabledBuyButton from '../components/Buttons/DisabledBuyButton';
+import EvenSpacingRow from '../layouts/EvenSpacingRow';
 
-const Header = styled.div`
-  color: ${Constants.RED};
-  font-size: 2.5vw;
+const Subtitle = styled.div`
+  color: #000080;
+  font-size: 8vmin;
   max-width: 80vw;
   margin: auto;
-  font-family: newsreader;
-  font-weight: 500;
-`;
-
-const Bold = styled.span`
-  font-weight: 700;
   text-align: center;
   font-family: belmont;
-  font-size: 2.6vw;
 `;
 
-const Subheader = styled.div`
-  color: #000080;
-  font-size: 1.3rem;
-  font-family: newsreader;
-`;
 
-const StyledContainer = styled(Container)`
-  height: 85vh;
-`;
-
-const StyledImage = styled.img`
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 75%;
-`;
-
-const StyledList = styled.ul`
-  font-size: 1.4rem;
-  font-family: newsreader;
-  font-weight: 475;
-`;
-
-const BasicBold = styled.span`
-  font-weight: 700;
-`;
-
-const MyHeader = () => (
-  <Header>
-    <Bold>Never</Bold> struggle to find players again.
-  </Header>
+const subscribeCard = (
+  <QuickstartCard
+    color="white"
+    header="Future Features"
+    border="4px solid #0088cc"
+    background="#0088cc"
+    text={Constants.SUBSCRIBE_CARD_TEXT}
+  />
 );
 
-export default function ThankYou(): ReactElement {
-  const subheader =
-    '20-page starter set includes basic rules, character materials PLUS a 2 hour mini adventure that will leave your friends hungry for more. A PDF copy will be instantly sent to your inbox.';
+const buyCard = (
+  <QuickstartCard
+    color="white"
+    header="Roleplay Revolution"
+    border="4px solid #800000"
+    background="#800000"
+    text={Constants.BUY_CARD_TEXT}
+  />
+);
+
+const freeCard = (
+  <QuickstartCard
+    color="black"
+    header="Our Principles"
+    border="4px solid orange"
+    background="orange"
+    text={Constants.FREE_CARD_TEXT}
+  />
+);
+
+export default function Home(): ReactElement {
+  const title = 'Welcome to the Party';
 
   return (
     <Layout>
-      <Break height="10vh"></Break>
-      <StyledContainer>
+      <Title text={title} size="12vmin"></Title>
+      <EpicImage src={`${Constants.BUCKET_URL}Tavern.jpg`} />
+      <Subtitle>Thank You for Joining</Subtitle>
+      <Container fluid>
         <Row>
-          <Col>
-            <Break height="1vh"></Break>
-            <StyledImage
-              src={`${Constants.BUCKET_URL}Starter Set.jpg`}
-            ></StyledImage>
+          <Col lg="4" md="6" sm="12">
+            {buyCard}
           </Col>
-          <Col>
-            <MyHeader></MyHeader>
-            <StyledList>
-              <li>
-                A 2 hour RPG experience your friends will{' '}
-                <BasicBold>LOVE</BasicBold>.
-              </li>
-              <li>Eliminate session 0 and get to the action instantly.</li>
-              <li>Build meaningful experiences with new players.</li>
-            </StyledList>
-            <LandingForm></LandingForm>
-            <Break height="5vh"></Break>
-            <Subheader>{subheader}</Subheader>
+          <Col lg="4" md="6" sm="12">
+            {freeCard}
+          </Col>
+          <Col lg="4" md="6" sm="12">
+            {subscribeCard}
           </Col>
         </Row>
-      </StyledContainer>
-      <Break height="10vh"></Break>
+      </Container>
     </Layout>
   );
 }
