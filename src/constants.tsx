@@ -14,7 +14,7 @@ export const BUY_CARD_TEXT = [
   'Buy Now to recieve the full set of Power Cards.',
 ];
 export const SUBSCRIBE_CARD_TEXT = [
-  'Online Monster Maker: May',
+  'Online Monster Maker: June',
   'Share and rate Monsters: July',
   'Create, share and rate Homebrew Rules: September',
   'Subscribe to keep up with our improvements!',
