@@ -15,17 +15,13 @@ import EvenSpacingRow from '../layouts/EvenSpacingRow';
 
 const Subtitle = styled.div`
   color: #000080;
-  font-size: 13vmin;
+  font-size: 8vmin;
   max-width: 80vw;
   margin: auto;
   text-align: center;
   font-family: belmont;
 `;
 
-
-const subscribeButton = <SubscribeButton key="1" />;
-const buyButton = <DisabledBuyButton key="2" />;
-const freeButton = <FreeButton key="3" />;
 
 const subscribeCard = (
   <QuickstartCard
@@ -34,7 +30,6 @@ const subscribeCard = (
     border="4px solid #0088cc"
     background="#0088cc"
     text={Constants.SUBSCRIBE_CARD_TEXT}
-    button={subscribeButton}
   />
 );
 
@@ -45,7 +40,6 @@ const buyCard = (
     border="4px solid #800000"
     background="#800000"
     text={Constants.BUY_CARD_TEXT}
-    button={buyButton}
   />
 );
 
@@ -56,22 +50,17 @@ const freeCard = (
     border="4px solid orange"
     background="orange"
     text={Constants.FREE_CARD_TEXT}
-    button={freeButton}
   />
 );
 
 export default function Home(): ReactElement {
-  const title = 'Join the Revolution';
-
-  const buttons = [buyButton, freeButton, subscribeButton];
+  const title = 'Welcome to the Party';
 
   return (
     <Layout>
+      <Title text={title} size="12vmin"></Title>
       <EpicImage src={`${Constants.BUCKET_URL}Tavern.jpg`} />
-      <Title text={title}></Title>
-      <Counter></Counter>
-      <Subtitle>It Begins</Subtitle>
-      <EvenSpacingRow items={buttons} />
+      <Subtitle>Thank You for Joining</Subtitle>
       <Container fluid>
         <Row>
           <Col lg="4" md="6" sm="12">

@@ -18,6 +18,7 @@ export function randomEquationAndAnswer(): [string, number] {
  * @param apiUrl The url the api goes to.
  */
 export async function post(apiUrl: string): Promise<void> {
+  console.log(apiUrl);
   axios
     .post(
       apiUrl,
@@ -26,5 +27,6 @@ export async function post(apiUrl: string): Promise<void> {
         headers: { 'x-api-key': Constants.API_KEY },
       }
     )
-    .catch((error) => alert(error))
+    .then((response) => console.log(response))
+    .catch((error) => alert(error));
 }
