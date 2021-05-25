@@ -30,6 +30,12 @@ const Subheader = styled.div`
 
 const StyledContainer = styled(Container)``;
 
+const Flex = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const StyledImage = styled.img`
   display: block;
   margin-left: auto;
@@ -84,9 +90,11 @@ export default function Landing(): ReactElement {
           </Col>
           <Col xs="12" sm={{ span: 6, order: 'first' }}>
             <Break height="3vh"></Break>
-            <StyledImage
-              src={`${Constants.BUCKET_URL}StarterRules.jpg`}
-            ></StyledImage>
+            <Flex>
+              <StyledImage
+                src={`${Constants.BUCKET_URL}StarterRules.jpg`}
+              ></StyledImage>
+            </Flex>
           </Col>
         </Row>
         <Row>
