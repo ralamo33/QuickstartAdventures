@@ -37,7 +37,9 @@ export default function FreeForm({ close }: FormProps): ReactElement {
         }}
         validationSchema={ValidationSchema}
         onSubmit={async (values: FormValues) =>
-          post(`${Constants.FREE_API}&Message=${values.email}`).then(close)
+          post(
+            `${Constants.LANDING_API}&Message=John Doe_${values.email}`
+          ).then(close)
         }
       >
         <Form>
