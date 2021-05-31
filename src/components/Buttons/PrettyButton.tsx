@@ -32,7 +32,7 @@ const MyButton = styled(Button)`
   }
 `;
 
-export default function ClickToOpen({
+export default function PrettyButton({
   variant,
   text,
   fontSize,

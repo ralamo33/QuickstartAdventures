@@ -6,7 +6,7 @@ import * as Constants from './constants';
  * @return {[string, number]} equation as a string and the answer as a number
  */
 export function randomEquationAndAnswer(): [string, number] {
-  const randNum1 = Math.floor(Math.random() * 10)
+  const randNum1 = Math.floor(Math.random() * 10);
   const randNum2 = Math.floor(Math.random() * 10);
   const answer = randNum1 + randNum2;
   const equation = `${randNum1.toString()} + ${randNum2.toString()} = `;

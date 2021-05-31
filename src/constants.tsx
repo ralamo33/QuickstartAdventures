@@ -4,20 +4,24 @@ export const BUCKET_URL =
 export const SUBTITLE = 'Crowdstart Countdown';
 
 export const BUY_BUTTON_TEXT = 'Buy Now';
-export const FREE_BUTTON_TEXT = 'Claim Free Tier';
+export const FREE_BUTTON_TEXT = 'Free Adventure';
 export const SUBSCRIPE_BUTTON_TEXT = 'Subscribe';
 
 export const BUY_CARD_TEXT = [
-  'A fantasy TTRPG you can start in 10 minutes.',
-  'Grow your party with a roleplaying game designed for newcomers.',
-  'Core Rules, Character Sheet, and Spellbook are free.',
-  'Buy Now to recieve the full set of Power Cards.',
+  'Never struggle to find players again. This TTRPG is designed to hook newcomers.',
+  'Get started easily. This game is designed for simplicity.',
+  'Create lasting memories with unique characters. 4,000 character possibilities by level 4.',
+  'The paid version is coming soon. I refuse to release a rushed product.',
 ];
 export const SUBSCRIBE_CARD_TEXT = [
-  'Online Monster Maker: June',
-  'Share and rate Monsters: July',
-  'Create, share and rate Homebrew Rules: September',
-  'Subscribe to keep up with our improvements!',
+  'Follow me on Instagram and subscribe to our email list.',
+  "Have a question? Comment in my most recent post! I'm obsessive about responding to the commuity.",
+  'Send me a picture or video of your sessions. Lets get Instafamous together!',
+];
+export const STARTER_CARD_TEXT = [
+  'Convert your friends into RPG fanatics with a 2 hour roleplay experience.',
+  'A super simple ruleset you can easily explain.',
+  'Everything you need to share your love of roleplaying games.',
 ];
 export const FREE_CARD_TEXT = [
   'Intuitive and concise ruleset.',
@@ -27,9 +31,9 @@ export const FREE_CARD_TEXT = [
   'Thousands of character possbilities.',
 ];
 
-export const BUY_MODAL_TITLE = 'Your Friends Will Want to Play';
-export const FREE_MODAL_TITLE = 'Everything you need to play with friends!';
-export const SUBSCRIBE_MODAL_TITLE = 'Where shall we send the ravens?';
+export const BUY_MODAL_TITLE = 'Your friends will Love it!';
+export const FREE_MODAL_TITLE = 'Convert the nonbelievers!';
+export const SUBSCRIBE_MODAL_TITLE = 'Never miss a thing.';
 
 const API_URL = 'https://9oeq1w1vcf.execute-api.us-east-1.amazonaws.com/prod';
 
