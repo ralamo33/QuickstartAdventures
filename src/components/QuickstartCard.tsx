@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
-import { Card } from 'react-bootstrap';
+import { Button, Card, Container, Row, Col } from 'react-bootstrap';
 import Break from './Break';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -10,6 +10,7 @@ interface CardProps {
   background: string;
   color: string;
   text: string[];
+  social: boolean;
   button?: ReactNode;
 }
 
@@ -38,6 +39,37 @@ const MyText = styled.li`
   font-size: 24px;
 `;
 
+const InstaText = styled(Button)`
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d
+  );
+`;
+
+const onClick = () => {
+  window.location.href = 'http://www.instagram.com/roleplayrev';
+};
+
+const InstaLink = () => {
+  return (
+    <MyText>
+      <InstaText onClick={onClick}>Instagram</InstaText>
+    </MyText>
+  );
+};
+
+function InstaFun(social: boolean) {
+  if (social) {
+    return <InstaLink />;
+  }
+  return <div />;
+}
+
 export default function QuickstartCard({
   border,
   background,
@@ -45,6 +77,7 @@ export default function QuickstartCard({
   header,
   text,
   button,
+  social,
 }: CardProps): ReactElement {
   const TextList = text.map((txt, idx) => (
     <div key={txt + idx.toString()}>
@@ -59,7 +92,10 @@ export default function QuickstartCard({
         {header}
       </MyHeader>
       <MyBody>
-        <MyList>{TextList}</MyList>
+        <MyList>
+          {TextList}
+          {InstaFun(social)}
+        </MyList>
       </MyBody>
       {button}
       <Break height="3vh" />

@@ -12,6 +12,7 @@ import EpicImage from '../components/EpicImage';
 import Counter from '../components/Counter';
 import DisabledBuyButton from '../components/Buttons/DisabledBuyButton';
 import EvenSpacingRow from '../layouts/EvenSpacingRow';
+import Instagram from '../components/Buttons/Instagram';
 
 const Subtitle = styled.div`
   color: #000080;
@@ -22,19 +23,20 @@ const Subtitle = styled.div`
   font-family: belmont;
 `;
 
-
 const subscribeButton = <SubscribeButton key="1" />;
 const buyButton = <DisabledBuyButton key="2" />;
 const freeButton = <FreeButton key="3" />;
+const instagram = <Instagram />;
 
 const subscribeCard = (
   <QuickstartCard
     color="white"
-    header="Future Features"
+    header="Join our Community"
     border="4px solid #0088cc"
     background="#0088cc"
     text={Constants.SUBSCRIBE_CARD_TEXT}
     button={subscribeButton}
+    social={true}
   />
 );
 
@@ -46,17 +48,19 @@ const buyCard = (
     background="#800000"
     text={Constants.BUY_CARD_TEXT}
     button={buyButton}
+    social={false}
   />
 );
 
 const freeCard = (
   <QuickstartCard
     color="black"
-    header="Our Principles"
+    header="Starter Set"
     border="4px solid orange"
     background="orange"
-    text={Constants.FREE_CARD_TEXT}
+    text={Constants.STARTER_CARD_TEXT}
     button={freeButton}
+    social={false}
   />
 );
 
@@ -69,8 +73,8 @@ export default function Home(): ReactElement {
     <Layout>
       <EpicImage src={`${Constants.BUCKET_URL}Tavern.jpg`} />
       <Title text={title}></Title>
-      <Counter></Counter>
-      <Subtitle>It Begins</Subtitle>
+      {/* <Counter></Counter> */}
+      {/* <Subtitle>It Begins</Subtitle> */}
       <EvenSpacingRow items={buttons} />
       <Container fluid>
         <Row>

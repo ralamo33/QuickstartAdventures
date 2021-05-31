@@ -24,12 +24,13 @@ const Bold = styled.span`
 
 const Subheader = styled.div`
   color: black;
-  font-size: 3vmax;
+  font-size: 2.5vmax;
   font-family: newsreader;
 `;
 
 const StyledContainer = styled(Container)`
-    background-image: linear-gradient(to right, #ddd, white);
+  background-image: linear-gradient(to right, #ddd, white);
+  min-height: 100vh;
 `;
 
 const Flex = styled.div`
@@ -42,7 +43,7 @@ const StyledImage = styled.img`
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 50%;
 `;
 
 const StyledList = styled.ul`
@@ -56,13 +57,10 @@ const BasicBold = styled.span`
   font-weight: 700;
 `;
 
-const BackImage = styled(Col)`
-  background-image: url('https://remember-the-ralamo-images.s3.amazonaws.com/StarterRules.jpg'),
-  background-color: black;
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-left: 5vw;
-  height: 40vh;
+const WrapForm = styled.div`
+  width: 80%;
+  margin: auto;
+  display: block;
 `;
 
 const MyHeader = () => (
@@ -102,13 +100,17 @@ export default function Landing(): ReactElement {
         <Row>
           <Col>
             <Break height="1vh"></Break>
-            <LandingForm></LandingForm>
+            <WrapForm>
+              <LandingForm></LandingForm>
+            </WrapForm>
           </Col>
         </Row>
         <Break height="10vh"></Break>
         <Row>
           <Col>
-            <Subheader>{subheader}</Subheader>
+            <WrapForm>
+              <Subheader>{subheader}</Subheader>
+            </WrapForm>
           </Col>
         </Row>
       </StyledContainer>

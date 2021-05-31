@@ -33,6 +33,7 @@ const SubmitButton = styled(Button)`
 const StyledErrorMessage = styled(ErrorMessage)`
   font-family: playfair;
   font-weight: 600;
+  color: red;
 `;
 
 export default function LandingForm(): ReactElement {

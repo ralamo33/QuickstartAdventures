@@ -41,6 +41,10 @@ export default function SubscribeForm({ close }: FormProps): ReactElement {
         }
       >
         <Form>
+          {/* <p>
+            Follow us on{' '}
+            <a href="https://www.instagram.com/roleplayrev/">Instagram</a>
+          </p> */}
           <Email />
           <CheckHuman question={question} />
           <FormFooter close={close} />
