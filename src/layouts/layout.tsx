@@ -61,7 +61,7 @@ interface LayoutProps {
   color?: string;
 }
 
-export default function Layout({ children, color }: LayoutProps): ReactElement {
+export default function Layout({ children }: LayoutProps): ReactElement {
   return (
     <>
       <GlobalStyle />

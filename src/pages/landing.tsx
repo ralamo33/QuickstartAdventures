@@ -43,7 +43,7 @@ const StyledImage = styled.img`
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 50%;
 `;
 
 const StyledList = styled.ul`
