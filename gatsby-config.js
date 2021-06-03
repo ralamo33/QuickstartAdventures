@@ -22,9 +22,6 @@ module.exports = {
       resolve: `gatsby-plugin-use-query-params`,
     },
     {
-      resolve: `gatsby-plugin-typescript`,
-    },
-    {
       resolve: 'gatsby-plugin-prettier-eslint',
       // this is the default configuration, override only what you need
       options: {
