@@ -48,6 +48,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    background-image: url("https://remember-the-ralamo-images.s3.amazonaws.com/Background.jpg");
     background-size: cover;
     font-family: 'newrocker';
     font-weight: 400;
