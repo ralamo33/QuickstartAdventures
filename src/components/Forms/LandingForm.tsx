@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
-import { Formik, Form, ErrorMessage } from 'formik';
+import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import * as Constants from '../../constants';
 import { post } from '../../utils';
@@ -14,26 +14,39 @@ interface FormValues {
 }
 
 const FullField = styled(Field)`
-  margin-bottom: 25px;
-  font-family: playfair;
-  font-weight: 600;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  width: 100%;
+  && {
+    margin-bottom: 25px;
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 100%;
+    font-size: 1.2rem;
+    border: 2.2px solid ${Constants.BLUE};
+    border-radius: 5px;
+  }
+
+  &:focus {
+    border: 2.2px solid ${Constants.YELLOW};
+    outline: solid 0;
+  }
 `;
 
 const SubmitButton = styled(Button)`
-  display: block;
-  width: 100%;
-  font-family: belmont;
-  margin: auto;
-`;
+  && {
+    display: block;
+    width: 100%;
+    font-family: belmont;
+    margin: auto;
+    background-color: ${Constants.RED};
+    border-color: ${Constants.RED};
+    font-size: 1.3rem;
+  }
 
-const StyledErrorMessage = styled(ErrorMessage)`
-  font-family: playfair;
-  font-weight: 600;
-  color: red;
+  &:hover {
+    background-color: #cc0000;
+    border-color: #cc0000;
+  }
 `;
 
 export default function LandingForm(): ReactElement {
@@ -52,23 +65,16 @@ export default function LandingForm(): ReactElement {
         validationSchema={ValidationSchema}
         onSubmit={async (values: FormValues) =>
           post(
-            `${Constants.LANDING_API}&Message=${values.customerName}_${values.email}`
+            `${Constants.LANDING_API}&Message=kjljdf_${values.email}`
           ).then(() => navigate('/thankyou'))
         }
       >
         <Form>
           <FullField
-            id="customerName"
-            name="customerName"
-            placeholder="Full Name"
-          ></FullField>
-          <StyledErrorMessage name="customerName" />
-          <FullField
             id="email"
             name="email"
             placeholder="Email Address"
           ></FullField>
-          <StyledErrorMessage name="email" />
           <SubmitButton variant="danger" type="submit">
             free adventure
           </SubmitButton>

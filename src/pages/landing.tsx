@@ -10,7 +10,10 @@ const Title = styled.p`
   color: #cc0000;
   font-family: belmont;
   font-size: 4rem;
-  font-weight: 700;
+  font-weight: 500;
+  text-shadow: 2px 0 2px black;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 `;
 
 export default function Landing(): ReactElement {
