@@ -1,11 +1,16 @@
-import React from 'react'
+import React, {ReactNode, ReactElement} from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
-import { convertToBgImage } from "gbimage-bridge"
+import { BgImage } from "gbimage-bridge"
 import BackgroundImage from 'gatsby-background-image'
 
-const GbiBridged = () => {
+interface Props {
+  children: ReactNode;
+}
+
+export default function Background ({ children }: Props): ReactElement {
+
   const { placeholderImage } = useStaticQuery(
     graphql`
       query {
@@ -23,20 +28,7 @@ const GbiBridged = () => {
   )
   const image = getImage(placeholderImage)
 
-  // Use like this:
-  const bgImage = convertToBgImage(image)
-
   return (
-    <BackgroundImage
-      Tag="section"
-      // Spread bgImage into BackgroundImage:
-      {...bgImage}
-      preserveStackingContext
-    >
-      <div style={{minHeight: 1000, minWidth: 1000}}>
-        Hello
-      </div>
-    </BackgroundImage>
-  )
+    <BgImage image={image}>{children}</BgImage>
+  );
 }
-export default GbiBridged;

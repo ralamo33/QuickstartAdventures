@@ -63,7 +63,6 @@ const GlobalStyle = createGlobalStyle`
 
 interface LayoutProps {
   children: ReactNode;
-  color?: string;
 }
 
 export default function Layout({ children }: LayoutProps): ReactElement {

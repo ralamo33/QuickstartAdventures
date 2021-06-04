@@ -24,7 +24,7 @@ const Title = styled.p`
 export default function Landing(): ReactElement {
   return (
     <LandingLayout>
-      <BackgroundImage ></BackgroundImage>
+      <BackgroundImage >
       <Container>
           <Row>
             <Col xs="6"></Col>
@@ -35,6 +35,7 @@ export default function Landing(): ReactElement {
             </Col>
           </Row>
         </Container>
+      </BackgroundImage>
     </LandingLayout>
   );
 }
