@@ -1,4 +1,5 @@
 import React, {ReactNode, ReactElement} from 'react'
+import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby'
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
@@ -17,7 +18,6 @@ export default function Background ({ children }: Props): ReactElement {
         placeholderImage: file(relativePath: { eq: "landscape.jpg" }) {
           childImageSharp {
             gatsbyImageData(
-              width: 200
               placeholder: BLURRED
               formats: [AUTO, WEBP, AVIF]
             )
@@ -28,7 +28,11 @@ export default function Background ({ children }: Props): ReactElement {
   )
   const image = getImage(placeholderImage)
 
+  const SBgImage = styled(BgImage)`
+      height: 110vh;
+  `
+
   return (
-    <BgImage image={image}>{children}</BgImage>
+    <SBgImage image={image}>{children}</SBgImage>
   );
 }
