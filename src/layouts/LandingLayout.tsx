@@ -6,6 +6,10 @@ import newrocker from '../fonts/NewRocker-Regular.ttf';
 import newsreader from '../fonts/Newsreader/Newsreader-VariableFont_opsz,wght.ttf';
 import roboto from '../fonts/Roboto-Regular.ttf';
 import playfair from '../fonts/PlayfairDisplay-VariableFont_wght.ttf';
+import { convertToBgImage } from "gbimage-bridge";
+import BackgroundImage from 'gatsby-background-image';
+import { graphql, useStaticQuery } from 'gatsby';
+import { getImage, GatsbyImage } from "gatsby-plugin-image";
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -48,9 +52,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-image: url("https://remember-the-ralamo-images.s3.amazonaws.com/Background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: teal;
     font-family: 'newrocker';
     font-weight: 400;
     width: 100%;

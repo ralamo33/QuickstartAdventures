@@ -5,6 +5,11 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Break from '../components/Break';
 import LandingLayout from '../layouts/LandingLayout';
 import LandingForm from '../components/Forms/LandingForm';
+import { graphql, useStaticQuery } from 'gatsby'
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import BackgroundImage from '../components/Background';
+
+import { convertToBgImage } from "gbimage-bridge"
 
 const Title = styled.p`
   color: #cc0000;
@@ -19,16 +24,17 @@ const Title = styled.p`
 export default function Landing(): ReactElement {
   return (
     <LandingLayout>
+      <BackgroundImage ></BackgroundImage>
       <Container>
-        <Row>
-          <Col xs="6"></Col>
-          <Col>
-            <Break height="10vh"></Break>
-            <Title>Roleplay Revolution</Title>
-            <LandingForm></LandingForm>
-          </Col>
-        </Row>
-      </Container>
+          <Row>
+            <Col xs="6"></Col>
+            <Col>
+              <Break height="10vh"></Break>
+              <Title>Roleplay Revolution</Title>
+              <LandingForm></LandingForm>
+            </Col>
+          </Row>
+        </Container>
     </LandingLayout>
   );
 }
