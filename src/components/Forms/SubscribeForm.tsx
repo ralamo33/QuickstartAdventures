@@ -3,10 +3,11 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import * as Constants from '../../constants';
 import { post } from '../../utils';
-import Email from '../FormFields/Email';
+import Email from '../FormFields/TextField';
 import CheckHuman from '../FormFields/CheckHuman';
 import FormFooter from '../FormFields/FormFooter';
 import { randomEquationAndAnswer } from '../../utils';
+import TextField from '../FormFields/TextField';
 
 interface FormProps {
   close: () => void;
@@ -41,11 +42,11 @@ export default function SubscribeForm({ close }: FormProps): ReactElement {
         }
       >
         <Form>
-          {/* <p>
-            Follow us on{' '}
-            <a href="https://www.instagram.com/roleplayrev/">Instagram</a>
-          </p> */}
-          <Email />
+          <TextField
+            name="email"
+            placeholder="Email Address"
+            minWidth="40vw"
+          />
           <CheckHuman question={question} />
           <FormFooter close={close} />
         </Form>

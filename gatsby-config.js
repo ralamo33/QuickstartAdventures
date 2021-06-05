@@ -16,13 +16,23 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-styled-components`,
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-image`,
+    },
+    {
+      resolve: `gatsby-plugin-sharp`,
+    },
+    {
+      resolve: `gatsby-transformer-sharp`,
     },
     {
       resolve: `gatsby-plugin-use-query-params`,
-    },
-    {
-      resolve: `gatsby-plugin-typescript`,
     },
     {
       resolve: 'gatsby-plugin-prettier-eslint',

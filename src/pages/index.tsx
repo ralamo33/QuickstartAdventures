@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
+import { StaticImage } from "gatsby-plugin-image";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import Layout from '../layouts/layout';
@@ -71,7 +72,7 @@ export default function Home(): ReactElement {
 
   return (
     <Layout>
-      <EpicImage src={`${Constants.BUCKET_URL}Tavern.jpg`} />
+      <StaticImage alt="tavern" src='../images/tavern.jpg' layout="fullWidth"/>
       <Title text={title}></Title>
       {/* <Counter></Counter> */}
       {/* <Subtitle>It Begins</Subtitle> */}
