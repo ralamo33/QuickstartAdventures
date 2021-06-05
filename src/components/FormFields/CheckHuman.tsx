@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-bootstrap';
 import { Field, ErrorMessage } from 'formik';
+import TextField from '../FormFields/TextField';
 
 interface CheckProps {
   question: string;
@@ -31,13 +32,11 @@ export default function CheckHuman({ question }: CheckProps): ReactElement {
       <Row>
         <TestQuestion>{question}</TestQuestion>
         <Col>
-          <FullField
-            id="test"
+          <TextField
             name="test"
             placeholder="What is the answer?"
-            type="text"
+            minWidth="40vw"
           />
-          <ErrorMessage name="test" />
         </Col>
       </Row>
     </div>

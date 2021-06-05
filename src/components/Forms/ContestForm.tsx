@@ -3,7 +3,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import * as Constants from '../../constants';
-import Email from '../FormFields/Email';
+import Email from '../FormFields/TextField';
 import CheckHuman from '../FormFields/CheckHuman';
 import FormFooter from '../FormFields/FormFooter';
 import { randomEquationAndAnswer } from '../../utils';

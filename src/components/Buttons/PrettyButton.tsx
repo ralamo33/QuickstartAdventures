@@ -13,6 +13,8 @@ interface ClickProps {
   bordercolor: string;
   opacity?: string;
   hovercolor?: string;
+  fontfamily?: string;
+  type?: string;
   onClick?: () => void;
 }
 
@@ -25,6 +27,7 @@ const MyButton = styled(Button)`
     background-color: ${(props: ClickProps) => props.backgroundcolor};
     border-color: ${(props: ClickProps) => props.bordercolor};
     opacity: ${(props: ClickProps) => props.opacity};
+    font-family: ${(props: ClickProps) => props.fontfamily};
   }
 
   &:hover {
@@ -41,6 +44,8 @@ export default function PrettyButton({
   bordercolor,
   hovercolor,
   opacity,
+  fontfamily,
+  type,
   onClick,
 }: ClickProps): ReactElement {
   return (
@@ -52,6 +57,8 @@ export default function PrettyButton({
       bordercolor={bordercolor}
       hovercolor={hovercolor}
       opacity={opacity}
+      fontfamily={fontfamily}
+      type={type}
       onClick={onClick}
     >
       {text}

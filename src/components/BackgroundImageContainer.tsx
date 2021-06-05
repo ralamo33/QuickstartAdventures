@@ -29,7 +29,10 @@ export default function Background ({ children }: Props): ReactElement {
   const image = getImage(placeholderImage)
 
   const SBgImage = styled(BgImage)`
-      height: 110vh;
+      height: 110vh;  
+      align-items: center;
+      justify-content: center;
+      display: flex;
   `
 
   return (

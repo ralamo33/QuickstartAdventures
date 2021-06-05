@@ -72,7 +72,7 @@ export default function Home(): ReactElement {
 
   return (
     <Layout>
-      {/* <StaticImage alt="tavern" src='../images/tavern.jpg' width={2000}/> */}
+      <StaticImage alt="tavern" src='../images/tavern.jpg' layout="fullWidth"/>
       <Title text={title}></Title>
       {/* <Counter></Counter> */}
       {/* <Subtitle>It Begins</Subtitle> */}
