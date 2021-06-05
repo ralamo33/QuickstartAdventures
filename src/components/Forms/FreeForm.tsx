@@ -22,7 +22,7 @@ export default function FreeForm({ close }: FormProps): ReactElement {
   const [question, answer] = randomEquationAndAnswer();
 
   const ValidationSchema = Yup.object().shape({
-    email: Yup.string().email('Invalid email').required('Required'),
+    email: Constants.STRING_VALIDATION.email('Invalid email'),
     test: Yup.number()
       .max(answer, 'Too high')
       .min(answer, 'Too low')
