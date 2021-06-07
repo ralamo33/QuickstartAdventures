@@ -7,46 +7,28 @@ import { Row, Col } from 'react-bootstrap';
 
 interface Props {
   name: string,
-  error: boolean;
   label?: string,
   minWidth?: string,
   placeholder?: string
   fontSize?: string; 
-  borderColor?: string;
+  borderColor: string;
+  borderWidth: string;
   animation?: Keyframes;
   animationPlay?: string;
   animationBorderColor?: string
 }
 
-interface ErrorProps {
-  error: boolean;
-}
-
-  // const [borderColor, setBorderColor] = useState(Constants.BLUE);
-  // const [outlineColor, setOutlineColor] = useState(Constants.OLD_BLUE);
-
-  // const activateError = () => {
-  //   setBorderColor(Constants.RED);
-  //   setOutlineColor('red');
-  // }
-
-  const MyLabel = styled.p`
+    const MyLabel = styled.p`
     font-size: 20px;
     display: block;
   `;
-
-  const getBorderColor = (error: boolean) => {
-    // return error ? 'red' : Constants.BLUE;
-    return error ? Constants.BLUE : 'red';
-  }
 
   const FullField = styled(Field)`
   && {
     display: block;
     border-radius: 5px;
     min-width: ${(props: Props) => props.minWidth};
-    // border: 2.2px solid ${(props: Props) => getBorderColor(props.error)};
-    border: 2.2px solid ${(props: Props) => props.borderColor};
+    border: ${(props: Props) => props.borderWidth} solid ${(props: Props) => props.borderColor};
     font-size: ${(props: Props) => props.fontSize}; 
     justify-content: center;
     margin: auto;
@@ -70,34 +52,21 @@ interface ErrorProps {
     margin: 0px;
     padding: 0px;
     font-weight: 600;
-    margin: auto;
     display: block;
+    margin: auto;
+    text-align: center;
   `
 
-  const shakeAnimation = keyframes`${shake}`;
-  const tadaAnimation = keyframes`${tada}`;
-
-  // const SuccessAnimation = styled.div`
-  //   animation: 1s ${shakeAnimation};
-  //   animation-play-state: ${(props: Props) => props.success};
-  // `;
-
-  const ErrorAnimation = styled.div`
-    animation: 1s ${shakeAnimation};
-    animation-play-state: ${(props: ErrorProps) => props.error ? 'start': 'paused'}; 
-    `;
-
-
-export default function TextField({label, minWidth, name, placeholder, fontSize, error}: Props): ReactElement {
+export default function TextField({label, minWidth, name, placeholder, fontSize, borderColor, borderWidth}: Props): ReactElement {
 
   return (
     <div>
       <MyLabel>{label}</MyLabel>
       <Row>
         <Col>
-          <ErrorAnimation error={error}>
-          <FullField id={name} name={name} placeholder={placeholder} minWidth={minWidth} fontSize={fontSize} />
-          </ErrorAnimation>
+          <FullField id={name} name={name} placeholder={placeholder} minWidth={minWidth} fontSize={fontSize} 
+          borderColor={borderColor} borderWidth={borderWidth} />
+          <ErrorMessage name={name} render={(msg) => <StyledError>{msg}</StyledError>}></ErrorMessage>
         </Col>
       </Row>
     </div>

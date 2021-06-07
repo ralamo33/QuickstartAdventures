@@ -1,22 +1,16 @@
 import React, { ReactElement, useState } from 'react';
 import styled, {Keyframes, keyframes} from 'styled-components';
-import { Formik, Form, FormikErrors, FormikTouched } from 'formik';
+import { Formik, Form, FormikErrors, FormikTouched, FormikState } from 'formik';
 import * as Yup from 'yup';
 import * as Constants from '../../constants';
 import { post } from '../../utils';
 import PrettyButton from '../Buttons/PrettyButton';
 import TextField from '../FormFields/TextField';
-import { shake, tada } from 'react-animations';
+import * as Animations from 'react-animations';
 
 
 interface FormValues {
   email: string;
-}
-
-interface AnimationProps {
-  animation: Keyframes;
-  play: string;
-  borderColor: string;
 }
 
 const border = `2.2px solid ${Constants.BLUE};`
@@ -29,10 +23,16 @@ const PrettyText = styled.p`
   margin: 10px auto;
 `;
 
+interface AnimationProps {
+  animPlay: string;
+}
+
+const pulseAnimation = keyframes`${Animations.pulse}`;
+const fadeAnimation = keyframes`${Animations.fadeIn}`;
+
 const Animation = styled.div`
-  animation: 1s ${(props: AnimationProps) => props.animation};
-  animation-play-state: ${(props: AnimationProps) => props.play};
-  border-color: ${(props: AnimationProps) => props.borderColor};
+  animation: 1s ${pulseAnimation};
+  animation-play-state: ${(props: AnimationProps) => props.animPlay};
 `;
 
 const ErrorText = styled(PrettyText)`
@@ -47,15 +47,34 @@ const SuccessText = styled(PrettyText)`
 
 export default function FreeForm(): ReactElement {
 
-  const [hidden, setHidden] = useState(false);
-  const [text, setText] = useState('');
+  const startBorderColor = Constants.BLUE;
+  const startBorderWidth = '2.2px';
+  const startPlacedholder = 'Email Address';
+  const updatedBorderColor = '#66ff66'
+  const updatedBorderWidth = '5px';
+  const updatedPlacedholder = 'Success!';
+
+  const [borderColor, setBorderColor] = useState(startBorderColor);
+  const [borderWidth, setBorderWidth] = useState(startBorderWidth);
+  const [play, setPlay] = useState('paused');
+  const [placeholder, setPlaceholder] = useState(startPlacedholder);
+
 
   const ValidationSchema = Yup.object().shape({
     email: Constants.STRING_VALIDATION.email('Invalid email'),
   });
 
-  const getBorderColor = (touched: boolean, error: boolean) => {
-    return (touched && error) ? 'red' : Constants.BLUE;
+  const updateEmailField = () => {
+    setPlaceholder(updatedPlacedholder);
+    setBorderColor(updatedBorderColor);
+    setPlay('start');
+    setBorderWidth(updatedBorderWidth);
+  }
+
+  const onSubmit = (values: FormValues, resetForm:(nextState?: Partial<FormikState<any>>) => void) => {
+    post(
+      `${Constants.LANDING_API}&Message=John Doe_${values.email}`
+    ).then(updateEmailField).then(() => resetForm({}))
   }
 
   return (
@@ -65,23 +84,22 @@ export default function FreeForm(): ReactElement {
           email: '',
         }}
         validationSchema={ValidationSchema}
-        onSubmit={async (values: FormValues) =>
-          post(
-            `${Constants.LANDING_API}&Message=John Doe_${values.email}`
-          ).then()
-        }
+        onSubmit={(values, {resetForm}) => onSubmit(values, resetForm)}
       >
         {(errors: FormikErrors<string>, touched: FormikTouched<string>) => (
           <Form>
+            <Animation animPlay={play}>
               <TextField
                 name="email"
-                placeholder="Email Address"
+                placeholder={placeholder}
                 minWidth="30vw"
-                borderColor={getBorderColor(errors.email, touched.email)}
-                error={(errors.email && touched.email) || false}
+                borderColor={borderColor}
+                borderWidth={borderWidth}
               />
+            </Animation>
             <PrettyButton
               variant="warning"
+              type="submit"
               fontSize="30px"
               color="white"
               backgroundcolor="#800000"
