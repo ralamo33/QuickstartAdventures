@@ -28,6 +28,7 @@ interface Props {
     display: block;
     border-radius: 5px;
     min-width: ${(props: Props) => props.minWidth};
+    max-width: 80%;
     border: ${(props: Props) => props.borderWidth} solid ${(props: Props) => props.borderColor};
     font-size: ${(props: Props) => props.fontSize}; 
     justify-content: center;

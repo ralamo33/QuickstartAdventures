@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import { StaticImage } from "gatsby-plugin-image";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Button, Container, Row, Col } from 'react-bootstrap';
 import Layout from '../layouts/layout';
 import Title from '../components/Title';
 import * as Constants from '../constants';
@@ -25,7 +25,27 @@ const Subtitle = styled.div`
 `;
 
 const freeForm = <FreeForm />;
-const instagram = <Instagram />;
+
+const InstagramButton = styled(Button)`
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d
+  );
+  width: 80%;
+  display: block;
+  margin: auto;
+  font-size: 2rem;
+`;
+
+const onClick = () => {
+  window.location.href = 'http://www.instagram.com/roleplayrev';
+};
+
 
 const subscribeCard = (
   <QuickstartCard
@@ -34,8 +54,7 @@ const subscribeCard = (
     border="4px solid #0088cc"
     background="#0088cc"
     text={Constants.SUBSCRIBE_CARD_TEXT}
-    // button={freeForm}
-    social={true}
+    button={<InstagramButton onClick={onClick}>Instagram</InstagramButton>}
   />
 );
 
@@ -46,8 +65,7 @@ const buyCard = (
     text={Constants.BUY_CARD_TEXT}
     border="4px solid orange"
     background="orange"
-    // button={freeForm}
-    social={false}
+    button={freeForm}
   />
 );
 
@@ -58,8 +76,6 @@ const freeCard = (
     border="4px solid #800000"
     background="#800000"
     text={Constants.STARTER_CARD_TEXT}
-    // button={freeForm}
-    social={false}
   />
 );
 

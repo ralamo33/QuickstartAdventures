@@ -92,15 +92,16 @@ export default function FreeForm(): ReactElement {
               <TextField
                 name="email"
                 placeholder={placeholder}
-                minWidth="30vw"
+                minWidth="25vw"
                 borderColor={borderColor}
                 borderWidth={borderWidth}
+                fontSize="1.5rem"
               />
             </Animation>
             <PrettyButton
               variant="warning"
               type="submit"
-              fontSize="30px"
+              fontSize="2rem"
               color="white"
               backgroundcolor="#800000"
               bordercolor="#800000"

@@ -10,7 +10,6 @@ interface CardProps {
   background: string;
   color: string;
   text: string[];
-  social: boolean;
   button?: ReactNode;
 }
 
@@ -33,42 +32,13 @@ const MyBody = styled(Card.Body)`
 const MyList = styled.ul`
   margin-left: 6px;
   padding: 0;
+  min-height: 50vh;
 `;
 
 const MyText = styled.li`
   font-size: 24px;
 `;
 
-const InstaText = styled(Button)`
-  background: linear-gradient(
-    45deg,
-    #405de6,
-    #5851db,
-    #833ab4,
-    #c13584,
-    #e1306c,
-    #fd1d1d
-  );
-`;
-
-const onClick = () => {
-  window.location.href = 'http://www.instagram.com/roleplayrev';
-};
-
-const InstaLink = () => {
-  return (
-    <MyText>
-      <InstaText onClick={onClick}>Instagram</InstaText>
-    </MyText>
-  );
-};
-
-function InstaFun(social: boolean) {
-  if (social) {
-    return <InstaLink />;
-  }
-  return <div />;
-}
 
 export default function QuickstartCard({
   border,
@@ -77,7 +47,6 @@ export default function QuickstartCard({
   header,
   text,
   button,
-  social,
 }: CardProps): ReactElement {
   const TextList = text.map((txt, idx) => (
     <div key={txt + idx.toString()}>
@@ -94,10 +63,9 @@ export default function QuickstartCard({
       <MyBody>
         <MyList>
           {TextList}
-          {InstaFun(social)}
         </MyList>
-      </MyBody>
       {button}
+      </MyBody>
       <Break height="3vh" />
     </MyCard>
   );
