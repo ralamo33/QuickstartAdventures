@@ -8,12 +8,12 @@ import Title from '../components/Title';
 import * as Constants from '../constants';
 import SubscribeButton from '../components/Buttons/SubscribeButton';
 import QuickstartCard from '../components/QuickstartCard';
-import FreeButton from '../components/Buttons/FreeButton';
 import EpicImage from '../components/EpicImage';
 import Counter from '../components/Counter';
 import DisabledBuyButton from '../components/Buttons/DisabledBuyButton';
 import EvenSpacingRow from '../layouts/EvenSpacingRow';
 import Instagram from '../components/Buttons/Instagram';
+import FreeForm from '../components/Forms/FreeForm';
 
 const Subtitle = styled.div`
   color: #000080;
@@ -24,9 +24,7 @@ const Subtitle = styled.div`
   font-family: belmont;
 `;
 
-const subscribeButton = <SubscribeButton key="1" />;
-const buyButton = <DisabledBuyButton key="2" />;
-const freeButton = <FreeButton key="3" />;
+const freeForm = <FreeForm />;
 const instagram = <Instagram />;
 
 const subscribeCard = (
@@ -36,31 +34,31 @@ const subscribeCard = (
     border="4px solid #0088cc"
     background="#0088cc"
     text={Constants.SUBSCRIBE_CARD_TEXT}
-    button={subscribeButton}
+    // button={freeForm}
     social={true}
   />
 );
 
 const buyCard = (
   <QuickstartCard
-    color="white"
+    color="black"
     header="Roleplay Revolution"
-    border="4px solid #800000"
-    background="#800000"
     text={Constants.BUY_CARD_TEXT}
-    button={buyButton}
+    border="4px solid orange"
+    background="orange"
+    // button={freeForm}
     social={false}
   />
 );
 
 const freeCard = (
   <QuickstartCard
-    color="black"
+    color="white"
     header="Starter Set"
-    border="4px solid orange"
-    background="orange"
+    border="4px solid #800000"
+    background="#800000"
     text={Constants.STARTER_CARD_TEXT}
-    button={freeButton}
+    // button={freeForm}
     social={false}
   />
 );
@@ -68,22 +66,18 @@ const freeCard = (
 export default function Home(): ReactElement {
   const title = 'Join the Revolution';
 
-  const buttons = [buyButton, freeButton, subscribeButton];
-
   return (
     <Layout>
       <StaticImage alt="tavern" src='../images/tavern.jpg' layout="fullWidth"/>
       <Title text={title}></Title>
-      {/* <Counter></Counter> */}
-      {/* <Subtitle>It Begins</Subtitle> */}
-      <EvenSpacingRow items={buttons} />
+      <FreeForm />
       <Container fluid>
         <Row>
           <Col lg="4" md="6" sm="12">
-            {buyCard}
+            {freeCard}
           </Col>
           <Col lg="4" md="6" sm="12">
-            {freeCard}
+            {buyCard}
           </Col>
           <Col lg="4" md="6" sm="12">
             {subscribeCard}

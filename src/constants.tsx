@@ -11,9 +11,9 @@ export const FREE_BUTTON_TEXT = 'Free Adventure';
 export const SUBSCRIPE_BUTTON_TEXT = 'Subscribe';
 
 export const BUY_CARD_TEXT = [
-  'Never struggle to find players again. This TTRPG is designed to hook newcomers.',
-  'Get started easily. This game is designed for simplicity.',
-  'Create lasting memories with unique characters. 4,000 character possibilities by level 4.',
+  'Get started easily. This game is designed for everyone!',
+  'Create lasting memories with thousands of unique characters.',
+  'A D20 RPG powered by tarot cards.',
   'The paid version is coming soon. I refuse to release a rushed product.',
 ];
 export const SUBSCRIBE_CARD_TEXT = [

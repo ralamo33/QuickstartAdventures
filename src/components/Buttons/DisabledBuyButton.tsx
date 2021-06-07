@@ -12,8 +12,8 @@ export default function DisabledFreeButton(): ReactElement {
           variant="danger"
           fontSize="30px"
           color="white"
-          backgroundcolor="#800000"
-          bordercolor="#800000"
+          backgroundcolor="#b30000"
+          bordercolor="#b30000"
           hovercolor="#cc0000"
           opacity="0.7"
           text={Constants.BUY_BUTTON_TEXT}

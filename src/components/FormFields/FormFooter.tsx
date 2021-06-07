@@ -8,11 +8,6 @@ interface FormProps {
 export default function FormFooter({ close }: FormProps): ReactElement {
   return (
     <Row>
-      <Col xs="1">
-        <Button variant="secondary" onClick={close}>
-          Close
-        </Button>
-      </Col>
       <Col xs="7" sm="8" md="8" lg="9" />
       <Col xs="1">
         <Button variant="primary" type="submit">
