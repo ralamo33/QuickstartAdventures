@@ -77,6 +77,7 @@ export default function FreeForm(): ReactElement {
     ).then(updateEmailField).then(() => resetForm({}))
   }
 
+
   return (
     <div>
       <Formik
