@@ -22,7 +22,6 @@ const Subtitle = styled.p`
 const validationSchema1 = object().shape({
   name: Constants.STRING_VALIDATION,
   summary: Constants.STRING_VALIDATION,
-  language: Constants.STRING_VALIDATION,
   description: Constants.STRING_VALIDATION,
 });
 
@@ -41,28 +40,6 @@ export default function Stepper(): ReactElement {
           }}
         >
           <FormikStep label="Flavor" validationSchema={validationSchema1}>
-            <Subtitle>Monster Flavor</Subtitle>
-            <Container>
-              <Row>
-                <Col>
-                  <TextField name="name" label="Name" as="input" />
-                </Col>
-                <Col>
-                  <TextField name="summary" label="Motivation" as="input" />
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <TextField
-                    name="description"
-                    label="Description"
-                    as="textarea"
-                  />
-                </Col>
-              </Row>
-            </Container>
-          </FormikStep>
-          <FormikStep label="rFlavor" validationSchema={validationSchema1}>
             <Subtitle>Monster Flavor</Subtitle>
             <Container>
               <Row>
