@@ -1,28 +1,13 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
-import { StaticImage } from "gatsby-plugin-image";
+import { StaticImage } from 'gatsby-plugin-image';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import Layout from '../layouts/layout';
 import Title from '../components/Title';
 import * as Constants from '../constants';
-import SubscribeButton from '../components/Buttons/SubscribeButton';
 import QuickstartCard from '../components/QuickstartCard';
-import EpicImage from '../components/EpicImage';
-import Counter from '../components/Counter';
-import DisabledBuyButton from '../components/Buttons/DisabledBuyButton';
-import EvenSpacingRow from '../layouts/EvenSpacingRow';
-import Instagram from '../components/Buttons/Instagram';
 import FreeForm from '../components/Forms/FreeForm';
-
-const Subtitle = styled.div`
-  color: #000080;
-  font-size: 13vmin;
-  max-width: 80vw;
-  margin: auto;
-  text-align: center;
-  font-family: belmont;
-`;
 
 const freeForm = <FreeForm />;
 
@@ -45,7 +30,6 @@ const InstagramButton = styled(Button)`
 const onClick = () => {
   window.location.href = 'http://www.instagram.com/roleplayrev';
 };
-
 
 const subscribeCard = (
   <QuickstartCard
@@ -84,7 +68,7 @@ export default function Home(): ReactElement {
 
   return (
     <Layout>
-      <StaticImage alt="tavern" src='../images/tavern.jpg' layout="fullWidth"/>
+      <StaticImage alt="tavern" src="../images/tavern.jpg" layout="fullWidth" />
       <Title text={title}></Title>
       <FreeForm />
       <Container fluid>
