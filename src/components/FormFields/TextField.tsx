@@ -6,31 +6,32 @@ import { ErrorMessage, Field } from 'formik';
 import { Row, Col } from 'react-bootstrap';
 
 interface Props {
-  name: string,
-  label?: string,
-  minWidth?: string,
-  placeholder?: string
-  fontSize?: string; 
-  borderColor: string;
-  borderWidth: string;
+  name: string;
+  label?: string;
+  minWidth?: string;
+  placeholder?: string;
+  fontSize?: string;
+  borderColor?: string;
+  borderWidth?: string;
   animation?: Keyframes;
   animationPlay?: string;
-  animationBorderColor?: string
+  animationBorderColor?: string;
 }
 
-    const MyLabel = styled.p`
-    font-size: 20px;
-    display: block;
-  `;
+const MyLabel = styled.p`
+  font-size: 20px;
+  display: block;
+`;
 
-  const FullField = styled(Field)`
+const FullField = styled(Field)`
   && {
     display: block;
     border-radius: 5px;
     min-width: ${(props: Props) => props.minWidth};
     max-width: 80%;
-    border: ${(props: Props) => props.borderWidth} solid ${(props: Props) => props.borderColor};
-    font-size: ${(props: Props) => props.fontSize}; 
+    border: ${(props: Props) => props.borderWidth} solid
+      ${(props: Props) => props.borderColor};
+    font-size: ${(props: Props) => props.fontSize};
     justify-content: center;
     margin: auto;
     margin-bottom: 15px;
@@ -45,29 +46,46 @@ interface Props {
   &:focus {
     outline: 2px solid ${Constants.OLD_BLUE};
   }
-  `;
+`;
 
-  const StyledError = styled.p`
-    color: red;
-    font-family: newsreader;
-    margin: 0px;
-    padding: 0px;
-    font-weight: 600;
-    display: block;
-    margin: auto;
-    text-align: center;
-  `
+const StyledError = styled.p`
+  color: red;
+  font-family: newsreader;
+  margin: 0px;
+  padding: 0px;
+  font-weight: 600;
+  display: block;
+  margin: auto;
+  text-align: center;
+`;
 
-export default function TextField({label, minWidth, name, placeholder, fontSize, borderColor, borderWidth}: Props): ReactElement {
-
+export default function TextField({
+  label,
+  minWidth,
+  name,
+  placeholder,
+  fontSize,
+  borderColor,
+  borderWidth,
+}: Props): ReactElement {
   return (
     <div>
       <MyLabel>{label}</MyLabel>
       <Row>
         <Col>
-          <FullField id={name} name={name} placeholder={placeholder} minWidth={minWidth} fontSize={fontSize} 
-          borderColor={borderColor} borderWidth={borderWidth} />
-          <ErrorMessage name={name} render={(msg) => <StyledError>{msg}</StyledError>}></ErrorMessage>
+          <FullField
+            id={name}
+            name={name}
+            placeholder={placeholder}
+            minWidth={minWidth}
+            fontSize={fontSize}
+            borderColor={borderColor}
+            borderWidth={borderWidth}
+          />
+          <ErrorMessage
+            name={name}
+            render={(msg) => <StyledError>{msg}</StyledError>}
+          ></ErrorMessage>
         </Col>
       </Row>
     </div>

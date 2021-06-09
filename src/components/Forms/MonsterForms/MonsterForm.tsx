@@ -36,9 +36,8 @@ export default function MonsterForm(): ReactElement {
       }}
     >
       <Form>
-        <TextField id="name" name="name" placeholder="Monster Name"></TextField>
+        <TextField name="name" placeholder="Monster Name"></TextField>
         <TextField
-          id="description"
           name="description"
           placeholder="Monster Description"
         ></TextField>
