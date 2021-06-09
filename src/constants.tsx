@@ -1,6 +1,5 @@
 import * as Yup from 'yup';
 
-
 export const BUCKET_URL =
   'https://remember-the-ralamo-images.s3.amazonaws.com/';
 
@@ -76,5 +75,6 @@ export const PURPLE = '#cc00cc';
 export const ORANGE = 'orange';
 export const WHITE = '#f2f2f2';
 
-export const STRING_VALIDATION = Yup.string().required('Required')
-      .matches(new RegExp('^[a-zA-Z0-9 @.]+$'), 'Invalid characters');
+export const STRING_VALIDATION = Yup.string()
+  .required('Required')
+  .matches(new RegExp('^[a-zA-Z0-9 @.]+$'), 'Invalid characters');

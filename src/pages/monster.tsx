@@ -7,7 +7,6 @@ import Title from '../components/Title';
 // import {FormStepper from '../components/Forms/FormUtils';
 import { Jumbotron } from 'react-bootstrap';
 import BackgroundImageContainer from '../components/BackgroundImageContainer';
-import { MonsterBackground } from '../hooks/MonsterBackground';
 
 const Monstertron = styled(Jumbotron)`
   position: center;
