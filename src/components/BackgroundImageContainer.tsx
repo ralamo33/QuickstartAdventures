@@ -13,7 +13,7 @@ export default function Background({ children }: Props): ReactElement {
   const { placeholderImage } = useStaticQuery(
     graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "landscape.jpg" }) {
+        placeholderImage: file(relativePath: { eq: "Monster.jpg" }) {
           childImageSharp {
             gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
           }
