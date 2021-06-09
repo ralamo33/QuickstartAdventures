@@ -3,14 +3,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import { Container, Row, Col } from 'react-bootstrap';
-import Break from './Break';
 import * as Constants from '../constants';
 
 const minuteSeconds = 60;
 const hourSeconds = 3600;
 const daySeconds = 86400;
 
-const countdownColors = [['#00b3b3', 0.5], [Constants.PURPLE, 0.5], ['#e60000']];
+const countdownColors = [
+  ['#00b3b3', 0.5],
+  [Constants.PURPLE, 0.5],
+  ['#e60000'],
+];
 
 const timerProps = {
   isPlaying: true,

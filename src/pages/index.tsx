@@ -1,33 +1,35 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
-import { StaticImage } from "gatsby-plugin-image";
+import { StaticImage } from 'gatsby-plugin-image';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Button, Container, Row, Col } from 'react-bootstrap';
 import Layout from '../layouts/layout';
 import Title from '../components/Title';
 import * as Constants from '../constants';
-import SubscribeButton from '../components/Buttons/SubscribeButton';
 import QuickstartCard from '../components/QuickstartCard';
-import FreeButton from '../components/Buttons/FreeButton';
-import EpicImage from '../components/EpicImage';
-import Counter from '../components/Counter';
-import DisabledBuyButton from '../components/Buttons/DisabledBuyButton';
-import EvenSpacingRow from '../layouts/EvenSpacingRow';
-import Instagram from '../components/Buttons/Instagram';
+import FreeForm from '../components/Forms/FreeForm';
 
-const Subtitle = styled.div`
-  color: #000080;
-  font-size: 13vmin;
-  max-width: 80vw;
+const freeForm = <FreeForm />;
+
+const InstagramButton = styled(Button)`
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d
+  );
+  width: 80%;
+  display: block;
   margin: auto;
-  text-align: center;
-  font-family: belmont;
+  font-size: 2rem;
 `;
 
-const subscribeButton = <SubscribeButton key="1" />;
-const buyButton = <DisabledBuyButton key="2" />;
-const freeButton = <FreeButton key="3" />;
-const instagram = <Instagram />;
+const onClick = () => {
+  window.location.href = 'http://www.instagram.com/roleplayrev';
+};
 
 const subscribeCard = (
   <QuickstartCard
@@ -36,54 +38,46 @@ const subscribeCard = (
     border="4px solid #0088cc"
     background="#0088cc"
     text={Constants.SUBSCRIBE_CARD_TEXT}
-    button={subscribeButton}
-    social={true}
+    button={<InstagramButton onClick={onClick}>Instagram</InstagramButton>}
   />
 );
 
 const buyCard = (
   <QuickstartCard
-    color="white"
+    color="black"
     header="Roleplay Revolution"
-    border="4px solid #800000"
-    background="#800000"
     text={Constants.BUY_CARD_TEXT}
-    button={buyButton}
-    social={false}
+    border="4px solid orange"
+    background="orange"
+    button={freeForm}
   />
 );
 
 const freeCard = (
   <QuickstartCard
-    color="black"
+    color="white"
     header="Starter Set"
-    border="4px solid orange"
-    background="orange"
+    border="4px solid #800000"
+    background="#800000"
     text={Constants.STARTER_CARD_TEXT}
-    button={freeButton}
-    social={false}
   />
 );
 
 export default function Home(): ReactElement {
   const title = 'Join the Revolution';
 
-  const buttons = [buyButton, freeButton, subscribeButton];
-
   return (
     <Layout>
-      <StaticImage alt="tavern" src='../images/tavern.jpg' layout="fullWidth"/>
+      <StaticImage alt="tavern" src="../images/tavern.jpg" layout="fullWidth" />
       <Title text={title}></Title>
-      {/* <Counter></Counter> */}
-      {/* <Subtitle>It Begins</Subtitle> */}
-      <EvenSpacingRow items={buttons} />
+      <FreeForm />
       <Container fluid>
         <Row>
           <Col lg="4" md="6" sm="12">
-            {buyCard}
+            {freeCard}
           </Col>
           <Col lg="4" md="6" sm="12">
-            {freeCard}
+            {buyCard}
           </Col>
           <Col lg="4" md="6" sm="12">
             {subscribeCard}
