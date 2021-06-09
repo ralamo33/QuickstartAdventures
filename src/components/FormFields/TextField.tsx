@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import * as Constants from '../../constants';
-import styled, { Keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { ErrorMessage, Field } from 'formik';
 
 interface Props {
