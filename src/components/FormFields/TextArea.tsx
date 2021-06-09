@@ -3,6 +3,8 @@ import * as Constants from '../../constants';
 import styled, { Keyframes } from 'styled-components';
 import { ErrorMessage, Field } from 'formik';
 
+// This is everything the text field is except its an area instead
+
 interface Props {
   name: string;
   as: string;
@@ -14,7 +16,9 @@ interface Props {
   fontSize?: string;
 }
 
-const FullField = styled(Field)`
+const FieldType = <Field as="textarea"></Field>;
+
+const FullField = styled(FieldType)`
   && {
     display: block;
     border-radius: 5px;
@@ -64,7 +68,6 @@ export default function TextField({
   fontSize,
   border,
   label,
-  maxWidth,
   as,
 }: Props): ReactElement {
   return (
@@ -75,11 +78,10 @@ export default function TextField({
         name={name}
         placeholder={placeholder}
         minWidth={minWidth}
-        maxWidth={maxWidth}
         fontSize={fontSize}
         border={border}
-        component={as}
       />
+      <Field as="input"></Field>
       <ErrorMessage
         name={name}
         render={(msg) => <StyledError>{msg}</StyledError>}

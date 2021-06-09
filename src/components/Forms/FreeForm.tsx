@@ -24,15 +24,12 @@ const Animation = styled.div`
 `;
 
 export default function FreeForm(): ReactElement {
-  const startBorderColor = Constants.BLUE;
-  const startBorderWidth = '2.2px';
+  const startBorder = `2.2px solid ${Constants.BLUE}`;
   const startPlacedholder = 'Email Address';
-  const updatedBorderColor = '#66ff66';
-  const updatedBorderWidth = '5px';
+  const updatedBorder = '5px solid #66ff66';
   const updatedPlacedholder = 'Success!';
 
-  const [borderColor, setBorderColor] = useState(startBorderColor);
-  const [borderWidth, setBorderWidth] = useState(startBorderWidth);
+  const [border, setBorder] = useState(startBorder);
   const [play, setPlay] = useState('paused');
   const [placeholder, setPlaceholder] = useState(startPlacedholder);
 
@@ -42,9 +39,8 @@ export default function FreeForm(): ReactElement {
 
   const updateEmailField = () => {
     setPlaceholder(updatedPlacedholder);
-    setBorderColor(updatedBorderColor);
+    setBorder(updatedBorder);
     setPlay('start');
-    setBorderWidth(updatedBorderWidth);
   };
 
   const onSubmit = (
@@ -71,9 +67,10 @@ export default function FreeForm(): ReactElement {
               name="email"
               placeholder={placeholder}
               minWidth="25vw"
-              borderColor={borderColor}
-              borderWidth={borderWidth}
+              maxWidth="80%"
+              border={border}
               fontSize="1.5rem"
+              as="input"
             />
           </Animation>
           <PrettyButton
