@@ -6,11 +6,10 @@ import BackgroundImageContainer from '../components/BackgroundImageContainer';
 import Break from '../components/Break';
 import FreeForm from '../components/Forms/FreeForm';
 import { Container, Row, Col } from 'react-bootstrap';
-import * as Utils from '../utils';
 import * as Constants from '../constants';
-import useLandscape from '../hooks/LandscapeBackground';
 import useMonster from '../hooks/MonsterBackground';
 import useTavern from '../hooks/TavernBackground';
+import useLandscape from '../hooks/LandscapeBackground';
 
 const StyledList = styled.ul`
   margin-left: 6px;
@@ -22,28 +21,28 @@ export default function Landing(): ReactElement {
   return (
     <Layout>
       {/* Layer 1 they see when they first open link */}
-      {/* <BackgroundImageContainer hook={useLandscape} height="90vh"> */}
-      <Container>
-        <Row>
-          <Title
-            text="Build a Revolutionary Community"
-            color={Constants.YELLOW}
-            size="10vmin"
-          />
-        </Row>
-        <Row>
-          <Title
-            text="RPGs are about People"
-            color={Constants.OLD_BLUE}
-            size="5vmin"
-          ></Title>
-        </Row>
-        <Row>
-          <FreeForm></FreeForm>
-        </Row>
-      </Container>
-      <Break height="5vh" />
-      {/* </BackgroundImageContainer> */}
+      <BackgroundImageContainer hook={useLandscape} height="90vh">
+        <Container>
+          <Row>
+            <Title
+              text="Build a Revolutionary Community"
+              color={Constants.YELLOW}
+              size="10vmin"
+            />
+          </Row>
+          <Row>
+            <Title
+              text="RPGs are about People"
+              color={Constants.OLD_BLUE}
+              size="5vmin"
+            ></Title>
+          </Row>
+          <Row>
+            <FreeForm></FreeForm>
+          </Row>
+        </Container>
+        <Break height="5vh" />
+      </BackgroundImageContainer>
       {/* Layer 2 they see when they scroll down */}
       <Break height="10vh" />
       <Container>
