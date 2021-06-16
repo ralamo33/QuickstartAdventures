@@ -10,6 +10,7 @@ import * as Utils from '../utils';
 import * as Constants from '../constants';
 import useLandscape from '../hooks/LandscapeBackground';
 import useMonster from '../hooks/MonsterBackground';
+import useTavern from '../hooks/TavernBackground';
 
 const StyledList = styled.ul`
   margin-left: 6px;
@@ -21,37 +22,41 @@ export default function Landing(): ReactElement {
   return (
     <Layout>
       {/* Layer 1 they see when they first open link */}
-      <BackgroundImageContainer hook={useLandscape} height="90vh">
-        <Container>
-          <Row>
-            <Title
-              text="Build a Revolutionary Community"
-              color={Constants.YELLOW}
-              size="10vmin"
-            />
-          </Row>
-          <Row>
-            <Title
-              text="RPGs are about People"
-              color={Constants.OLD_BLUE}
-              size="5vmin"
-            ></Title>
-          </Row>
-          <Row>
-            <FreeForm></FreeForm>
-          </Row>
-        </Container>
-        <Break height="5vh" />
-      </BackgroundImageContainer>
+      {/* <BackgroundImageContainer hook={useLandscape} height="90vh"> */}
+      <Container>
+        <Row>
+          <Title
+            text="Build a Revolutionary Community"
+            color={Constants.YELLOW}
+            size="10vmin"
+          />
+        </Row>
+        <Row>
+          <Title
+            text="RPGs are about People"
+            color={Constants.OLD_BLUE}
+            size="5vmin"
+          ></Title>
+        </Row>
+        <Row>
+          <FreeForm></FreeForm>
+        </Row>
+      </Container>
+      <Break height="5vh" />
+      {/* </BackgroundImageContainer> */}
       {/* Layer 2 they see when they scroll down */}
       <Break height="10vh" />
       <Container>
         <Row>
           <Col>
-            <BackgroundImageContainer height="30vh" hook={useMonster} />
+            <BackgroundImageContainer height="45vh" hook={useTavern} />
           </Col>
           <Col>
-            <Title text="Hook New Players" color="blue" size="5vmin" />
+            <Title
+              text="Hook New Players"
+              color={Constants.YELLOW}
+              size="5vmin"
+            />
             <StyledList>
               <li>Teach the game in 20 minutes or less.</li>
               <li>Create your character in 5 minutes.</li>
@@ -61,15 +66,22 @@ export default function Landing(): ReactElement {
         </Row>
         <Row>
           <Col>
-            <Title text="Excite Veterans" color="blue" size="5vmin" />
+            <Title
+              text="Excite Veterans"
+              color={Constants.YELLOW}
+              size="5vmin"
+            />
             <StyledList>
-              <li>Build unique and memorable characters with thousands of possibilites.</li>
+              <li>
+                Build unique and memorable characters with thousands of
+                possibilites.
+              </li>
               <li>Experience a unique card based character sytem.</li>
               <li>Control every step of your character's destiny.</li>
             </StyledList>
           </Col>
           <Col>
-            <BackgroundImageContainer height="30vh" hook={useMonster} />
+            <BackgroundImageContainer height="45vh" hook={useTavern} />
           </Col>
         </Row>
         <Row>
@@ -81,20 +93,45 @@ export default function Landing(): ReactElement {
             ></Title>
           </Col>
         </Row>
+        {/* List of image and text pairings inside columns. At large screens show all in one row. Smaller have them offset. */}
         <Row>
           <Col>
-            {/* List of image and text pairings inside columns. At large screens show all in one row. Smaller have them offset. */}
-            Test
+            <BackgroundImageContainer
+              height="30vh"
+              hook={useMonster}
+            ></BackgroundImageContainer>
+            <p>Hello this is the best game ever.</p>
+          </Col>
+          <Col>
+            <BackgroundImageContainer
+              height="30vh"
+              hook={useMonster}
+            ></BackgroundImageContainer>
+            <p>Hello this is the best game ever.</p>
+          </Col>
+          <Col>
+            <BackgroundImageContainer
+              height="30vh"
+              hook={useMonster}
+            ></BackgroundImageContainer>
+            <p>Hello this is the best game ever.</p>
           </Col>
         </Row>
         <Break height="5vh" />
-	{/* Now advertise the Starter Set itself */}
+        {/* Now advertise the Starter Set itself */}
         <Title text="Starter Set"></Title>
-        <StyledList>
-          <li>A 2 hour RPG experience to convert your friends into roleplay fanatics.</li>
-          <li>Includes everything you need to test out the Revolutionary System</li>
-          <li>FREE</li>
-        </StyledList>
+        <BackgroundImageContainer hook={useMonster}>
+          <StyledList>
+            <li>
+              A 2 hour RPG experience to convert your friends into roleplay
+              fanatics.
+            </li>
+            <li>
+              Includes everything you need to test out the Revolutionary System
+            </li>
+            <li>FREE</li>
+          </StyledList>
+        </BackgroundImageContainer>
         <FreeForm></FreeForm>
         <Break height="5vh" />
       </Container>
