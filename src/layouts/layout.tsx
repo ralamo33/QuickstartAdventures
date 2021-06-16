@@ -49,10 +49,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    // background: #ffbf00;
-    // background: ${Constants.OLD_BLUE};
-    background-image: radial-gradient(circle, #ffa600, #ffae00, #ffb700, #ffbf00, #ffc700, #ffbe00, #feb600, #fdad00, #f99100, #f27400, #e95509, #de3016);
-    background-size: cover;
+    background: #FFC201;
+    background: -webkit-radial-gradient(top, #FFC201, #F62A03);
+    background: -moz-radial-gradient(top, #FFC201, #F62A03);
+    background: radial-gradient(to bottom, #FFC201, #F62A03);
     font-family: 'newrocker';
     font-weight: 400;
     width: 100%;

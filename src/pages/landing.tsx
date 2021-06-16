@@ -21,12 +21,13 @@ export default function Landing(): ReactElement {
   return (
     <Layout>
       {/* Layer 1 they see when they first open link */}
-      <BackgroundImageContainer hook={useLandscape} height="90vh">
-        <Container>
+      {/* <BackgroundImageContainer hook={useTavern} height="90vh"> */}
+        {/* <Container>
           <Row>
             <Title
               text="Build a Revolutionary Community"
-              color={Constants.YELLOW}
+              // color={Constants.BLUE}
+              color="gray"
               size="10vmin"
             />
           </Row>
@@ -40,9 +41,9 @@ export default function Landing(): ReactElement {
           <Row>
             <FreeForm></FreeForm>
           </Row>
-        </Container>
+        </Container> */}
         <Break height="5vh" />
-      </BackgroundImageContainer>
+      {/* </BackgroundImageContainer> */}
       {/* Layer 2 they see when they scroll down */}
       <Break height="10vh" />
       <Container>
@@ -53,8 +54,10 @@ export default function Landing(): ReactElement {
           <Col>
             <Title
               text="Hook New Players"
-              color={Constants.YELLOW}
-              size="5vmin"
+              // color={Constants.YELLOW}
+              // color="#6666ff"
+              color="#0066ff"
+              size="8vmin"
             />
             <StyledList>
               <li>Teach the game in 20 minutes or less.</li>
@@ -67,8 +70,8 @@ export default function Landing(): ReactElement {
           <Col>
             <Title
               text="Excite Veterans"
-              color={Constants.YELLOW}
-              size="5vmin"
+              color={Constants.OLD_BLUE}
+              size="8vmin"
             />
             <StyledList>
               <li>
