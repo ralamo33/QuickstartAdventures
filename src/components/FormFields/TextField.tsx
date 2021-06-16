@@ -43,6 +43,7 @@ FullField.defaultProps = {
 
 const StyledError = styled.p`
   color: red;
+  font-size: 1.8rem;
   font-family: newsreader;
   margin: 0px;
   padding: 0px;
@@ -50,6 +51,7 @@ const StyledError = styled.p`
   display: block;
   margin: auto;
   text-align: center;
+  -webkit-text-stroke: 0.2px red;
 `;
 
 const Label = styled.p`

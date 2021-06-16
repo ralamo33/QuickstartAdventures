@@ -8,6 +8,7 @@ import MonsterName from '../MonsterForm/MonsterName';
 import { Col, Row, Container } from 'react-bootstrap';
 import * as Constants from '../../../constants';
 import { string } from 'yup/lib/locale';
+import SliderField from '../../FormFields/SliderFormField';
 
 const sleep = (time: number) => new Promise((acc) => setTimeout(acc, time));
 
@@ -24,6 +25,21 @@ const validationSchema1 = object().shape({
   summary: Constants.STRING_VALIDATION,
   description: Constants.STRING_VALIDATION,
 });
+
+// validationSchema={object({
+//   appearance: require('Required'),
+// })}
+// money: mixed().when('millionaire', {
+//   is: true,
+//   then: number()
+//     .required()
+//     .min(
+//       1_000_000,
+//       'Because you said you are a millionaire you need to have 1 million'
+//     ),
+//   otherwise: number().required(),
+// }),
+// })}
 
 export default function Stepper(): ReactElement {
   return (
@@ -61,23 +77,14 @@ export default function Stepper(): ReactElement {
               </Row>
             </Container>
           </FormikStep>
-          <FormikStep
-            label="Bank Accounts"
-            // validationSchema={object({
-            //   appearance: require('Required'),
-            // })}
-            // money: mixed().when('millionaire', {
-            //   is: true,
-            //   then: number()
-            //     .required()
-            //     .min(
-            //       1_000_000,
-            //       'Because you said you are a millionaire you need to have 1 million'
-            //     ),
-            //   otherwise: number().required(),
-            // }),
-            // })}
-          ></FormikStep>
+          <FormikStep label="Stats and Attacks"></FormikStep>
+          <Container>
+            <Row>
+              <Col>
+                <SliderField field="STR"></SliderField>
+              </Col>
+            </Row>
+          </Container>
         </FormikStepper>
       </CardContent>
     </Card>

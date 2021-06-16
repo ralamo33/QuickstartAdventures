@@ -13,6 +13,7 @@ const StyledTitle = styled.h1`
   text-align: center;
   font-size: ${(props: Props) => props.size || '15vmin'};
   width: 100%;
+  -webkit-text-stroke: 1px black;
 `;
 
 export default function Title({ text, color, size }: Props): ReactElement {

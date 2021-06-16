@@ -1,10 +1,10 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-export default function useMonster(): any {
+export default function useLandscape(): any {
   return useStaticQuery(
     graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "tavern.jpg" }) {
+        placeholderImage: file(relativePath: { eq: "landscape.jpg" }) {
           childImageSharp {
             gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
           }

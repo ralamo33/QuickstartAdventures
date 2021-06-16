@@ -1,34 +1,34 @@
 import React, { ReactNode, ReactElement } from 'react';
 import styled from 'styled-components';
-import { graphql, useStaticQuery } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 
 import { BgImage } from 'gbimage-bridge';
 
 interface Props {
-  children: ReactNode;
+  children?: ReactNode;
+  height?: string;
+  hook: () => any;
 }
 
-export default function Background({ children }: Props): ReactElement {
-  const { placeholderImage } = useStaticQuery(
-    graphql`
-      query {
-        placeholderImage: file(relativePath: { eq: "Monster.jpg" }) {
-          childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-          }
-        }
-      }
-    `
-  );
+export default function Background({
+  children,
+  height,
+  hook,
+}: Props): ReactElement {
+  const { placeholderImage } = hook();
+
   const image = getImage(placeholderImage);
 
   const SBgImage = styled(BgImage)`
-    height: 110vh;
+    height: ${(props: Props) => props.height || '110vh'};
     align-items: center;
     justify-content: center;
     display: flex;
   `;
 
-  return <SBgImage image={image}>{children}</SBgImage>;
+  return (
+    <SBgImage height={height} image={image}>
+      {children}
+    </SBgImage>
+  );
 }
