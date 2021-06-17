@@ -4,7 +4,7 @@ export default function useMonster(): any {
   return useStaticQuery(
     graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "monster.jpg" }) {
+        placeholderImage: file(relativePath: { eq: "monstertext.png" }) {
           childImageSharp {
             gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
           }

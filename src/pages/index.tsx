@@ -8,8 +8,27 @@ import Title from '../components/Title';
 import * as Constants from '../constants';
 import QuickstartCard from '../components/QuickstartCard';
 import FreeForm from '../components/Forms/FreeForm';
+import Break from '../components/Break';
 
 const freeForm = <FreeForm />;
+
+const Background1 = styled.div`
+  // background: #01c9ff;
+  // background: -webkit-radial-gradient(center, #01c9ff, #0a8c3c);
+  // background: -moz-radial-gradient(center, #01c9ff, #0a8c3c);
+  // background: radial-gradient(ellipse at center, #01c9ff, #0a8c3c);
+  background: #01CAFF;
+background: -webkit-radial-gradient(top, #01CAFF, #01092F);
+background: -moz-radial-gradient(top, #01CAFF, #01092F);
+background: radial-gradient(to bottom, #01CAFF, #01092F);
+`;
+
+const BackgroundOrange = styled.div`
+  background: #ffc201;
+  background: -webkit-radial-gradient(top, #ffc201, #f62a03);
+  background: -moz-radial-gradient(top, #ffc201, #f62a03);
+  background: radial-gradient(to bottom, #ffc201, #f62a03);
+`;
 
 const InstagramButton = styled(Button)`
   background: linear-gradient(
@@ -49,7 +68,6 @@ const buyCard = (
     text={Constants.BUY_CARD_TEXT}
     border="4px solid orange"
     background="orange"
-    button={freeForm}
   />
 );
 
@@ -67,23 +85,30 @@ export default function Home(): ReactElement {
   const title = 'Join the Revolution';
 
   return (
-    <Layout>
-      <StaticImage alt="tavern" src="../images/landscape.jpg" layout="fullWidth" />
-      <Title text={title}></Title>
-      <FreeForm />
-      <Container fluid>
-        <Row>
-          <Col lg="4" md="6" sm="12">
-            {freeCard}
-          </Col>
-          <Col lg="4" md="6" sm="12">
-            {buyCard}
-          </Col>
-          <Col lg="4" md="6" sm="12">
-            {subscribeCard}
-          </Col>
-        </Row>
-      </Container>
-    </Layout>
+    <Background1>
+      <Layout>
+        <StaticImage
+          alt="tavern"
+          src="../images/landscape.jpg"
+          layout="fullWidth"
+        />
+        <Title text={title}></Title>
+        <FreeForm />
+        <Break height="5vh"></Break>
+        <Container fluid>
+          <Row>
+            <Col lg="4" md="6" sm="12">
+              {freeCard}
+            </Col>
+            <Col lg="4" md="6" sm="12">
+              {buyCard}
+            </Col>
+            <Col lg="4" md="6" sm="12">
+              {subscribeCard}
+            </Col>
+          </Row>
+        </Container>
+      </Layout>
+    </Background1>
   );
 }

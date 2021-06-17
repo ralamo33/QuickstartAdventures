@@ -15,16 +15,6 @@ import PrettyButton from '../components/Buttons/PrettyButton';
 import useLandscape from '../hooks/LandscapeBackground';
 import useWitch from '../hooks/WitchBackground';
 
-const StyledList = styled.ul`
-  margin-left: 5vw;
-  padding: 0;
-  min-height: 30px;
-  color: white;
-  font-size: 1.7rem;
-  font-family: baskerville;
-  font-weight: 600;
-`;
-
 const StyledText = styled.p`
   color: white;
   text-align: center;
@@ -68,29 +58,29 @@ export default function Landing(): ReactElement {
       <Background1>
         <Container>
           <Row>
-            <Col>
+            <Col xs="12" sm="6">
               <Title
                 text="Never Struggle to find players Again"
                 color={Constants.YELLOW}
-                size="4rem"
+                size="12vmin"
                 fontFamily="mephisto"
               />
-              <Break height="20vh" />
-              <Title
+              <Break height="5vmin" />
+              {/* <Title
                 text="Build a roleplaying Community"
                 color="white"
-                size="2rem"
+                size="8vmin"
                 fontFamily="mephisto"
-              ></Title>
-              <FreeForm></FreeForm>
-              <Break height="5vh" />
+              ></Title> */}
             </Col>
-            <Col>
-              <Break height="10vh" />
+            <Col xs="12" sm="6">
+              <Break height="5vh" />
               <BackgroundImageContainer height="80vh" hook={useWitch} />
               <Break height="10vh" />
             </Col>
           </Row>
+          <FreeForm></FreeForm>
+          <Break height="5vh" />
         </Container>
       </Background1>
       <BackgroundRadial>
@@ -133,35 +123,35 @@ export default function Landing(): ReactElement {
               <BackgroundImageContainer height="45vh" hook={useTavern} />
             </Col>
           </Row> */}
-          <Title text="Hook new players" color="orange" size="10vmin"></Title>
-          <Title text="Excite Veterans" color="orange" size="10vmin"></Title>
-          <StyledTable />
+          <Title text="Hook Players" color="orange" size="10vmin"></Title>
+          {/* <Title text="Excite Veterans" color="orange" size="10vmin"></Title> */}
+            <StyledTable />
           <Row>
             <Col>
               <Title
                 text="Playtester Testimonials"
                 color="orange"
-                size="10vmin"
+                size="12vmin"
                 fontFamily="mephisto"
               ></Title>
             </Col>
           </Row>
           <Row>
-            <Col>
+            <Col xs="12" sm="6" md="4">
               <BackgroundImageContainer
                 height="30vh"
                 hook={useMonster}
               ></BackgroundImageContainer>
               <StyledText>"Hello this is the best game ever."</StyledText>
             </Col>
-            <Col>
+            <Col xs="12" sm="6" md="4">
               <BackgroundImageContainer
                 height="30vh"
                 hook={useMonster}
               ></BackgroundImageContainer>
               <StyledText>Hello this is the best game ever.</StyledText>
             </Col>
-            <Col>
+            <Col xs="12" sm="6" md="4">
               <BackgroundImageContainer
                 height="30vh"
                 hook={useMonster}
@@ -174,11 +164,11 @@ export default function Landing(): ReactElement {
       </BackgroundRadial>
       <BackgroundOrange>
         <Container>
-          {/* Now advertise the Starter Set itself */}
           <Title text="Starter Set"></Title>
           <Row>
-            <Col>
-              <BackgroundImageContainer hook={useMonster} height="100%" />
+            <Col sm="12" md="6">
+              <BackgroundImageContainer hook={useMonster} height="78vh" />
+              <Break height="10vh"></Break>
             </Col>
             <Col>{freeCard}</Col>
           </Row>

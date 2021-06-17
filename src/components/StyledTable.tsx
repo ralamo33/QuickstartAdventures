@@ -4,13 +4,12 @@ import styled from 'styled-components';
 import * as Constants from '../constants';
 
 const StyledText = styled.p`
-  font-size: 1.5rem;
   font-family: baskerville;
 `;
 
 const Header = styled.th`
   color: white;
-  font-size: 2rem;
+  font-size: 5vmin;
   text-align: center;
 `;
 
@@ -20,7 +19,7 @@ const StyledList = styled(StyledText)`
 `;
 
 const StyledRow = styled.tr`
-  font-size: 1.5rem;
+  font-size: 4.5vmin;
   font-family: baskerville;
   font-weight: 600;
   color: white;
@@ -40,7 +39,7 @@ const OddRow = styled(StyledRow)`
 
 export default function StyledTable(): ReactElement {
   return (
-    <Table bordered >
+    <Table bordered responsive >
       <thead>
         <EvenRow>
           <Header>Features</Header>

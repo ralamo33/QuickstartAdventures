@@ -14,7 +14,7 @@ interface CardProps {
 }
 
 const MyCard = styled(Card)`
-  margin: 10px 0px;
+  margin: 0px;
   border: ${(props: CardProps) => props.border};
 `;
 

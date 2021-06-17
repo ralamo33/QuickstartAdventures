@@ -91,7 +91,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: white;
     // background: #FFC201;
     // background: -webkit-radial-gradient(top, #FFC201, #F62A03);
     // background: -moz-radial-gradient(top, #FFC201, #F62A03);
