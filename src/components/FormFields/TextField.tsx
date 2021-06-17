@@ -28,13 +28,11 @@ const FullField = styled(Field)`
   }
 
   &:active {
-    // outline: 2px solid ${Constants.OLD_BLUE};
-    outline: 2px solid orangered;
+    outline: 2px solid #33ff77;
   }
 
   &:focus {
-    // outline: 2px solid ${Constants.OLD_BLUE};
-    outline: 2px solid orangered;
+    outline: 2px solid #33ff77;
   }
 `;
 
@@ -53,7 +51,7 @@ const StyledError = styled.p`
   display: block;
   margin: auto;
   text-align: center;
-  -webkit-text-stroke: 0.2px red;
+  -webkit-text-stroke: 0.3px black;
 `;
 
 const Label = styled.p`

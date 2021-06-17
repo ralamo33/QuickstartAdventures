@@ -5,9 +5,11 @@ import Title from '../components/Title';
 import BackgroundImageContainer from '../components/BackgroundImageContainer';
 import Break from '../components/Break';
 import FreeForm from '../components/Forms/FreeForm';
-import { Container, Row, Col, Table } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import StyledTable from '../components/StyledTable';
 import * as Constants from '../constants';
 import useMonster from '../hooks/MonsterBackground';
+import QuickstartCard from '../components/QuickstartCard';
 import useTavern from '../hooks/TavernBackground';
 import PrettyButton from '../components/Buttons/PrettyButton';
 import useLandscape from '../hooks/LandscapeBackground';
@@ -50,6 +52,16 @@ const BackgroundRadial = styled.div`
   background: linear-gradient(to bottom, #8e3bf7, #f701a0);
 `;
 
+const freeCard = (
+  <QuickstartCard
+    color="white"
+    header="Starter Set"
+    border="4px solid #800000"
+    background="#800000"
+    text={Constants.LANDING_CARD_TEXT}
+  />
+);
+
 export default function Landing(): ReactElement {
   return (
     <Layout>
@@ -58,17 +70,20 @@ export default function Landing(): ReactElement {
           <Row>
             <Col>
               <Title
-                text="Build a Revolutionary Community"
-                color="orange"
-                size="10vmin"
+                text="Never Struggle to find players Again"
+                color={Constants.YELLOW}
+                size="4rem"
+                fontFamily="mephisto"
               />
               <Break height="20vh" />
               <Title
-                text="RPGs are about People"
+                text="Build a roleplaying Community"
                 color="white"
-                size="5vmin"
+                size="2rem"
+                fontFamily="mephisto"
               ></Title>
               <FreeForm></FreeForm>
+              <Break height="5vh" />
             </Col>
             <Col>
               <Break height="10vh" />
@@ -79,9 +94,9 @@ export default function Landing(): ReactElement {
         </Container>
       </Background1>
       <BackgroundRadial>
-        <Break height="15vh" />
+        <Break height="5vh" />
         <Container fluid>
-          <Row>
+          {/* <Row>
             <Col>
               <BackgroundImageContainer height="45vh" hook={useTavern} />
             </Col>
@@ -117,17 +132,20 @@ export default function Landing(): ReactElement {
             <Col>
               <BackgroundImageContainer height="45vh" hook={useTavern} />
             </Col>
-          </Row>
+          </Row> */}
+          <Title text="Hook new players" color="orange" size="10vmin"></Title>
+          <Title text="Excite Veterans" color="orange" size="10vmin"></Title>
+          <StyledTable />
           <Row>
             <Col>
               <Title
                 text="Playtester Testimonials"
                 color="orange"
                 size="10vmin"
+                fontFamily="mephisto"
               ></Title>
             </Col>
           </Row>
-          {/* List of image and text pairings inside columns. At large screens show all in one row. Smaller have them offset. */}
           <Row>
             <Col>
               <BackgroundImageContainer
@@ -152,55 +170,18 @@ export default function Landing(): ReactElement {
             </Col>
           </Row>
           <Break height="5vh" />
-          <Table striped bordered hover>
-            <thead>
-              <tr>
-                <th>Features</th>
-                <th>Benefits</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Feature #1</td>
-                <td>
-                  <StyledList>
-                    <li>Benefit 1</li>
-                    <li>Benefit 2</li>
-                    <li>Benefit 3</li>
-                  </StyledList>
-                </td>
-              </tr>
-              <tr>
-                <td>Feature #2</td>
-                <td>
-                  <StyledList>
-                    <li>Benefit 1</li>
-                    <li>Benefit 2</li>
-                    <li>Benefit 3</li>
-                  </StyledList>
-                </td>
-              </tr>
-            </tbody>
-          </Table>
         </Container>
       </BackgroundRadial>
       <BackgroundOrange>
         <Container>
           {/* Now advertise the Starter Set itself */}
           <Title text="Starter Set"></Title>
-          <BackgroundImageContainer hook={useMonster}>
-            <StyledList>
-              {/* <li>
-                A 2 hour RPG experience to convert your friends into roleplay
-                fanatics.
-              </li>
-              <li>
-                Includes everything you need to test out the Revolutionary
-                System
-              </li>
-              <li>FREE</li> */}
-            </StyledList>
-          </BackgroundImageContainer>
+          <Row>
+            <Col>
+              <BackgroundImageContainer hook={useMonster} height="100%" />
+            </Col>
+            <Col>{freeCard}</Col>
+          </Row>
           <FreeForm></FreeForm>
           <Break height="5vh" />
         </Container>

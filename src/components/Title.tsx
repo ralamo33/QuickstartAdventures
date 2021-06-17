@@ -5,6 +5,7 @@ interface Props {
   text?: string;
   color?: string;
   size?: string;
+  fontFamily?: string;
 }
 
 const StyledTitle = styled.h1`
@@ -12,13 +13,19 @@ const StyledTitle = styled.h1`
   font-family: mephisto;
   text-align: center;
   font-size: ${(props: Props) => props.size || '15vmin'};
+  font-family: ${(props: Props) => props.fontFamily || 'belmont'};
   width: 100%;
   -webkit-text-stroke: 1px black;
 `;
 
-export default function Title({ text, color, size }: Props): ReactElement {
+export default function Title({
+  text,
+  color,
+  size,
+  fontFamily,
+}: Props): ReactElement {
   return (
-    <StyledTitle color={color} size={size}>
+    <StyledTitle color={color} size={size} fontFamily={fontFamily}>
       {text}
     </StyledTitle>
   );

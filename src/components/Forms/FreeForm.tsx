@@ -24,10 +24,11 @@ const Animation = styled.div`
 `;
 
 export default function FreeForm(): ReactElement {
-  const startBorder = `2.2px solid orange`;
+  const startBorder = `2.2px solid #00e64d`;
+  // const startBorder = `2.2px solid orange`;
   const startPlacedholder = 'Email Address';
-  // const updatedBorder = '5px solid #66ff66';
-  const updatedBorder = '5px solid orange';
+  const updatedBorder = '5px solid #66ff66';
+  // const updatedBorder = '5px solid orange';
   const updatedPlacedholder = 'Success!';
 
   const [border, setBorder] = useState(startBorder);

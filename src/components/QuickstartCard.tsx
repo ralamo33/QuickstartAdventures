@@ -39,7 +39,6 @@ const MyText = styled.li`
   font-size: 24px;
 `;
 
-
 export default function QuickstartCard({
   border,
   background,
@@ -61,10 +60,8 @@ export default function QuickstartCard({
         {header}
       </MyHeader>
       <MyBody>
-        <MyList>
-          {TextList}
-        </MyList>
-      {button}
+        <MyList>{TextList}</MyList>
+        {button}
       </MyBody>
       <Break height="3vh" />
     </MyCard>
