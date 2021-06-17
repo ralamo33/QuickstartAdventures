@@ -28,11 +28,13 @@ const FullField = styled(Field)`
   }
 
   &:active {
-    outline: 2px solid ${Constants.OLD_BLUE};
+    // outline: 2px solid ${Constants.OLD_BLUE};
+    outline: 2px solid orangered;
   }
 
   &:focus {
-    outline: 2px solid ${Constants.OLD_BLUE};
+    // outline: 2px solid ${Constants.OLD_BLUE};
+    outline: 2px solid orangered;
   }
 `;
 

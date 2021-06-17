@@ -68,7 +68,7 @@ export default function Home(): ReactElement {
 
   return (
     <Layout>
-      <StaticImage alt="tavern" src="../images/tavern.jpg" layout="fullWidth" />
+      <StaticImage alt="tavern" src="../images/landscape.jpg" layout="fullWidth" />
       <Title text={title}></Title>
       <FreeForm />
       <Container fluid>
