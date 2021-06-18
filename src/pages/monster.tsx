@@ -28,12 +28,10 @@ const Monstertron = styled(Jumbotron)`
 export default function Monster(): ReactElement {
   return (
     <Layout>
-      <BackgroundImageContainer>
-        <Monstertron>
-          <Title text="Monster Maker" size="10vmin"></Title>
-          <MonsterForm />
-        </Monstertron>
-      </BackgroundImageContainer>
+      <Monstertron>
+        <Title text="Monster Maker" size="10vmin"></Title>
+        <MonsterForm />
+      </Monstertron>
     </Layout>
   );
 }

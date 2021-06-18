@@ -13,21 +13,9 @@ import Break from '../components/Break';
 const freeForm = <FreeForm />;
 
 const Background1 = styled.div`
-  // background: #01c9ff;
-  // background: -webkit-radial-gradient(center, #01c9ff, #0a8c3c);
-  // background: -moz-radial-gradient(center, #01c9ff, #0a8c3c);
-  // background: radial-gradient(ellipse at center, #01c9ff, #0a8c3c);
-  background: #01CAFF;
-background: -webkit-radial-gradient(top, #01CAFF, #01092F);
-background: -moz-radial-gradient(top, #01CAFF, #01092F);
-background: radial-gradient(to bottom, #01CAFF, #01092F);
-`;
-
-const BackgroundOrange = styled.div`
-  background: #ffc201;
-  background: -webkit-radial-gradient(top, #ffc201, #f62a03);
-  background: -moz-radial-gradient(top, #ffc201, #f62a03);
-  background: radial-gradient(to bottom, #ffc201, #f62a03);
+  background: -webkit-radial-gradient(top, #01caff, #01092f);
+  background: -moz-radial-gradient(top, #01caff, #01092f);
+  background: radial-gradient(to bottom, #01caff, #01092f);
 `;
 
 const InstagramButton = styled(Button)`

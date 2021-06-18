@@ -8,8 +8,8 @@ interface Props {
   as: string;
   label?: string;
   border?: string;
-  minWidth?: string;
-  maxWidth?: string;
+  minwidth?: string;
+  maxwidth?: string;
   placeholder?: string;
   fontSize?: string;
 }
@@ -18,8 +18,8 @@ const FullField = styled(Field)`
   && {
     display: block;
     border-radius: 5px;
-    min-width: ${(props: Props) => props.minWidth};
-    max-width: ${(props: Props) => props.maxWidth};
+    min-width: ${(props: Props) => props.minwidth};
+    max-width: ${(props: Props) => props.maxwidth};
     border: ${(props: Props) => props.border};
     font-size: ${(props: Props) => props.fontSize};
     justify-content: center;
@@ -38,7 +38,7 @@ const FullField = styled(Field)`
 
 FullField.defaultProps = {
   border: `2.2px solid ${Constants.BLUE}`,
-  minWidth: '100%',
+  minwidth: '100%',
 };
 
 const StyledError = styled.p`
@@ -60,13 +60,13 @@ const Label = styled.p`
 `;
 
 export default function TextField({
-  minWidth,
+  minwidth,
   name,
   placeholder,
   fontSize,
   border,
   label,
-  maxWidth,
+  maxwidth,
   as,
 }: Props): ReactElement {
   return (
@@ -76,8 +76,8 @@ export default function TextField({
         id={name}
         name={name}
         placeholder={placeholder}
-        minWidth={minWidth}
-        maxWidth={maxWidth}
+        minwidth={minwidth}
+        maxwidth={maxwidth}
         fontSize={fontSize}
         border={border}
         component={as}

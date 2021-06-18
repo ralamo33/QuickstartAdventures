@@ -68,8 +68,8 @@ export default function FreeForm(): ReactElement {
             <TextField
               name="email"
               placeholder={placeholder}
-              minWidth="25vw"
-              maxWidth="80%"
+              minwidth="25vw"
+              maxwidth="80%"
               border={border}
               fontSize="1.5rem"
               as="input"

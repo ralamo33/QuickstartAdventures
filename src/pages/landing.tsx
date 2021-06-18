@@ -2,18 +2,13 @@ import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import Layout from '../layouts/layout';
 import Title from '../components/Title';
-import BackgroundImageContainer from '../components/BackgroundImageContainer';
 import Break from '../components/Break';
 import FreeForm from '../components/Forms/FreeForm';
 import { Container, Row, Col } from 'react-bootstrap';
 import StyledTable from '../components/StyledTable';
 import * as Constants from '../constants';
-import useMonster from '../hooks/MonsterBackground';
 import QuickstartCard from '../components/QuickstartCard';
-import useTavern from '../hooks/TavernBackground';
-import PrettyButton from '../components/Buttons/PrettyButton';
-import useLandscape from '../hooks/LandscapeBackground';
-import useWitch from '../hooks/WitchBackground';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const StyledText = styled.p`
   color: white;
@@ -75,7 +70,11 @@ export default function Landing(): ReactElement {
             </Col>
             <Col xs="12" sm="6">
               <Break height="5vh" />
-              <BackgroundImageContainer height="80vh" hook={useWitch} />
+              <StaticImage
+                alt="tavern"
+                src="../images/witchtext.jpg"
+                layout="fullWidth"
+              />
               <Break height="10vh" />
             </Col>
           </Row>
@@ -138,24 +137,39 @@ export default function Landing(): ReactElement {
           </Row>
           <Row>
             <Col xs="12" sm="6" md="4">
-              <BackgroundImageContainer
+              <StaticImage
+                alt="tavern"
+                src="../images/monster.jpg"
+                layout="fullWidth"
+              />
+              {/* <BackgroundImageContainer
                 height="30vh"
                 hook={useMonster}
-              ></BackgroundImageContainer>
+              ></BackgroundImageContainer> */}
               <StyledText>"Hello this is the best game ever."</StyledText>
             </Col>
             <Col xs="12" sm="6" md="4">
-              <BackgroundImageContainer
+              <StaticImage
+                alt="tavern"
+                src="../images/monster.jpg"
+                layout="fullWidth"
+              />
+              {/* <BackgroundImageContainer
                 height="30vh"
                 hook={useMonster}
-              ></BackgroundImageContainer>
+              ></BackgroundImageContainer> */}
               <StyledText>Hello this is the best game ever.</StyledText>
             </Col>
             <Col xs="12" sm="6" md="4">
-              <BackgroundImageContainer
+              <StaticImage
+                alt="tavern"
+                src="../images/monster.jpg"
+                layout="fullWidth"
+              />
+              {/* <BackgroundImageContainer
                 height="30vh"
                 hook={useMonster}
-              ></BackgroundImageContainer>
+              ></BackgroundImageContainer> */}
               <StyledText>Hello this is the best game ever.</StyledText>
             </Col>
           </Row>
@@ -167,7 +181,12 @@ export default function Landing(): ReactElement {
           <Title text="Starter Set"></Title>
           <Row>
             <Col sm="12" md="6">
-              <BackgroundImageContainer hook={useMonster} height="78vh" />
+              <StaticImage
+                alt="tavern"
+                src="../images/monstertext.png"
+                layout="fullWidth"
+              />
+              {/* <BackgroundImageContainer hook={useMonster} height="78vh" /> */}
               <Break height="10vh"></Break>
             </Col>
             <Col>{freeCard}</Col>
