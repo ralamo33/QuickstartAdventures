@@ -61,12 +61,6 @@ export default function Landing(): ReactElement {
                 fontFamily="mephisto"
               />
               <Break height="5vmin" />
-              {/* <Title
-                text="Build a roleplaying Community"
-                color="white"
-                size="8vmin"
-                fontFamily="mephisto"
-              ></Title> */}
             </Col>
             <Col xs="12" sm="6">
               <Break height="5vh" />
@@ -85,45 +79,7 @@ export default function Landing(): ReactElement {
       <BackgroundRadial>
         <Break height="5vh" />
         <Container fluid>
-          {/* <Row>
-            <Col>
-              <BackgroundImageContainer height="45vh" hook={useTavern} />
-            </Col>
-            <Col>
-              <Title
-                text="Hook New Players"
-                color={Constants.YELLOW}
-                size="8vmin"
-              />
-              <StyledList>
-                <li>Teach the game in 20 minutes or less.</li>
-                <li>Create your character in 5 minutes.</li>
-                <li>Almost no reading required!</li>
-              </StyledList>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Title
-                text="Excite Veterans"
-                color={Constants.YELLOW}
-                size="8vmin"
-              />
-              <StyledList>
-                <li>
-                  Build unique and memorable characters with thousands of
-                  possibilites.
-                </li>
-                <li>Experience a unique card based character sytem.</li>
-                <li>Control every step of your character's destiny.</li>
-              </StyledList>
-            </Col>
-            <Col>
-              <BackgroundImageContainer height="45vh" hook={useTavern} />
-            </Col>
-          </Row> */}
           <Title text="Hook Players" color="orange" size="10vmin"></Title>
-          {/* <Title text="Excite Veterans" color="orange" size="10vmin"></Title> */}
             <StyledTable />
           <Row>
             <Col>
@@ -142,10 +98,6 @@ export default function Landing(): ReactElement {
                 src="../images/monster.jpg"
                 layout="fullWidth"
               />
-              {/* <BackgroundImageContainer
-                height="30vh"
-                hook={useMonster}
-              ></BackgroundImageContainer> */}
               <StyledText>"Hello this is the best game ever."</StyledText>
             </Col>
             <Col xs="12" sm="6" md="4">
@@ -154,10 +106,6 @@ export default function Landing(): ReactElement {
                 src="../images/monster.jpg"
                 layout="fullWidth"
               />
-              {/* <BackgroundImageContainer
-                height="30vh"
-                hook={useMonster}
-              ></BackgroundImageContainer> */}
               <StyledText>Hello this is the best game ever.</StyledText>
             </Col>
             <Col xs="12" sm="6" md="4">
@@ -166,11 +114,6 @@ export default function Landing(): ReactElement {
                 src="../images/monster.jpg"
                 layout="fullWidth"
               />
-              {/* <BackgroundImageContainer
-                height="30vh"
-                hook={useMonster}
-              ></BackgroundImageContainer> */}
-              <StyledText>Hello this is the best game ever.</StyledText>
             </Col>
           </Row>
           <Break height="5vh" />
@@ -186,7 +129,6 @@ export default function Landing(): ReactElement {
                 src="../images/monstertext.png"
                 layout="fullWidth"
               />
-              {/* <BackgroundImageContainer hook={useMonster} height="78vh" /> */}
               <Break height="10vh"></Break>
             </Col>
             <Col>{freeCard}</Col>

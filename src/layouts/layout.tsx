@@ -91,10 +91,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    // background: #FFC201;
-    // background: -webkit-radial-gradient(top, #FFC201, #F62A03);
-    // background: -moz-radial-gradient(top, #FFC201, #F62A03);
-    // background: radial-gradient(to bottom, #FFC201, #F62A03);
     font-family: 'newrocker';
     font-weight: 400;
     width: 100%;
