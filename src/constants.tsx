@@ -33,10 +33,10 @@ export const FREE_CARD_TEXT = [
   'Thousands of character possbilities.',
 ];
 export const LANDING_CARD_TEXT = [
-  'A 2 hour RPG experience to convert your friends into RPG fanatics.',
-  'Test out the basics for free!',
-  'Includes a 2 hour mini adventure and all required character materials!',
-  'Give feedback and make an impact on the final release of Roleplay Revolution!'
+  'Never worry about how to introduce RPGs to new players again.',
+  'FREE 2 hour experience to convert your friends into roleplay fanatics.',
+  'Test whether your friends will LOVE this game as much as I do.',
+  'Includes a 2 hour mini adventure and all required character materials.',
 ];
 
 export const BUY_MODAL_TITLE = 'Your friends will Love it!';

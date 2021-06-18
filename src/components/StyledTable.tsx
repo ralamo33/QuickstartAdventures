@@ -52,7 +52,7 @@ export default function StyledTable(): ReactElement {
           <td>
             <StyledList>
               <li>Teach it in minutes. Even to people who never played TTRPGs before.</li>
-              <li>Be ready to GM it in half an hour or less.</li>
+              <li>Get ready to GM in half an hour or less.</li>
               <li>Quickly and decisively settle rule disputes.</li>
             </StyledList>
           </td>
@@ -62,11 +62,30 @@ export default function StyledTable(): ReactElement {
           <td>
             <StyledList>
               <li>Thousands of unique and memorable characters to create. 4,000 possibilities by level 4.</li>
-              <li>Greater over control of character progression. Decide which cards to unlock and upgrade.</li>
-              <li>Players never read a rulebook. All a new player needs is the reference cards.</li>
+              <li>Greater control over character progression. Decide which cards to unlock and upgrade.</li>
+              <li>Players never read a rulebook. Everything they need to know is in the reference cards.</li>
             </StyledList>
           </td>
         </EvenRow>
+        <OddRow>
+          <td>Guides to Making Monsters and Rewarding Players</td>
+          <td>
+            <StyledList>
+              <li>Give rewards to your players with confidence. Know that you're keeping the balance of the game.</li>
+              <li>Balance custom monsters on the fly.</li>
+              <li>Easily adjust monster difficulty as players weave in and out of sessions.</li>
+            </StyledList>
+          </td>
+        </OddRow>
+        {/* <EvenRow>
+          <td>Free Starter Set includes everythign you need to play through levels 1 and 2 or Roleplay Revolution.</td>
+          <td>
+            <StyledList>
+              <li>The perfect experience for new players getting into the genre. Get them started with our custom experience!</li>
+              <li>Test out a simplified version of the Roleplay Revolution system. See if its for you!</li>
+            </StyledList>
+          </td>
+        </EvenRow> */}
       </tbody>
     </Table>
   );

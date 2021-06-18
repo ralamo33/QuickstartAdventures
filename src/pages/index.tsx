@@ -1,63 +1,41 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
-import { StaticImage } from 'gatsby-plugin-image';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Container, Row, Col } from 'react-bootstrap';
 import Layout from '../layouts/layout';
 import Title from '../components/Title';
+import Break from '../components/Break';
+import FreeForm from '../components/Forms/FreeForm';
+import { Container, Row, Col } from 'react-bootstrap';
+import StyledTable from '../components/StyledTable';
 import * as Constants from '../constants';
 import QuickstartCard from '../components/QuickstartCard';
-import FreeForm from '../components/Forms/FreeForm';
-import Break from '../components/Break';
+import { StaticImage } from 'gatsby-plugin-image';
 
-const freeForm = <FreeForm />;
+const StyledText = styled.p`
+  color: white;
+  text-align: center;
+  font-size: 1.4rem;
+`;
 
 const Background1 = styled.div`
-  background: -webkit-radial-gradient(top, #01caff, #01092f);
-  background: -moz-radial-gradient(top, #01caff, #01092f);
-  background: radial-gradient(to bottom, #01caff, #01092f);
+  background: #0be2d4;
+  background: -webkit-linear-gradient(top, #0be2d4, #0b44cc);
+  background: -moz-linear-gradient(top, #0be2d4, #0b44cc);
+  background: linear-gradient(to bottom, #0be2d4, #0b44cc);
 `;
 
-const InstagramButton = styled(Button)`
-  background: linear-gradient(
-    45deg,
-    #405de6,
-    #5851db,
-    #833ab4,
-    #c13584,
-    #e1306c,
-    #fd1d1d
-  );
-  width: 80%;
-  display: block;
-  margin: auto;
-  font-size: 2rem;
+const BackgroundOrange = styled.div`
+  background: #ffc201;
+  background: -webkit-radial-gradient(top, #ffc201, #f62a03);
+  background: -moz-radial-gradient(top, #ffc201, #f62a03);
+  background: radial-gradient(to bottom, #ffc201, #f62a03);
 `;
 
-const onClick = () => {
-  window.location.href = 'http://www.instagram.com/roleplayrev';
-};
-
-const subscribeCard = (
-  <QuickstartCard
-    color="white"
-    header="Join our Community"
-    border="4px solid #0088cc"
-    background="#0088cc"
-    text={Constants.SUBSCRIBE_CARD_TEXT}
-    button={<InstagramButton onClick={onClick}>Instagram</InstagramButton>}
-  />
-);
-
-const buyCard = (
-  <QuickstartCard
-    color="black"
-    header="Roleplay Revolution"
-    text={Constants.BUY_CARD_TEXT}
-    border="4px solid orange"
-    background="orange"
-  />
-);
+const BackgroundRadial = styled.div`
+  background: #8e3bf7;
+  background: -webkit-linear-gradient(top, #8e3bf7, #f701a0);
+  background: -moz-linear-gradient(top, #8e3bf7, #f701a0);
+  background: linear-gradient(to bottom, #8e3bf7, #f701a0);
+`;
 
 const freeCard = (
   <QuickstartCard
@@ -65,38 +43,100 @@ const freeCard = (
     header="Starter Set"
     border="4px solid #800000"
     background="#800000"
-    text={Constants.STARTER_CARD_TEXT}
+    text={Constants.LANDING_CARD_TEXT}
   />
 );
 
-export default function Home(): ReactElement {
-  const title = 'Join the Revolution';
-
+export default function Landing(): ReactElement {
   return (
-    <Background1>
-      <Layout>
-        <StaticImage
-          alt="tavern"
-          src="../images/landscape.jpg"
-          layout="fullWidth"
-        />
-        <Title text={title}></Title>
-        <FreeForm />
-        <Break height="5vh"></Break>
-        <Container fluid>
+    <Layout>
+      <Background1>
+        <Container>
           <Row>
-            <Col lg="4" md="6" sm="12">
-              {freeCard}
+            <Col xs="12" sm="6">
+              <Title
+                text="Never Struggle to find players Again"
+                color={Constants.YELLOW}
+                size="12vmin"
+                fontFamily="mephisto"
+              />
+              <Break height="5vmin" />
             </Col>
-            <Col lg="4" md="6" sm="12">
-              {buyCard}
-            </Col>
-            <Col lg="4" md="6" sm="12">
-              {subscribeCard}
+            <Col xs="12" sm="6">
+              <Break height="5vh" />
+              <StaticImage
+                alt="tavern"
+                src="../images/witchtext.jpg"
+                layout="fullWidth"
+              />
+              <Break height="10vh" />
             </Col>
           </Row>
+          <FreeForm></FreeForm>
+          <Break height="5vh" />
         </Container>
-      </Layout>
-    </Background1>
+      </Background1>
+      <BackgroundRadial>
+        <Break height="5vh" />
+        <Container fluid>
+          <Title text="Hook Players" color="orange" size="10vmin"></Title>
+          <StyledTable />
+          <Row>
+            <Col>
+              <Title
+                text="Playtester Testimonials"
+                color="orange"
+                size="12vmin"
+                fontFamily="mephisto"
+              ></Title>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs="12" sm="6" md="4">
+              <StaticImage
+                alt="tavern"
+                src="../images/ryancoat.jpg"
+                layout="fullWidth"
+              />
+              <StyledText>"Hello this is the best game ever."</StyledText>
+            </Col>
+            <Col xs="12" sm="6" md="4">
+              <StaticImage
+                alt="tavern"
+                src="../images/ryanmoney.jpg"
+                layout="fullWidth"
+              />
+              <StyledText>Hello this is the best game ever.</StyledText>
+            </Col>
+            <Col xs="12" sm="6" md="4">
+              <StaticImage
+                alt="tavern"
+                src="../images/monster.jpg"
+                layout="fullWidth"
+              />
+            </Col>
+          </Row>
+          <Break height="5vh" />
+        </Container>
+      </BackgroundRadial>
+      <BackgroundOrange>
+        <Container>
+          <Title text="Starter Set"></Title>
+          <Row>
+            <Col sm="12" md="6">
+              <StaticImage
+                alt="monster"
+                src="../images/monstertext.jpg"
+                layout="fullWidth"
+              />
+              <Break height="10vh"></Break>
+            </Col>
+            <Col>{freeCard}</Col>
+          </Row>
+          <FreeForm></FreeForm>
+          <Break height="5vh" />
+        </Container>
+      </BackgroundOrange>
+    </Layout>
   );
 }
