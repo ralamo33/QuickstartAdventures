@@ -95,26 +95,26 @@ export default function Landing(): ReactElement {
             <Col xs="12" sm="6" md="4">
               <StaticImage
                 alt="tavern"
-                src="../images/monster.jpg"
+                src="../images/eddie.jpeg"
                 layout="fullWidth"
               />
-              <StyledText>"Hello this is the best game ever."</StyledText>
+              <StyledText>{Constants.TESTIMONALS.eddie}</StyledText>
             </Col>
             <Col xs="12" sm="6" md="4">
+              <StaticImage
+                alt="tavern"
+                src="../images/pablo.jpeg"
+                layout="fullWidth"
+              />
+              <StyledText>{Constants.TESTIMONALS.pablo}</StyledText>
+            </Col>
+            {/* <Col xs="12" sm="6" md="4">
               <StaticImage
                 alt="tavern"
                 src="../images/monster.jpg"
                 layout="fullWidth"
               />
-              <StyledText>Hello this is the best game ever.</StyledText>
-            </Col>
-            <Col xs="12" sm="6" md="4">
-              <StaticImage
-                alt="tavern"
-                src="../images/monster.jpg"
-                layout="fullWidth"
-              />
-            </Col>
+            </Col> */}
           </Row>
           <Break height="5vh" />
         </Container>
@@ -126,7 +126,7 @@ export default function Landing(): ReactElement {
             <Col sm="12" md="6">
               <StaticImage
                 alt="tavern"
-                src="../images/monstertext.png"
+                src="../images/monstertext.jpg"
                 layout="fullWidth"
               />
               <Break height="10vh"></Break>

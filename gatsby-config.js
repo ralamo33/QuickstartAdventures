@@ -5,6 +5,7 @@
  */
 
 module.exports = {
+  flags: { PRESERVE_WEBPACK_CACHE: true },
   siteMetadata: {
     title: `RememberTheRalamo`,
   },
@@ -13,6 +14,10 @@ module.exports = {
       resolve: `gatsby-plugin-s3`,
       options: {
         bucketName: 'www.quickstartadventures.com',
+      },
+      resolve: 'gatsby-plugin-styled-components',
+      options: {
+        displayName: false,
       },
     },
     {

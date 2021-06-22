@@ -84,3 +84,9 @@ export const WHITE = '#f2f2f2';
 export const STRING_VALIDATION = Yup.string()
   .required('Required')
   .matches(new RegExp('^[a-zA-Z0-9 @.]+$'), 'Invalid characters');
+
+
+export const TESTIMONALS = {
+  eddie: 'We had a great time discovering the synergies between players abilities. It felt awesome to work together for insane damage.',
+  pablo: 'Overall this is a perfect role play game that will get you right to the action immediately!',
+}
