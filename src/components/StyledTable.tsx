@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import * as Constants from '../constants';
 
 const StyledText = styled.p`
-//   font-family: playfair;
+  font-family: playfair;
 `;
 
 const Header = styled.th`
@@ -20,7 +20,7 @@ const StyledList = styled(StyledText)`
 
 const StyledRow = styled.tr`
   font-size: 4.5vmin;
-//   font-family: baskerville;
+  font-family: baskerville;
   font-weight: 600;
   color: white;
 `;

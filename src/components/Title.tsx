@@ -11,7 +11,7 @@ interface Props {
 
 const StyledTitle = styled.h1`
   color: ${(props: Props) => props.color || '#800000'};
-  // font-family: mephisto;
+  font-family: mephisto;
   text-align: center;
   font-size: ${(props: Props) => props.size || '15vmin'};
   font-family: ${(props: Props) => props.fontFamily || 'belmont'};

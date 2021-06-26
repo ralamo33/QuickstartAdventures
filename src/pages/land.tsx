@@ -66,7 +66,7 @@ export default function Landing(): ReactElement {
               <Break height="5vh" />
               <StaticImage
                 alt="tavern"
-                src="../images/witchtext.jpg"
+                src="../images/witch.jpg"
                 layout="fullWidth"
               />
               <Break height="10vh" />
@@ -95,7 +95,7 @@ export default function Landing(): ReactElement {
             <Col xs="12" sm="6" md="4">
               <StaticImage
                 alt="tavern"
-                src="../images/monster.jpg"
+                src="../images/landscape.jpg"
                 layout="fullWidth"
               />
               <StyledText>"Hello this is the best game ever."</StyledText>
@@ -103,7 +103,7 @@ export default function Landing(): ReactElement {
             <Col xs="12" sm="6" md="4">
               <StaticImage
                 alt="tavern"
-                src="../images/monster.jpg"
+                src="../images/landscape.jpg"
                 layout="fullWidth"
               />
               <StyledText>Hello this is the best game ever.</StyledText>
@@ -111,7 +111,7 @@ export default function Landing(): ReactElement {
             <Col xs="12" sm="6" md="4">
               <StaticImage
                 alt="tavern"
-                src="../images/monster.jpg"
+                src="../images/landscape.jpg"
                 layout="fullWidth"
               />
             </Col>
@@ -126,7 +126,7 @@ export default function Landing(): ReactElement {
             <Col sm="12" md="6">
               <StaticImage
                 alt="tavern"
-                src="../images/monstertext.png"
+                src="../images/monster.jpg"
                 layout="fullWidth"
               />
               <Break height="10vh"></Break>
