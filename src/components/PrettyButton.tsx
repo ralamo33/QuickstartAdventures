@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { ReactNode, ReactElement } from 'react';
 import { Button } from 'react-bootstrap';
 import styled from 'styled-components';
@@ -13,6 +12,8 @@ interface ClickProps {
   bordercolor: string;
   opacity?: string;
   hovercolor?: string;
+  fontFamily?: string;
+  type?: string;
   onClick?: () => void;
 }
 
@@ -25,8 +26,8 @@ const MyButton = styled(Button)`
     background-color: ${(props: ClickProps) => props.backgroundcolor};
     border-color: ${(props: ClickProps) => props.bordercolor};
     opacity: ${(props: ClickProps) => props.opacity};
+    font-family: ${(props: ClickProps) => props.fontFamily};
   }
-
   &:hover {
     background-color: ${(props: ClickProps) => props.hovercolor};
   }
@@ -41,6 +42,8 @@ export default function PrettyButton({
   bordercolor,
   hovercolor,
   opacity,
+  fontFamily,
+  type,
   onClick,
 }: ClickProps): ReactElement {
   return (
@@ -52,6 +55,8 @@ export default function PrettyButton({
       bordercolor={bordercolor}
       hovercolor={hovercolor}
       opacity={opacity}
+      fontFamily={fontFamily}
+      type={type}
       onClick={onClick}
     >
       {text}

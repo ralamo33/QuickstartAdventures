@@ -1,38 +1,30 @@
 import {
-  Box,
   Button,
-  Card,
-  CardContent,
   CircularProgress,
   Grid,
   Step,
   StepLabel,
   Stepper,
 } from '@material-ui/core';
-import { Field, Form, Formik, FormikConfig, FormikValues } from 'formik';
-import { CheckboxWithLabel, TextField } from 'formik-material-ui';
-import React, { useState } from 'react';
-import { mixed, number, object } from 'yup';
-
-const sleep = (time) => new Promise((acc) => setTimeout(acc, time));
-
+import { Form, Formik, FormikConfig, FormikValues } from 'formik';
+import React, { useState, ReactElement } from 'react';
 
 export interface FormikStepProps
   extends Pick<FormikConfig<FormikValues>, 'children' | 'validationSchema'> {
   label: string;
 }
 
-export function FormikStep({ children }: FormikStepProps) {
+export function FormikStep({ children }: FormikStepProps): ReactElement {
   return <>{children}</>;
 }
 
 export function FormikStepper({
   children,
   ...props
-}: FormikConfig<FormikValues>) {
-  const childrenArray = React.Children.toArray(children) as React.ReactElement<
-    FormikStepProps
-  >[];
+}: FormikConfig<FormikValues>): ReactElement {
+  const childrenArray = React.Children.toArray(
+    children
+  ) as React.ReactElement<FormikStepProps>[];
   const [step, setStep] = useState(0);
   const currentChild = childrenArray[step];
   const [completed, setCompleted] = useState(false);
@@ -52,17 +44,6 @@ export function FormikStepper({
         } else {
           setStep((s) => s + 1);
 
-          // the next line was not covered in the youtube video
-          //
-          // If you have multiple fields on the same step
-          // we will see they show the validation error all at the same time after the first step!
-          //
-          // If you want to keep that behaviour, then, comment the next line :)
-          // If you want the second/third/fourth/etc steps with the same behaviour
-          //    as the first step regarding validation errors, then the next line is for you! =)
-          //
-          // In the example of the video, it doesn't make any difference, because we only
-          //    have one field with validation in the second step :)
           helpers.setTouched({});
         }
       }}

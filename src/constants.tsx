@@ -1,3 +1,5 @@
+import * as Yup from 'yup';
+
 export const BUCKET_URL =
   'https://remember-the-ralamo-images.s3.amazonaws.com/';
 
@@ -8,9 +10,9 @@ export const FREE_BUTTON_TEXT = 'Free Adventure';
 export const SUBSCRIPE_BUTTON_TEXT = 'Subscribe';
 
 export const BUY_CARD_TEXT = [
-  'Never struggle to find players again. This TTRPG is designed to hook newcomers.',
-  'Get started easily. This game is designed for simplicity.',
-  'Create lasting memories with unique characters. 4,000 character possibilities by level 4.',
+  'Get started easily. This game is designed for everyone!',
+  'Create lasting memories with thousands of unique characters.',
+  'A D20 RPG powered by tarot cards.',
   'The paid version is coming soon. I refuse to release a rushed product.',
 ];
 export const SUBSCRIBE_CARD_TEXT = [
@@ -29,6 +31,12 @@ export const FREE_CARD_TEXT = [
   '5 minutes for an epic character.',
   '10 minutes to teach.',
   'Thousands of character possbilities.',
+];
+export const LANDING_CARD_TEXT = [
+  'A 2 hour RPG experience to convert your friends into RPG fanatics.',
+  'Test out the basics for free!',
+  'Includes a 2 hour mini adventure and all required character materials!',
+  'Give feedback and make an impact on the final release of Roleplay Revolution!'
 ];
 
 export const BUY_MODAL_TITLE = 'Your friends will Love it!';
@@ -72,3 +80,7 @@ export const RED = '#800000';
 export const PURPLE = '#cc00cc';
 export const ORANGE = 'orange';
 export const WHITE = '#f2f2f2';
+
+export const STRING_VALIDATION = Yup.string()
+  .required('Required')
+  .matches(new RegExp('^[a-zA-Z0-9 @.]+$'), 'Invalid characters');

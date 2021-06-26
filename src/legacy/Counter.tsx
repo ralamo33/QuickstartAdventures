@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import { Container, Row, Col } from 'react-bootstrap';
-import Break from './Break';
+import Break from '../components/Break';
 import * as Constants from '../constants';
 
 const minuteSeconds = 60;
