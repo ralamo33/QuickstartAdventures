@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Layout from '../layouts/layout';
 import Break from '../components/Break';
 import LandingForm from '../components/Forms/LandingForm';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const Header = styled.div`
   color: ${Constants.RED};
@@ -90,11 +91,11 @@ export default function Landing(): ReactElement {
           </Col>
           <Col xs="12" sm={{ span: 6, order: 'first' }}>
             <Break height="3vh"></Break>
-            <Flex>
-              <StyledImage
-                src={`${Constants.BUCKET_URL}StarterRules.jpg`}
-              ></StyledImage>
-            </Flex>
+                          <StaticImage
+                alt="tavern"
+                src="../images/monster.jpg"
+                layout="fullWidth"
+              />
           </Col>
         </Row>
         <Row>
