@@ -48,7 +48,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: #ffbf00;
     font-family: 'newrocker';
     font-weight: 400;
     width: 100%;
