@@ -6,7 +6,7 @@ import * as Constants from '../../constants';
 import { post } from '../../utils';
 import PrettyButton from '../PrettyButton';
 import TextField from '../FormFields/TextField';
-// import * as Animations from 'react-animations';
+import * as Animations from 'react-animations';
 
 interface FormValues {
   email: string;
@@ -16,12 +16,12 @@ interface AnimationProps {
   animPlay: string;
 }
 
-// const pulseAnimation = keyframes`${Animations.pulse}`;
+const pulseAnimation = keyframes`${Animations.pulse}`;
 
-// const Animation = styled.div`
-//   animation: 1s ${pulseAnimation};
-//   animation-play-state: ${(props: AnimationProps) => props.animPlay};
-// `;
+const Animation = styled.div`
+  animation: 1s ${pulseAnimation};
+  animation-play-state: ${(props: AnimationProps) => props.animPlay};
+`;
 
 export default function FreeForm(): ReactElement {
   const startBorder = `2.2px solid #00e64d`;
@@ -64,7 +64,7 @@ export default function FreeForm(): ReactElement {
         onSubmit={(values, { resetForm }) => onSubmit(values, resetForm)}
       >
         <Form>
-          {/* <Animation animPlay={play}> */}
+          <Animation animPlay={play}>
             <TextField
               name="email"
               placeholder={placeholder}
@@ -74,7 +74,7 @@ export default function FreeForm(): ReactElement {
               fontSize="1.5rem"
               as="input"
             />
-          {/* </Animation> */}
+          </Animation>
           <PrettyButton
             variant="warning"
             type="submit"

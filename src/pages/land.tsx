@@ -9,32 +9,12 @@ import StyledTable from '../components/StyledTable';
 import * as Constants from '../constants';
 import QuickstartCard from '../components/QuickstartCard';
 import { StaticImage } from 'gatsby-plugin-image';
+import { BackgroundDarkBlue, BackgroundOrange, BackgroundPurple } from '../backgrounds';
 
 const StyledText = styled.p`
   color: white;
   text-align: center;
   font-size: 1.4rem;
-`;
-
-const Background1 = styled.div`
-  background: #0be2d4;
-  background: -webkit-linear-gradient(top, #0be2d4, #0b44cc);
-  background: -moz-linear-gradient(top, #0be2d4, #0b44cc);
-  background: linear-gradient(to bottom, #0be2d4, #0b44cc);
-`;
-
-const BackgroundOrange = styled.div`
-  background: #ffc201;
-  background: -webkit-radial-gradient(top, #ffc201, #f62a03);
-  background: -moz-radial-gradient(top, #ffc201, #f62a03);
-  background: radial-gradient(to bottom, #ffc201, #f62a03);
-`;
-
-const BackgroundRadial = styled.div`
-  background: #8e3bf7;
-  background: -webkit-linear-gradient(top, #8e3bf7, #f701a0);
-  background: -moz-linear-gradient(top, #8e3bf7, #f701a0);
-  background: linear-gradient(to bottom, #8e3bf7, #f701a0);
 `;
 
 const freeCard = (
@@ -47,20 +27,29 @@ const freeCard = (
   />
 );
 
+const PaddedCol = styled(Col)`
+  padding-left: 5vw;
+  padding-right: 5vw;
+`;
+
+const MaxWidth = styled.div`
+`;
+
 export default function Landing(): ReactElement {
   return (
     <Layout>
-      <Background1>
-        <Container>
+      <BackgroundDarkBlue>
+        <Container fluid>
           <Row>
             <Col xs="12" sm="6">
               <Title
-                text="Never Struggle to find players Again"
-                color={Constants.YELLOW}
+                text="The best table top RPG is Coming Soon"
+                // color="orangered"
+                color="#ffff00"
                 size="12vmin"
                 fontFamily="mephisto"
               />
-              <Break height="5vmin" />
+              <Break height="2vmin" />
             </Col>
             <Col xs="12" sm="6">
               <Break height="5vh" />
@@ -69,59 +58,67 @@ export default function Landing(): ReactElement {
                 src="../images/witch.jpg"
                 layout="fullWidth"
               />
-              <Break height="10vh" />
+              <Break height="3vh" />
             </Col>
           </Row>
+            <Title
+                text="Free Version"
+                color="#ffff00"
+                size="10vmin"
+                fontFamily="mephisto"
+            />
           <FreeForm></FreeForm>
           <Break height="5vh" />
         </Container>
-      </Background1>
-      <BackgroundRadial>
+      </BackgroundDarkBlue>
+      <BackgroundPurple>
         <Break height="5vh" />
         <Container fluid>
-          <Title text="Hook Players" color="orange" size="10vmin"></Title>
+          <Title text="Hook Players" color="#ffff00" size="10vmin"></Title>
             <StyledTable />
           <Row>
             <Col>
               <Title
                 text="Playtester Testimonials"
-                color="orange"
+                color="#ffff00"
                 size="12vmin"
                 fontFamily="mephisto"
               ></Title>
             </Col>
           </Row>
           <Row>
-            <Col xs="12" sm="6" md="4">
+            <PaddedCol xs="12" sm="6" md="4">
               <StaticImage
-                alt="tavern"
-                src="../images/landscape.jpg"
-                layout="fullWidth"
+                alt="Eddie"
+                src="../images/Eddie3.jpg"
               />
-              <StyledText>"Hello this is the best game ever."</StyledText>
-            </Col>
-            <Col xs="12" sm="6" md="4">
+              <StyledText>{Constants.PLAYTESTER_TESTIMONIALS.Eddie}</StyledText>
+            </PaddedCol>
+            <PaddedCol xs="12" sm="6" md="4">
+              <MaxWidth>
               <StaticImage
-                alt="tavern"
-                src="../images/landscape.jpg"
-                layout="fullWidth"
+                alt="Brandon"
+                src="../images/Brandon3.jpg"
               />
-              <StyledText>Hello this is the best game ever.</StyledText>
-            </Col>
-            <Col xs="12" sm="6" md="4">
+              <StyledText>{Constants.PLAYTESTER_TESTIMONIALS.Brandon}</StyledText>
+              </MaxWidth>
+            </PaddedCol>
+            <PaddedCol xs="12" sm="6" md="4">
+              <MaxWidth>
               <StaticImage
-                alt="tavern"
-                src="../images/landscape.jpg"
-                layout="fullWidth"
+                alt="Sabrina"
+                src="../images/Sabrina3.jpg"
               />
-            </Col>
+              <StyledText>{Constants.PLAYTESTER_TESTIMONIALS.Sabrina}</StyledText>
+              </MaxWidth>
+            </PaddedCol>
           </Row>
           <Break height="5vh" />
         </Container>
-      </BackgroundRadial>
+      </BackgroundPurple>
       <BackgroundOrange>
         <Container>
-          <Title text="Starter Set"></Title>
+          <Title text="Starter Set" color="#cc0000"></Title>
           <Row>
             <Col sm="12" md="6">
               <StaticImage
