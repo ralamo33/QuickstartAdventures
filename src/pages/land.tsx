@@ -14,7 +14,7 @@ import { BackgroundDarkBlue, BackgroundOrange, BackgroundPurple } from '../backg
 const StyledText = styled.p`
   color: white;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 `;
 
 const freeCard = (
@@ -43,7 +43,7 @@ export default function Landing(): ReactElement {
           <Row>
             <Col xs="12" sm="6">
               <Title
-                text="The best table top RPG is Coming Soon"
+                text="the BEST table top RPG is Coming Soon"
                 // color="orangered"
                 color="#ffff00"
                 size="12vmin"
@@ -128,7 +128,7 @@ export default function Landing(): ReactElement {
               />
               <Break height="10vh"></Break>
             </Col>
-            <Col>{freeCard}</Col>
+            <Col sm="12" md="6">{freeCard}</Col>
           </Row>
           <FreeForm></FreeForm>
           <Break height="5vh" />

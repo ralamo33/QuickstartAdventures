@@ -88,5 +88,6 @@ export const STRING_VALIDATION = Yup.string()
 export const PLAYTESTER_TESTIMONIALS = {
   Brandon: "\"It was super simple to get started, and an absolute blast.\" Brandon Milian",
   Eddie: "\"This is the perfect role play game to get you right to the action immediately.\" Eddie Lainez",
-  Sabrina: `\"Roleplay Revolution gives me control over my character's destiny.\" Sabrina Fernandez`
+  Sabrina: `\"Roleplay Revolution gives me control over my character's destiny.\" Sabrina Fernandez`,
+  Gaby: "\"Easy to get into, hard to get out of.\" Gaby Azteca",
 }
