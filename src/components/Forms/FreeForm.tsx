@@ -4,7 +4,7 @@ import { Formik, Form, FormikState } from 'formik';
 import * as Yup from 'yup';
 import * as Constants from '../../constants';
 import { post } from '../../utils';
-import PrettyButton from '../Buttons/PrettyButton';
+import PrettyButton from '../PrettyButton';
 import TextField from '../FormFields/TextField';
 import * as Animations from 'react-animations';
 

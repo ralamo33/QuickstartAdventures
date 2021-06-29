@@ -2,11 +2,11 @@ import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import * as Constants from '../constants';
 import Layout from '../layouts/layout';
-import MonsterForm from '../components/Forms/MonsterForm/MonsterForm';
+import MonsterForm from '../components/Forms/MonsterForm';
 import Title from '../components/Title';
 // import {FormStepper from '../components/Forms/FormUtils';
 import { Jumbotron } from 'react-bootstrap';
-import BackgroundImageContainer from '../components/BackgroundImageContainer';
+import { BackgroundOrange } from '../backgrounds';
 
 const Monstertron = styled(Jumbotron)`
   position: center;
@@ -28,10 +28,12 @@ const Monstertron = styled(Jumbotron)`
 export default function Monster(): ReactElement {
   return (
     <Layout>
-      <Monstertron>
-        <Title text="Monster Maker" size="10vmin"></Title>
-        <MonsterForm />
-      </Monstertron>
+      <BackgroundOrange>
+        <Monstertron>
+          <Title text="Monster Maker" size="10vmin"></Title>
+          <MonsterForm />
+        </Monstertron>
+      </BackgroundOrange>
     </Layout>
   );
 }

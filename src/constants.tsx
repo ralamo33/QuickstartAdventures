@@ -84,3 +84,10 @@ export const WHITE = '#f2f2f2';
 export const STRING_VALIDATION = Yup.string()
   .required('Required')
   .matches(new RegExp('^[a-zA-Z0-9 @.]+$'), 'Invalid characters');
+
+export const PLAYTESTER_TESTIMONIALS = {
+  Brandon: "\"It was super simple to get started, and an absolute blast.\" Brandon Milian",
+  Eddie: "\"This is the perfect role play game to get you right to the action immediately.\" Eddie Lainez",
+  Sabrina: `\"Roleplay Revolution gives me control over my character's destiny.\" Sabrina Fernandez`,
+  Gaby: "\"Easy to get into, hard to get out of.\" Gaby Azteca",
+}

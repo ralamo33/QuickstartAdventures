@@ -26,11 +26,9 @@ const FullField = styled(Field)`
     margin: auto;
     margin-bottom: 15px;
   }
-
   &:active {
     outline: 2px solid #33ff77;
   }
-
   &:focus {
     outline: 2px solid #33ff77;
   }
