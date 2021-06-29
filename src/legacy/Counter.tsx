@@ -10,7 +10,11 @@ const minuteSeconds = 60;
 const hourSeconds = 3600;
 const daySeconds = 86400;
 
-const countdownColors = [['#00b3b3', 0.5], [Constants.PURPLE, 0.5], ['#e60000']];
+const countdownColors = [
+  ['#00b3b3', 0.5],
+  [Constants.PURPLE, 0.5],
+  ['#e60000'],
+];
 
 const timerProps = {
   isPlaying: true,

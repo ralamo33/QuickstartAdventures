@@ -11,8 +11,44 @@ import mephisto from '../fonts/Mephisto.ttf';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
+    font-family: baskerville;
+    src: url(${baskerville}) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: mephisto;
+    src: url(${mephisto}) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  // @font-face {
+  //   font-family: revorioum;
+  //   src: url(${revorioum}) format('truetype');
+  //   font-weight: normal;
+  //   font-style: normal;
+  // }
+  // @font-face {
+  //   font-family: immortal;
+  //   src: url(${immortal}) format('truetype');
+  //   font-weight: normal;
+  //   font-style: normal;
+  // }
+  // @font-face {
+  //   font-family: hardcorium;
+  //   src: url(${hardcorium}) format('truetype');
+  //   font-weight: normal;
+  //   font-style: normal;
+  // }
+  @font-face {
     font-family: belmont;
     src: url(${belmont}) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: evanescent;
+    src: url(${evanescent}) format('truetype');
     font-weight: normal;
     font-style: normal;
   }
