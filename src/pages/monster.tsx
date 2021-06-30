@@ -2,38 +2,31 @@ import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import * as Constants from '../constants';
 import Layout from '../layouts/layout';
-import MonsterForm from '../components/Forms/MonsterForm';
+import Break from '../components/Break';
+import MonsterForm from '../components/Forms/Monster/MonsterForm';
 import Title from '../components/Title';
+import { Container } from 'react-bootstrap';
 // import {FormStepper from '../components/Forms/FormUtils';
 import { Jumbotron } from 'react-bootstrap';
 import { BackgroundOrange } from '../backgrounds';
+import { Form2 } from '../components/Forms/form';
 
-const Monstertron = styled(Jumbotron)`
-  position: center;
-  left: 10%;
-  display: block
+// Ensure that the background encapsulate the full page, even if the form is super small.
+const FullPage = styled.div`
+  height: 100vh;
   margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  font-size: 1.2rem;
-  width: 80vw;
-  // background-color: ${Constants.ORANGE};
-  background-color: #cccccc;
-  color: black;
-  opacity: 0.95;
+  padding: 0;
 `;
 
 export default function Monster(): ReactElement {
   return (
-    <Layout>
       <BackgroundOrange>
-        <Monstertron>
+        <FullPage>
+        <Container>
           <Title text="Monster Maker" size="10vmin"></Title>
           <MonsterForm />
-        </Monstertron>
+        </Container>
+        </FullPage>
       </BackgroundOrange>
-    </Layout>
   );
 }
