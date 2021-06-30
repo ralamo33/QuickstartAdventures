@@ -6,7 +6,7 @@ import { object } from 'yup';
 import { Col, Row, Container } from 'react-bootstrap';
 import * as Constants from '../../../constants';
 import { Field } from 'formik';
-import { Slider } from '../form';
+import { SliderField } from '../../FormFields/SliderField';
 
 interface Props {
 	label: string;
@@ -43,20 +43,11 @@ export function Attack(props: Props): ReactElement {
 		</Row>
 		<Row>
 		  <Col>
-            <Field
-              component={Slider}
-              name="strength"
-	      min={0}
-	      max={5}
-	      valueLabelDisplay="on"
-	      marks
-            />
-		    {/* <Slider
-		      min={-2}
-		      max={12}
-		      marks
-		      valueLabelDisplay="auto"
-		    ></Slider> */}
+	            <SliderField name="str" min={-2} max={12} label="Strength"/>
+	            <SliderField name="dex" min={-2} max={12} label="Dexterity"/>
+	            <SliderField name="int" min={-2} max={12} label="Intelligence"/>
+	            <SliderField name="wis" min={-2} max={12} label="Wisdom"/>
+	            <SliderField name="cha" min={-2} max={12} label="Charisma"/>
 		  </Col>
 		</Row>
            </Container>

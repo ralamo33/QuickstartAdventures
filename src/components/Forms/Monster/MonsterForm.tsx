@@ -7,6 +7,7 @@ import { object } from 'yup';
 import { Col, Row, Container } from 'react-bootstrap';
 import { Flavor } from './Flavor';
 import { Attack } from './Attack';
+import { Skill } from './Skills';
 import * as Constants from '../../../constants';
 
 const sleep = (time: number) => new Promise((acc) => setTimeout(acc, time));
@@ -35,7 +36,18 @@ export default function Stepper(): ReactElement {
             name: '',
             summary: '',
             description: '',
-            strength: '',
+            attack: '',
+            actions: '',
+            health: '',
+            armor: '',
+            speed: '',
+            dice: '',
+            str: '',
+            dex: '',
+            int: '',
+            wis: '',
+            cha: '',
+            notes: '',
           }}
           onSubmit={async (values) => {
             console.log('values', values);
@@ -43,6 +55,7 @@ export default function Stepper(): ReactElement {
         >
           <Flavor label="Flavor"/>
           <Attack label="Attack"/>
+          <Skill label="Skills"/>
         </FormikStepper>
       </CardContent>
     </Card>
