@@ -1,14 +1,9 @@
 import { Card, CardContent } from '@material-ui/core';
-import styled from 'styled-components';
-import TextField from '../../FormFields/TextField';
 import React, { ReactElement } from 'react';
-import { FormikStepper, FormikStep } from '../FormUtils';
-import { object } from 'yup';
-import { Col, Row, Container } from 'react-bootstrap';
+import { FormikStepper } from '../FormUtils';
 import { Flavor } from './Flavor';
 import { Attack } from './Attack';
 import { Skill } from './Skills';
-import * as Constants from '../../../constants';
 
 const sleep = (time: number) => new Promise((acc) => setTimeout(acc, time));
 

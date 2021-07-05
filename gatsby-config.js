@@ -23,6 +23,9 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-use-query-params',
+    },
+    {
       resolve: 'gatsby-transformer-sharp'
     },
     {

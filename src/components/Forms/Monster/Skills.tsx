@@ -9,13 +9,13 @@ import * as Constants from '../../../constants';
 import { string } from 'yup/lib/locale';
 
 interface Props {
-	label: string;
+  label: string;
 }
 
 const validationSchema1 = object().shape({
-//   name: Constants.STRING_VALIDATION,
-//   summary: Constants.STRING_VALIDATION,
-//   description: Constants.STRING_VALIDATION,
+  //   name: Constants.STRING_VALIDATION,
+  //   summary: Constants.STRING_VALIDATION,
+  //   description: Constants.STRING_VALIDATION,
 });
 
 const Subtitle = styled.p`
@@ -27,18 +27,16 @@ const Subtitle = styled.p`
 `;
 
 export function Skill(props: Props): ReactElement {
-	return <FormikStep label="Skills" validationSchema={validationSchema1}>
-            <Subtitle>Special Skills</Subtitle>
-            <Container>
-              <Row>
-                <Col>
-                  <TextField
-                    name="notes"
-                    label="Special Notes"
-                    as="textarea"
-                  />
-                </Col>
-              </Row>
-            </Container>
-          </FormikStep>
+  return (
+    <FormikStep label="Skills" validationSchema={validationSchema1}>
+      <Subtitle>Special Skills</Subtitle>
+      <Container>
+        <Row>
+          <Col>
+            <TextField name="notes" label="Special Notes" as="textarea" />
+          </Col>
+        </Row>
+      </Container>
+    </FormikStep>
+  );
 }

@@ -1,6 +1,7 @@
 import React, { ReactElement, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Formik, Form, FormikState } from 'formik';
+import { useQueryParam, StringParam } from 'use-query-params';
 import * as Yup from 'yup';
 import * as Constants from '../../constants';
 import { post } from '../../utils';
@@ -45,11 +46,18 @@ export default function FreeForm(): ReactElement {
     setPlay('start');
   };
 
+  const current = new Date();
+  const param = useQueryParam('crs', StringParam)[0] || 'default';
+  const date = current.toLocaleDateString();
+  const time = current.toLocaleTimeString();
+
   const onSubmit = (
     values: FormValues,
     resetForm: (nextState?: Partial<FormikState<any>>) => void
   ) => {
-    post(`${Constants.LANDING_API}&Message=John Doe_${values.email}`)
+    post(
+      `${Constants.LANDING_API}&Message=${param}_${values.email}_${date}_${time}`
+    )
       .then(updateEmailField)
       .then(() => resetForm({}));
   };
