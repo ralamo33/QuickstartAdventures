@@ -13,15 +13,12 @@ interface FormValues {
   email: string;
 }
 
-interface AnimationProps {
-  animPlay: string;
-}
-
 const pulseAnimation = keyframes`${Animations.pulse}`;
 
 const Animation = styled.div`
-  animation: 1s ${pulseAnimation};
-  animation-play-state: ${(props: AnimationProps) => props.animPlay};
+  animation: 1.5s ${pulseAnimation};
+  animation-play-state: play;
+	animation-iteration-count: infinite;
 `;
 
 export default function FreeForm(): ReactElement {
@@ -79,14 +76,14 @@ export default function FreeForm(): ReactElement {
               minwidth="25vw"
               maxwidth="80%"
               border={border}
-              fontSize="1.5rem"
+              fontSize="2.2rem"
               as="input"
             />
           </Animation>
           <PrettyButton
             variant="warning"
             type="submit"
-            fontSize="2rem"
+            fontSize="2.2rem"
             color="white"
             backgroundcolor="#800000"
             bordercolor="#800000"

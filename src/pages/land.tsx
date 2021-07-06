@@ -8,9 +8,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import StyledTable from '../components/StyledTable';
 import * as Constants from '../constants';
 import QuickstartCard from '../components/QuickstartCard';
-import { Location } from '@reach/router';
-import queryString from 'query-string';
 import { StaticImage } from 'gatsby-plugin-image';
+import { ListText } from '../components/ListText';
 import {
   BackgroundDarkBlue,
   BackgroundOrange,
@@ -20,7 +19,7 @@ import {
 const StyledText = styled.p`
   color: white;
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 2rem;
 `;
 
 const freeCard = (
@@ -38,53 +37,48 @@ const PaddedCol = styled(Col)`
   padding-right: 5vw;
 `;
 
-const MaxWidth = styled.div``;
-
 export default function Landing(): ReactElement {
   return (
     <Layout>
       <BackgroundDarkBlue>
-        <Location>
-          {({ location, navigate }) => (
-            <Container fluid>
-              <Row>
-                <Col xs="12" sm="6">
-                  <Title
-                    text="the BEST table top RPG is Coming Soon"
-                    // color="orangered"
-                    color="#ffff00"
-                    size="12vmin"
-                    fontFamily="mephisto"
-                  />
-                  <Break height="2vmin" />
-                </Col>
-                <Col xs="12" sm="6">
-                  <Break height="5vh" />
-                  <StaticImage
-                    alt="tavern"
-                    src="../images/witch.jpg"
-                    layout="fullWidth"
-                  />
-                  <Break height="3vh" />
-                </Col>
-              </Row>
+        <Container fluid>
+          <Row>
+            <Col lg="12" xl="6">
               <Title
-                text="Free Version"
-                color="#ffff00"
-                size="10vmin"
+                text="a FREE rpg EXPERIENCE!"
+								color="yellow"
+                size="12vmin"
                 fontFamily="mephisto"
               />
-              <FreeForm
-              ></FreeForm>
+              <Break height="2vmin" />
+            </Col>
+            <Col lg="12" xl="6">
               <Break height="5vh" />
-            </Container>
-          )}
-        </Location>
+              <StaticImage
+                alt="tavern"
+                src="../images/Tavern.jpg"
+                layout="fullWidth"
+              />
+              <Break height="3vh" />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <ListText
+                text={Constants.SELLING_POINTS}
+                size="6vmin"
+                color="yellow"
+                fontFamily="baskerville"
+              />
+          	<FreeForm />
+            </Col>
+          </Row>
+        </Container>
+        <Break height="5vh" />
       </BackgroundDarkBlue>
       <BackgroundPurple>
         <Break height="5vh" />
         <Container fluid>
-          <Title text="Hook Players" color="#ffff00" size="10vmin"></Title>
           <StyledTable />
           <Row>
             <Col>
@@ -97,25 +91,21 @@ export default function Landing(): ReactElement {
             </Col>
           </Row>
           <Row>
-            <PaddedCol xs="12" sm="6" md="4">
+            <PaddedCol sm="12" md="6" lg="4">
               <StaticImage alt="Eddie" src="../images/Eddie3.jpg" />
               <StyledText>{Constants.PLAYTESTER_TESTIMONIALS.Eddie}</StyledText>
             </PaddedCol>
-            <PaddedCol xs="12" sm="6" md="4">
-              <MaxWidth>
-                <StaticImage alt="Brandon" src="../images/Brandon3.jpg" />
-                <StyledText>
-                  {Constants.PLAYTESTER_TESTIMONIALS.Brandon}
-                </StyledText>
-              </MaxWidth>
+            <PaddedCol sm="12" md="6" lg="4">
+              <StaticImage alt="Brandon" src="../images/Brandon3.jpg" />
+              <StyledText>
+                {Constants.PLAYTESTER_TESTIMONIALS.Brandon}
+              </StyledText>
             </PaddedCol>
-            <PaddedCol xs="12" sm="6" md="4">
-              <MaxWidth>
-                <StaticImage alt="Sabrina" src="../images/Sabrina3.jpg" />
-                <StyledText>
-                  {Constants.PLAYTESTER_TESTIMONIALS.Sabrina}
-                </StyledText>
-              </MaxWidth>
+            <PaddedCol sm="12" md="6" lg="4">
+              <StaticImage alt="Sabrina" src="../images/Sabrina3.jpg" />
+              <StyledText>
+                {Constants.PLAYTESTER_TESTIMONIALS.Sabrina}
+              </StyledText>
             </PaddedCol>
           </Row>
           <Break height="5vh" />
@@ -123,9 +113,9 @@ export default function Landing(): ReactElement {
       </BackgroundPurple>
       <BackgroundOrange>
         <Container>
-          <Title text="Starter Set" color="#cc0000"></Title>
+          <Title text="Starter Set" color="red"></Title>
           <Row>
-            <Col sm="12" md="6">
+            <Col lg="12" xl="6">
               <StaticImage
                 alt="tavern"
                 src="../images/monster.jpg"
@@ -133,12 +123,11 @@ export default function Landing(): ReactElement {
               />
               <Break height="10vh"></Break>
             </Col>
-            <Col sm="12" md="6">
+            <Col lg="12" xl="6">
               {freeCard}
             </Col>
           </Row>
-          <FreeForm
-          ></FreeForm>
+          <FreeForm />
           <Break height="5vh" />
         </Container>
       </BackgroundOrange>
