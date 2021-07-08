@@ -22,33 +22,9 @@ const GlobalStyle = createGlobalStyle`
     font-weight: normal;
     font-style: normal;
   }
-  // @font-face {
-  //   font-family: revorioum;
-  //   src: url(${revorioum}) format('truetype');
-  //   font-weight: normal;
-  //   font-style: normal;
-  // }
-  // @font-face {
-  //   font-family: immortal;
-  //   src: url(${immortal}) format('truetype');
-  //   font-weight: normal;
-  //   font-style: normal;
-  // }
-  // @font-face {
-  //   font-family: hardcorium;
-  //   src: url(${hardcorium}) format('truetype');
-  //   font-weight: normal;
-  //   font-style: normal;
-  // }
   @font-face {
     font-family: belmont;
     src: url(${belmont}) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: evanescent;
-    src: url(${evanescent}) format('truetype');
     font-weight: normal;
     font-style: normal;
   }

@@ -33,10 +33,9 @@ export const FREE_CARD_TEXT = [
   'Thousands of character possbilities.',
 ];
 export const LANDING_CARD_TEXT = [
-  'A 2 hour RPG experience to convert your friends into RPG fanatics.',
-  'Test out the basics for free!',
-  'Includes a 2 hour mini adventure and all required character materials!',
-  'Give feedback and make an impact on the final release of Roleplay Revolution!'
+  'Everything you need to introduce friends to roleplaying games for the first time.',
+  "Takes minutes to understand, even if none of you know what a TTRPG is.",
+  'A unique, 2 hour experience for veteran players. They will be shocked how quickly you get started!',
 ];
 
 export const BUY_MODAL_TITLE = 'Your friends will Love it!';
@@ -85,9 +84,17 @@ export const STRING_VALIDATION = Yup.string()
   .required('Required')
   .matches(new RegExp('^[a-zA-Z0-9 @.]+$'), 'Invalid characters');
 
+export const SELLING_POINTS = [
+  'Never struggle to find players again',
+  'Addict new Friends to roleplaying games',
+  'Experience a hint of the latest and greatest in tabletop RPGs',
+];
+
 export const PLAYTESTER_TESTIMONIALS = {
-  Brandon: "\"It was super simple to get started, and an absolute blast.\" Brandon Milian",
-  Eddie: "\"This is the perfect role play game to get you right to the action immediately.\" Eddie Lainez",
+  Brandon:
+    '"It was super simple to get started, and an absolute blast." Brandon Milian',
+  Eddie:
+    '"This is the perfect role play game to get you right to the action immediately." Eddie Lainez',
   Sabrina: `\"Roleplay Revolution gives me control over my character's destiny.\" Sabrina Fernandez`,
-  Gaby: "\"Easy to get into, hard to get out of.\" Gaby Azteca",
-}
+  Gaby: '"Easy to get into, hard to get out of." Gaby Azteca',
+};

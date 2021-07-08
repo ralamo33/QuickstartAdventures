@@ -1,6 +1,7 @@
 import React, { ReactElement, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Formik, Form, FormikState } from 'formik';
+import { useQueryParam, StringParam } from 'use-query-params';
 import * as Yup from 'yup';
 import * as Constants from '../../constants';
 import { post } from '../../utils';
@@ -12,15 +13,12 @@ interface FormValues {
   email: string;
 }
 
-interface AnimationProps {
-  animPlay: string;
-}
-
 const pulseAnimation = keyframes`${Animations.pulse}`;
 
 const Animation = styled.div`
-  animation: 1s ${pulseAnimation};
-  animation-play-state: ${(props: AnimationProps) => props.animPlay};
+  animation: 1.5s ${pulseAnimation};
+  animation-play-state: play;
+	animation-iteration-count: infinite;
 `;
 
 export default function FreeForm(): ReactElement {
@@ -45,11 +43,18 @@ export default function FreeForm(): ReactElement {
     setPlay('start');
   };
 
+  const current = new Date();
+  const param = useQueryParam('crs', StringParam)[0] || 'default';
+  const date = current.toLocaleDateString();
+  const time = current.toLocaleTimeString();
+
   const onSubmit = (
     values: FormValues,
     resetForm: (nextState?: Partial<FormikState<any>>) => void
   ) => {
-    post(`${Constants.LANDING_API}&Message=John Doe_${values.email}`)
+    post(
+      `${Constants.LANDING_API}&Message=${param}_${values.email}_${date}_${time}`
+    )
       .then(updateEmailField)
       .then(() => resetForm({}));
   };
@@ -71,14 +76,14 @@ export default function FreeForm(): ReactElement {
               minwidth="25vw"
               maxwidth="80%"
               border={border}
-              fontSize="1.5rem"
+              fontSize="2.2rem"
               as="input"
             />
           </Animation>
           <PrettyButton
             variant="warning"
             type="submit"
-            fontSize="2rem"
+            fontSize="2.2rem"
             color="white"
             backgroundcolor="#800000"
             bordercolor="#800000"

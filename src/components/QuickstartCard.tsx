@@ -1,7 +1,8 @@
 import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
-import { Button, Card, Container, Row, Col } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import Break from './Break';
+import { ListText } from '../components/ListText';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 interface CardProps {
@@ -30,7 +31,7 @@ const MyBody = styled(Card.Body)`
 `;
 
 const MyList = styled.ul`
-  margin-left: 6px;
+  margin-left: 1vmin;
   padding: 0;
   min-height: 50vh;
 `;
@@ -47,20 +48,18 @@ export default function QuickstartCard({
   text,
   button,
 }: CardProps): ReactElement {
-  const TextList = text.map((txt, idx) => (
-    <div key={txt + idx.toString()}>
-      <MyText>{txt}</MyText>
-      <Break height="2vh" />
-    </div>
-  ));
-
   return (
     <MyCard border={border}>
       <MyHeader color={color} background={background}>
         {header}
       </MyHeader>
       <MyBody>
-        <MyList>{TextList}</MyList>
+        <ListText
+          text={text}
+          size="24px"
+          color="black"
+          fontFamily="newrocker"
+        />
         {button}
       </MyBody>
       <Break height="3vh" />

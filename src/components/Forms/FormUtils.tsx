@@ -48,7 +48,7 @@ export function FormikStepper({
         }
       }}
     >
-      {({ isSubmitting }) => (
+      {({submitForm, isSubmitting, touched, errors, values}) => (
         <Form autoComplete="off">
           <Stepper alternativeLabel activeStep={step}>
             {childrenArray.map((child, index) => (
