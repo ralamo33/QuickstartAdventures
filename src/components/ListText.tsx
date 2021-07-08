@@ -10,9 +10,7 @@ interface Props {
 }
 
 const List = styled.ul`
-	margin: 0;
   padding: 0;
-  min-height: 50vh;
   text-align: center;
   font-size: ${(props: Props) => props.size};
   color: ${(props: Props) => props.color};

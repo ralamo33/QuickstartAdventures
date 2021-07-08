@@ -46,11 +46,10 @@ export default function Landing(): ReactElement {
             <Col lg="12" xl="6">
               <Title
                 text="a FREE rpg EXPERIENCE!"
-								color="yellow"
+                color="yellow"
                 size="12vmin"
                 fontFamily="mephisto"
               />
-              <Break height="2vmin" />
             </Col>
             <Col lg="12" xl="6">
               <Break height="5vh" />
@@ -70,7 +69,7 @@ export default function Landing(): ReactElement {
                 color="yellow"
                 fontFamily="baskerville"
               />
-          	<FreeForm />
+              <FreeForm />
             </Col>
           </Row>
         </Container>
@@ -113,12 +112,12 @@ export default function Landing(): ReactElement {
       </BackgroundPurple>
       <BackgroundOrange>
         <Container>
-          <Title text="Starter Set" color="red"></Title>
+          <Break height="10vh" />
           <Row>
             <Col lg="12" xl="6">
               <StaticImage
                 alt="tavern"
-                src="../images/monster.jpg"
+                src="../images/Warrior.png"
                 layout="fullWidth"
               />
               <Break height="10vh"></Break>
