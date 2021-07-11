@@ -20,14 +20,22 @@ interface Props {
   guide: string;
 }
 
+
+
+
 const ViewWrapper = styled.div`
 	width: 6.268in;
 	margin: auto;
+	font-family: NewRocker-Regular;
+`;
+
+const Hide = styled.div`
+	display: none;
 `;
 
 const Subtitle = styled.p`
   font-size: 2.5rem;
-  font-family: neverwinter;
+	font-family: Neverwinter;
 `;
 
 const Stat = styled.p`
@@ -52,8 +60,9 @@ export function MonsterView({
   guide,
 }: Props): ReactElement {
   return (
+		<Hide>
     <ViewWrapper id="pdf">
-      <Title text={name} />
+      <Title text={name} fontFamily="Belmont Regular" />
       <Subtitle>{motivation}</Subtitle>
       <Container>
         <Row>
@@ -94,5 +103,6 @@ export function MonsterView({
         </Row>
       </Container>
     </ViewWrapper>
+		</Hide>
   );
 }

@@ -1,6 +1,9 @@
 import axios from 'axios';
 import jsPDF from 'jspdf';
 import * as Constants from './constants';
+import { addFont } from './components/Views/Fonts/NewRocker-Regular';
+import { addNeverwinter } from './components/Views/Fonts/Neverwinter-normal';
+import { addBelmont } from './components/Views/Fonts/Belmont-Normal';
 
 /**
  * Generates a sum equation with variables between 1 and 10
@@ -34,6 +37,10 @@ export async function post(apiUrl: string): Promise<void> {
 
 export function generatePdf(): void {
   const doc = new jsPDF('p', 'pt', 'a4');
+	addFont(doc);
+	addNeverwinter(doc);
+	addBelmont(doc);
+  doc.setFont('NewRocker-Regular');
   doc.html(document.getElementById('pdf'), {
     callback: function (pdf) {
       pdf.save('test.pdf');
