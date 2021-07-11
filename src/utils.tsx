@@ -1,4 +1,5 @@
 import axios from 'axios';
+import jsPDF from 'jspdf';
 import * as Constants from './constants';
 
 /**
@@ -29,4 +30,13 @@ export async function post(apiUrl: string): Promise<void> {
     )
     .then((response) => console.log(response))
     .catch((error) => alert(error));
+}
+
+export function generatePdf(): void {
+  const doc = new jsPDF('p', 'pt', 'a4');
+  doc.html(document.getElementById('pdf'), {
+    callback: function (pdf) {
+      pdf.save('test.pdf');
+    },
+  });
 }
