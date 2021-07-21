@@ -8,6 +8,7 @@ import { post } from '../../utils';
 import PrettyButton from '../PrettyButton';
 import TextField from '../FormFields/TextField';
 import * as Animations from 'react-animations';
+import ReactPixel from 'react-facebook-pixel';
 
 interface FormValues {
   email: string;
@@ -18,8 +19,14 @@ const pulseAnimation = keyframes`${Animations.pulse}`;
 const Animation = styled.div`
   animation: 1.5s ${pulseAnimation};
   animation-play-state: play;
-	animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
 `;
+
+const pixelId = '500534284273760';
+
+ReactPixel.init(pixelId);
+
+ReactPixel.pageView(); // For tracking page view
 
 export default function FreeForm(): ReactElement {
   const startBorder = `2.2px solid #00e64d`;
@@ -56,7 +63,14 @@ export default function FreeForm(): ReactElement {
       `${Constants.LANDING_API}&Message=${param}_${values.email}_${date}_${time}`
     )
       .then(updateEmailField)
-      .then(() => resetForm({}));
+      .then(() => resetForm({}))
+      .then(() =>
+        ReactPixel.trackSingle(pixelId, 'Subscribe', {
+          email: values.email,
+          date: date,
+          time: time,
+        })
+      );
   };
 
   return (
